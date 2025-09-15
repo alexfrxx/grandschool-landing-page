@@ -19,6 +19,7 @@
 @media (min-width: 1024px) {
   .hero-gallery__slider {
     .splide__track {
+      max-width: 100%;
       overflow: visible;
     }
     .splide__list {

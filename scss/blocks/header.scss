@@ -31,48 +31,6 @@ header {
   }
 }
 
-.primaryBtn {
-  @include mixins.btnSettings;
-  position: relative;
-  font-size: 20px;
-  min-width: 200px;
-  padding: 15px 60px;
-  color: #ffff;
-  border: 2px solid #618135;
-  background-color: #618135;
-  span {
-    position: relative;
-    &::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      width: 0;
-      top: 18px;
-      height: 1px;
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-      transform-origin: top;
-      background-color: #fff;
-    }
-  }
-  &:hover,
-  &:focus {
-    background-color: #72a62b;
-    border: 2px solid #72a62b;
-    span::after {
-      width: 100%;
-    }
-  }
-  &:active {
-    background-color: #517322;
-    border: 2px solid #618135;
-    span::after {
-      transform: scaleX(0);
-      width: 0;
-    }
-  }
-}
-
 @media (max-width: 560px) {
   header {
     .headerWrapper {
