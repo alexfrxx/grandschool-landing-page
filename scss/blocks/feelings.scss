@@ -59,11 +59,16 @@
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 768px) {
   .feelings {
     h2 {
       font-size: 30px;
     }
+  }
+}
+
+@media (max-width: 550px) {
+  .feelings {
     .feelingList {
       li {
         width: 100%;

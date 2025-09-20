@@ -77,15 +77,20 @@
   .projectSupport {
     padding: 70px 0;
     background: white;
-    h2 {
-      font-size: 30px;
-    }
   }
   .supportList {
     li {
       h3 {
         font-weight: 700;
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .projectSupport {
+    h2 {
+      font-size: 30px;
     }
   }
 }
