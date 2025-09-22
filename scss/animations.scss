@@ -101,15 +101,15 @@
   }
   25% {
     transform: translateX(-2px);
-    fill: rgb(182, 11, 11);
+    fill: black;
   }
   50% {
     transform: translateX(2px);
-    fill: rgb(182, 11, 11);
+    fill: black;
   }
   75% {
     transform: translateX(-2px);
-    fill: rgb(182, 11, 11);
+    fill: black;
   }
 }
 .shake {
@@ -185,7 +185,23 @@
     transform: scaleY(1);
     fill: #618135;
   } /* мягкое открытие */
+  37% {
+    transform: scaleY(0);
+    fill: none;
+  }
   38% {
+    transform: scaleY(1);
+    fill: none;
+  } /* мягкое закрытие */
+  48% {
+    transform: scaleY(1);
+    fill: #618135;
+  } /* задержка в закрытом состоянии */
+  53% {
+    transform: scaleY(1);
+    fill: #618135;
+  } /* мягкое открытие */
+  55% {
     transform: scaleY(0);
     fill: none;
   }
@@ -195,6 +211,6 @@
   }
 }
 .eye {
-  animation: eyeBlink 5s ease-in-out infinite;
+  animation: eyeBlink 3.5s ease-in-out infinite;
   transform-origin: center top;
 }
