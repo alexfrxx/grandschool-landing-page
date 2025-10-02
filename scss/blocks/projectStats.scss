@@ -12,6 +12,7 @@
   .stats-cta {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     h2 {
       font-size: 36px;
       margin-bottom: 15px;
@@ -38,13 +39,19 @@
       width: 33%;
       background-color: #fff;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      &:hover svg {
+        transform: scale(0.8);
+      }
+      svg {
+        transition: all 0.7s ease;
+      }
       h3 {
         margin: 0;
-        font-size: 48px;
-        font-weight: 700;
+        font-size: 34px;
         margin-bottom: 24px;
-        small {
-          font-size: 34px;
+        span {
+          font-size: 48px;
+          font-weight: 700;
         }
       }
       p {
@@ -88,6 +95,9 @@
         width: 100%;
         box-shadow: none;
         border-radius: 10px;
+        &:hover svg {
+          transform: none;
+        }
       }
       hr {
         display: block;
