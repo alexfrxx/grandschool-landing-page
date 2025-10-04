@@ -214,3 +214,61 @@
   animation: eyeBlink 3.5s ease-in-out infinite;
   transform-origin: center top;
 }
+
+@keyframes tap {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(0.95) translateY(2px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.hand-icon {
+  animation: tap 1.3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.pulse-circle {
+  animation: tap 1.3s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@keyframes hug {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+}
+.left-person {
+  animation: hug 2s infinite;
+  transform-origin: bottom right;
+}
+.right-person {
+  animation: hug 2s infinite;
+  transform-origin: bottom left;
+}
+
+@keyframes rotateScan {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: rotate(-5deg);
+  }
+}
+
+.Ai-icon {
+  animation: rotateScan 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
