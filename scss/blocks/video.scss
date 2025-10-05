@@ -1,0 +1,29 @@
+.video {
+  background-image: image-set(
+    url('../../img/videoBg.webp') 1x,
+    url('../../img/videoBgRetina.webp') 2x
+  );
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  padding: 146px 0 130px 0;
+}
+
+@media (max-width: 1024px) {
+  .video {
+    padding: 70px 0 70px 0;
+    background: white;
+    iframe {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .video {
+    iframe {
+      height: 283px;
+    }
+  }
+}
