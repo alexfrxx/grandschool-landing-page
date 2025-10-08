@@ -1,0 +1,79 @@
+.courses {
+  padding: 100px 0 130px 0;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+  }
+  .courseSubtitle {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 141%;
+    width: 570px;
+  }
+  .coursesList {
+    display: flex;
+    gap: 33.5px;
+    list-style-type: none;
+    justify-content: space-between;
+    padding: 32px 0;
+    li {
+      padding: 20px;
+      width: 30%;
+      border-radius: 26px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 0 20px 0;
+      }
+      img {
+        width: 100%;
+        margin: 0 0 20px 0;
+      }
+      .aboutCourse {
+        font-size: 16px;
+        font-weight: 400;
+        color: #484747;
+        margin: 0 0 40px 0;
+      }
+      .price-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h4 {
+          font-size: 18px;
+          font-weight: 700;
+          color: #ff3f15;
+        }
+        .price {
+          font-size: 25px;
+          font-weight: 700;
+          color: #ff3f15;
+          display: flex;
+          align-items: flex-end;
+          gap: 6px;
+          .number {
+            font-size: 34px;
+            font-weight: 700;
+            color: #ff3f15;
+            display: flex;
+          }
+          .currency {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ff3f15;
+            align-self: flex-start;
+          }
+          .oldPrice {
+            color: #ff3f1580;
+            font-size: 24px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
