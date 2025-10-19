@@ -31,7 +31,7 @@
       transition: all 0.3 ease;
       background-color: white;
       padding: 20px;
-      width: 30%;
+      width: 33%;
       border-radius: 26px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       h3 {
@@ -233,6 +233,28 @@
     }
     .fullAccesCard {
       background-color: #faf1d5;
+    }
+  }
+  .course-modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    background-color: red;
+    inset: 0;
+    border: 3px solid black;
+    &:active {
+      display: flex;
+    }
+  }
+  .about-modal {
+    position: relative;
+    .close-btn {
+      cursor: pointer;
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background-color: black;
+      transform: rotate(45deg);
     }
   }
 }
