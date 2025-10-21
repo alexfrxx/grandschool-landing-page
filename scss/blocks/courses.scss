@@ -21,6 +21,7 @@
     width: 570px;
   }
   .coursesList {
+    position: relative;
     display: flex;
     gap: 32px;
     list-style-type: none;
@@ -28,10 +29,12 @@
     padding: 32px 0;
     .courseCard {
       position: relative;
-      transition: all 0.3 ease;
       background-color: white;
       padding: 20px;
       width: 33%;
+      overflow: hidden;
+      display: flex;
+      transition: all 1s ease;
       border-radius: 26px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       h3 {
@@ -64,6 +67,49 @@
           margin-bottom: 40px;
           font-size: 16px;
           font-weight: 400;
+        }
+      }
+      .hidden-content {
+        border-radius: 0 26px 26px 0;
+        box-shadow: none;
+        padding: 20px;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        transform: translateX(-40px);
+        z-index: 998;
+        pointer-events: none;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 1.2s ease;
+        .card-list-title {
+          list-style-type: none;
+          .punkt {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 8px;
+            position: relative;
+            &::before {
+              content: '•';
+              color: #e22;
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+      &.open {
+        background-color: white;
+        display: flex;
+        overflow: visible;
+        position: relative;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        .hidden-content {
+          opacity: 1;
+          transform: translateX(0);
+          pointer-events: all;
         }
       }
     }
