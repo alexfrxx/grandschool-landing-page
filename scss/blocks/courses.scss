@@ -34,6 +34,7 @@
       width: 33%;
       overflow: hidden;
       display: flex;
+      max-height: 602px;
       transition: all 1s ease;
       border-radius: 26px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -50,13 +51,13 @@
         font-size: 16px;
         font-weight: 400;
         color: #484747;
-        margin: 0 0 40px 0;
+        margin: 0 0 20px 0;
       }
       .details-wrapper {
-        width: 100%;
         display: flex;
         justify-content: center;
-
+        align-items: center;
+        padding-top: 20px;
         .view-details {
           border: none;
           background-color: white;
@@ -69,238 +70,314 @@
           font-weight: 400;
         }
       }
-      .hidden-content {
-        border-radius: 0 26px 26px 0;
-        box-shadow: none;
-        padding: 20px;
-        position: absolute;
-        top: 0;
-        left: 100%;
-        width: 100%;
-        height: 100%;
-        background-color: white;
-        transform: translateX(-40px);
-        z-index: 998;
-        pointer-events: none;
-        opacity: 0;
-        overflow: hidden;
-        transition: all 1.2s ease;
-        .card-list-title {
+      .card-list-title {
+        list-style-type: none;
+        ul {
           list-style-type: none;
-          .punkt {
-            font-weight: 600;
-            font-size: 18px;
-            margin-bottom: 8px;
-            position: relative;
-            &::before {
-              content: '•';
-              color: #e22;
-              margin-right: 8px;
-            }
+          li {
+            width: 100%;
+            font-size: 16px;
+            font-weight: 400;
+            color: #666666;
+            margin-bottom: 12px;
+            line-height: 140%;
+            padding: 0 0 0 23px;
+          }
+        }
+        .punkt {
+          position: relative;
+          font-weight: 600;
+          font-size: 18px;
+          margin-bottom: 8px;
+          &::after {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #e22;
+          }
+        }
+        .punkts {
+          position: relative;
+          &::after {
+            content: '';
+            width: 3px;
+            height: 3px;
+            position: absolute;
+            background-color: #666666;
+            border-radius: 50%;
+            left: 10px;
+            top: 7px;
           }
         }
       }
-      &.open {
-        background-color: white;
-        display: flex;
-        overflow: visible;
-        position: relative;
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
-        .hidden-content {
-          opacity: 1;
-          transform: translateX(0);
-          pointer-events: all;
+      .coursesStars {
+        display: none;
+        gap: 4px;
+        p {
+          font-size: 16px;
+          font-weight: 600;
+          span {
+            color: #666666;
+            font-weight: 400;
+          }
         }
       }
     }
   }
-  .price-block {
+}
+.price-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ff3f15;
+  }
+  .price {
+    font-size: 25px;
+    font-weight: 700;
+    color: #ff3f15;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    h4 {
-      font-size: 18px;
+    align-items: flex-end;
+    gap: 6px;
+    .number {
+      font-size: 34px;
       font-weight: 700;
       color: #ff3f15;
+      display: flex;
+      align-self: flex-end;
     }
-    .price {
-      font-size: 25px;
+    .from {
+      align-self: flex-end;
+    }
+    .currency {
+      font-size: 16px;
       font-weight: 700;
       color: #ff3f15;
-      display: flex;
-      align-items: flex-end;
-      gap: 6px;
-      .number {
-        font-size: 34px;
-        font-weight: 700;
-        color: #ff3f15;
-        display: flex;
-        align-self: flex-end;
-      }
-      .from {
-        align-self: flex-end;
-      }
-      .currency {
-        font-size: 16px;
-        font-weight: 700;
-        color: #ff3f15;
-        align-self: flex-start;
-      }
-      .oldPrice {
-        color: #ff3f1580;
-        font-size: 24px;
-        font-weight: 400;
-      }
+      align-self: flex-start;
+    }
+    .oldPrice {
+      color: #ff3f1580;
+      font-size: 24px;
+      font-weight: 400;
     }
   }
-  .courseCta {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 16px;
-    .courseCtaBtn {
-      width: 159px;
-      font-size: 18px;
-      font-weight: 600;
-      color: #618135;
-      text-decoration: none;
-      border: 2px solid #618135;
-      border-radius: 50px;
-      padding: 8px 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: all 0.4s ease;
-      &:hover,
-      &:focus {
-        background-color: #f3fee5;
-      }
-      &:active {
-        background-color: white;
-        border: 2px solid #517322;
-        color: #517322;
-      }
-    }
-    .presentBtn {
-      width: 197px;
-      height: fit-content;
-      font-size: 18px;
-      font-weight: 600;
-      text-decoration: none;
-      border: 2px solid #618135;
-      background-color: #618135;
-      color: white;
-      border-radius: 50px;
-      padding: 8px 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: all 0.4s ease;
-      span {
-        position: relative;
-        &::after {
-          content: '';
-          position: absolute;
-          left: 50%;
-          width: 0;
-          top: 20px;
-          height: 1px;
-          border-radius: 50%;
-          transition: all 0.3s ease;
-          transform: translateX(-50%);
-          transform-origin: top;
-          background-color: #fff;
-        }
-      }
-      &:hover,
-      &:focus {
-        background-color: #72a62b;
-        border: 2px solid #72a62b;
-        span::after {
-          width: 100%;
-        }
-      }
-      &:active {
-        background-color: #517322;
-        border: 2px solid #618135;
-        span::after {
-          transform: scaleX(0);
-          width: 0;
-        }
-      }
-    }
-    .halfWidthBtn {
-      width: 50%;
-    }
-  }
-  .fullCourseList {
+}
+.courseCta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  .courseCtaBtn {
+    width: 159px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #618135;
+    text-decoration: none;
+    border: 2px solid #618135;
+    border-radius: 50px;
+    padding: 8px 20px;
     display: flex;
     justify-content: center;
-    list-style-type: none;
-    gap: 32px;
-    li {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      width: 50%;
-      padding: 20px;
-      border-radius: 26px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s ease;
+    &:hover,
+    &:focus {
+      background-color: #f3fee5;
     }
-    .packOfCourses {
+    &:active {
       background-color: white;
-      img {
-        width: 173px;
-        margin-bottom: 20px;
+      border: 2px solid #517322;
+      color: #517322;
+    }
+  }
+  .presentBtn {
+    width: 197px;
+    height: fit-content;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid #618135;
+    background-color: #618135;
+    color: white;
+    border-radius: 50px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.4s ease;
+    span {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        width: 0;
+        top: 20px;
+        height: 1px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+        transform-origin: top;
+        background-color: #fff;
       }
     }
-    .fireTitleWrapper {
-      display: flex;
-      align-items: center;
-      gap: 20px;
+    &:hover,
+    &:focus {
+      background-color: #72a62b;
+      border: 2px solid #72a62b;
+      span::after {
+        width: 100%;
+      }
+    }
+    &:active {
+      background-color: #517322;
+      border: 2px solid #618135;
+      span::after {
+        transform: scaleX(0);
+        width: 0;
+      }
+    }
+  }
+  .halfWidthBtn {
+    width: 50%;
+  }
+}
+.fullCourseList {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  gap: 32px;
+  li {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 50%;
+    padding: 20px;
+    border-radius: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .packOfCourses {
+    background-color: white;
+    img {
+      width: 173px;
       margin-bottom: 20px;
     }
-    p {
-      font-size: 16px;
-      font-weight: 400;
-      color: #666666;
+  }
+  .fireTitleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #666666;
+  }
+  .fullCourseTitle {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    .greenTitle {
+      color: #618135;
     }
-    .fullCourseTitle {
-      font-size: 24px;
-      font-weight: 700;
-      margin: 0;
-      .greenTitle {
-        color: #618135;
+  }
+  .full-price {
+    margin-top: 40px;
+  }
+  .fullAccesCard {
+    background-color: #faf1d5;
+  }
+}
+
+.courses {
+  .coursesList {
+    .courseCard {
+      .hidden-content {
+        position: relative;
+        max-width: 50%;
+        border-radius: 26px;
+        padding: 60px 20px 20px 40px;
+        height: 100%;
+        background-color: white;
+        opacity: 0;
+        transition: all 1.2s ease;
+        .first-close-btn {
+          cursor: pointer;
+          top: 20px;
+          border-radius: 10px;
+          right: 20px;
+          position: absolute;
+          background-color: #a0a0a0;
+          width: 19px;
+          height: 2px;
+          transform: rotate(45deg);
+          &::after {
+            content: '';
+            position: absolute;
+            width: 19px;
+            height: 2px;
+            background-color: #a0a0a0;
+            transform: rotate(-90deg);
+            border-radius: 10px;
+          }
+        }
       }
     }
-    .full-price {
-      margin-top: 40px;
-    }
-    .fullAccesCard {
-      background-color: #faf1d5;
-    }
   }
-  .course-modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    background-color: red;
-    inset: 0;
-    border: 3px solid black;
-    &:active {
+}
+.FirstCardOpen {
+  .courseCard {
+    .coursesStars {
       display: flex;
     }
-  }
-  .about-modal {
-    position: relative;
-    .close-btn {
-      cursor: pointer;
-      position: absolute;
-      width: 20px;
-      height: 3px;
-      background-color: black;
-      transform: rotate(45deg);
+    .details-wrapper {
+      .view-details {
+        display: none;
+      }
     }
+    &:nth-child(1) {
+      z-index: 999;
+      position: absolute;
+      width: 850px;
+      top: 32px;
+      display: flex;
+      gap: 20px;
+      overflow: visible;
+      .hidden-content {
+        opacity: 1;
+        z-index: 999;
+      }
+      .card-info {
+        max-width: 50%;
+      }
+    }
+    &:nth-child(2) {
+      position: relative;
+      left: 48%;
+      z-index: 899;
+      top: 0;
+      width: 33%;
+    }
+    &:nth-child(3) {
+      position: absolute;
+      top: 32px;
+      right: 0;
+      width: 33%;
+      z-index: 799;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .courses {
+    display: none;
   }
 }
