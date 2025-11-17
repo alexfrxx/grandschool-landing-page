@@ -323,14 +323,15 @@
   .coursesList {
     .courseCard {
       .hidden-content {
+        overflow: hidden;
         position: relative;
-        max-width: 50%;
+        max-width: 0;
         border-radius: 26px;
         padding: 40px 0 0 0;
         height: 100%;
         background-color: white;
         opacity: 0;
-        transition: all 1.2s ease;
+        transition: max-width 1.4s ease;
         .closeBtn {
           z-index: 999;
           cursor: pointer;
@@ -383,13 +384,14 @@
         gap: 63px;
         height: 600px;
         overflow: visible;
-        transition: all 1.2s ease;
         .hidden-content {
           opacity: 1;
           z-index: 999;
+          max-width: 50%;
+          overflow: visible;
         }
         .card-info {
-          max-width: 45%;
+          width: 50%;
         }
         .courseOpenTitle {
           display: block;
@@ -478,9 +480,11 @@
         .hidden-content {
           opacity: 1;
           z-index: 999;
+          max-width: 50%;
+          overflow: visible;
         }
         .card-info {
-          max-width: 45%;
+          width: 50%;
         }
         .courseOpenTitle {
           display: block;
@@ -571,9 +575,11 @@
         .hidden-content {
           opacity: 1;
           z-index: 999;
+          max-width: 50%;
+          overflow: visible;
         }
         .card-info {
-          max-width: 45%;
+          width: 50%;
         }
         .courseOpenTitle {
           display: block;
