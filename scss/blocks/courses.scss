@@ -91,52 +91,6 @@
           font-weight: 400;
         }
       }
-      .card-list-title {
-        list-style-type: none;
-        .punkt {
-          position: relative;
-          font-weight: 600;
-          font-size: 18px;
-          padding: 0 0 0 20px;
-          margin-bottom: 8px;
-          &::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 5px;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #e22;
-          }
-          ul {
-            list-style-type: none;
-            padding: 12px 0 0 0;
-            li {
-              width: 100%;
-              font-size: 16px;
-              font-weight: 400;
-              color: #666666;
-              margin-bottom: 12px;
-              line-height: 140%;
-              padding: 0 0 0 23px;
-            }
-          }
-          .punkts {
-            position: relative;
-            &::after {
-              content: '';
-              width: 3px;
-              height: 3px;
-              position: absolute;
-              background-color: #666666;
-              border-radius: 50%;
-              left: 10px;
-              top: 7px;
-            }
-          }
-        }
-      }
       .coursesStars {
         display: none;
         gap: 4px;
@@ -333,6 +287,52 @@
         background-color: white;
         opacity: 0;
         transition: max-width 1.4s ease;
+        .card-list-title {
+          list-style-type: none;
+          .punkt {
+            position: relative;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 0 0 0 20px;
+            margin-bottom: 8px;
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 5px;
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              background-color: #e22;
+            }
+            ul {
+              list-style-type: none;
+              padding: 12px 0 0 0;
+              li {
+                width: 100%;
+                font-size: 16px;
+                font-weight: 400;
+                color: #666666;
+                margin-bottom: 12px;
+                line-height: 140%;
+                padding: 0 0 0 23px;
+              }
+            }
+            .punkts {
+              position: relative;
+              &::after {
+                content: '';
+                width: 3px;
+                height: 3px;
+                position: absolute;
+                background-color: #666666;
+                border-radius: 50%;
+                left: 10px;
+                top: 7px;
+              }
+            }
+          }
+        }
         .closeBtn {
           z-index: 999;
           cursor: pointer;
