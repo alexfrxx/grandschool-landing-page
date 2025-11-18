@@ -27,6 +27,16 @@
     list-style-type: none;
     justify-content: space-between;
     padding: 32px 0;
+    .overlay {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff80;
+      max-height: 600px;
+      z-index: 998;
+      border-radius: 26px;
+    }
     .courseCard {
       position: relative;
       background-color: white;
@@ -35,10 +45,21 @@
       overflow: hidden;
       display: flex;
       max-height: 602px;
-      transition: all 1s ease;
+      transition: all 1.2s ease;
       border-radius: 26px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      h3 {
+      .card-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .courseOpenTitle {
+        display: none;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 0 12px 0;
+      }
+      .courseTitle {
         font-size: 20px;
         font-weight: 600;
         margin: 0 0 20px 0;
@@ -68,50 +89,6 @@
           margin-bottom: 40px;
           font-size: 16px;
           font-weight: 400;
-        }
-      }
-      .card-list-title {
-        list-style-type: none;
-        ul {
-          list-style-type: none;
-          li {
-            width: 100%;
-            font-size: 16px;
-            font-weight: 400;
-            color: #666666;
-            margin-bottom: 12px;
-            line-height: 140%;
-            padding: 0 0 0 23px;
-          }
-        }
-        .punkt {
-          position: relative;
-          font-weight: 600;
-          font-size: 18px;
-          margin-bottom: 8px;
-          &::after {
-            content: '';
-            position: absolute;
-            left: -20px;
-            top: 5px;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #e22;
-          }
-        }
-        .punkts {
-          position: relative;
-          &::after {
-            content: '';
-            width: 3px;
-            height: 3px;
-            position: absolute;
-            background-color: #666666;
-            border-radius: 50%;
-            left: 10px;
-            top: 7px;
-          }
         }
       }
       .coursesStars {
@@ -301,28 +278,76 @@
   .coursesList {
     .courseCard {
       .hidden-content {
+        overflow: hidden;
         position: relative;
-        max-width: 50%;
+        max-width: 0;
         border-radius: 26px;
-        padding: 60px 20px 20px 40px;
+        padding: 40px 0 0 20px;
         height: 100%;
         background-color: white;
         opacity: 0;
-        transition: all 1.2s ease;
-        .first-close-btn {
+        transition: max-width 1.4s ease;
+        .card-list-title {
+          list-style-type: none;
+          .punkt {
+            position: relative;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 0 0 0 20px;
+            margin-bottom: 8px;
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 5px;
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              background-color: #e22;
+            }
+            ul {
+              list-style-type: none;
+              padding: 12px 0 0 0;
+              li {
+                width: 100%;
+                font-size: 16px;
+                font-weight: 400;
+                color: #666666;
+                margin-bottom: 12px;
+                line-height: 140%;
+                padding: 0 0 0 23px;
+              }
+            }
+            .punkts {
+              position: relative;
+              &::after {
+                content: '';
+                width: 3px;
+                height: 3px;
+                position: absolute;
+                background-color: #666666;
+                border-radius: 50%;
+                left: 10px;
+                top: 7px;
+              }
+            }
+          }
+        }
+        .closeBtn {
+          z-index: 999;
           cursor: pointer;
-          top: 20px;
+          top: 10px;
           border-radius: 10px;
-          right: 20px;
+          right: 0;
           position: absolute;
           background-color: #a0a0a0;
-          width: 19px;
+          width: 22px;
           height: 2px;
           transform: rotate(45deg);
           &::after {
             content: '';
             position: absolute;
-            width: 19px;
+            width: 22px;
             height: 2px;
             background-color: #a0a0a0;
             transform: rotate(-90deg);
@@ -333,45 +358,250 @@
     }
   }
 }
-.FirstCardOpen {
-  .courseCard {
-    .coursesStars {
-      display: flex;
+
+.courses {
+  .FirstCardOpen {
+    .overlay {
+      display: block;
     }
-    .details-wrapper {
-      .view-details {
+    .courseCard {
+      .courseTitle {
         display: none;
       }
-    }
-    &:nth-child(1) {
-      z-index: 999;
-      position: absolute;
-      width: 850px;
-      top: 32px;
-      display: flex;
-      gap: 20px;
-      overflow: visible;
-      .hidden-content {
-        opacity: 1;
+      .aboutCourse {
+        margin: 0;
+      }
+      .details-wrapper {
+        .course1 {
+          display: none;
+        }
+      }
+      &:nth-child(1) {
         z-index: 999;
+        position: absolute;
+        width: 850px;
+        top: 32px;
+        display: flex;
+        gap: 40px;
+        height: 600px;
+        transition: none;
+        .hidden-content {
+          opacity: 1;
+          z-index: 999;
+          max-width: 50%;
+          overflow: visible;
+          .card-list-title {
+            overflow: hidden;
+            padding: 0 5px 0 0;
+          }
+        }
+        .card-info {
+          width: 50%;
+        }
+        .courseOpenTitle {
+          display: block;
+        }
+        .coursesStars {
+          display: flex;
+        }
       }
-      .card-info {
-        max-width: 50%;
+      &:nth-child(2) {
+        position: relative;
+        left: 46%;
+        z-index: 899;
+        top: 0;
+        width: 33%;
+        max-height: 600px;
+        .courseTitle {
+          display: block;
+        }
+        .courseOpenTitle {
+          display: none;
+        }
+        .coursesStars {
+          display: none;
+        }
+      }
+      &:nth-child(3) {
+        position: absolute;
+        top: 32px;
+        right: 0;
+        width: 33%;
+        z-index: 799;
+        max-height: 600px;
+        .courseTitle {
+          display: block;
+        }
+        .courseOpenTitle {
+          display: none;
+        }
+        .coursesStars {
+          display: none;
+        }
       }
     }
-    &:nth-child(2) {
-      position: relative;
-      left: 48%;
-      z-index: 899;
-      top: 0;
-      width: 33%;
+  }
+}
+
+.courses {
+  .SecondCardOpen {
+    .overlay {
+      display: block;
     }
-    &:nth-child(3) {
-      position: absolute;
-      top: 32px;
-      right: 0;
-      width: 33%;
-      z-index: 799;
+    .courseCard {
+      .courseTitle {
+        display: none;
+      }
+      .aboutCourse {
+        margin: 0;
+      }
+      .details-wrapper {
+        .course2 {
+          display: none;
+        }
+      }
+      &:nth-child(1) {
+        z-index: 899;
+        max-height: 600px;
+        .courseTitle {
+          display: block;
+        }
+        .courseOpenTitle {
+          display: none;
+        }
+        .coursesStars {
+          display: none;
+        }
+      }
+      &:nth-child(2) {
+        z-index: 999;
+        position: absolute;
+        width: 850px;
+        height: 600px;
+        display: flex;
+        gap: 40px;
+        left: 16%;
+        transition: none;
+        .hidden-content {
+          opacity: 1;
+          z-index: 999;
+          max-width: 50%;
+          overflow: visible;
+          .card-list-title {
+            overflow: hidden;
+            padding: 0 5px 0 0;
+          }
+        }
+        .card-info {
+          width: 50%;
+        }
+        .courseOpenTitle {
+          display: block;
+        }
+        .coursesStars {
+          display: flex;
+        }
+      }
+      &:nth-child(3) {
+        z-index: 799;
+        max-height: 600px;
+        .courseTitle {
+          display: block;
+        }
+        .courseOpenTitle {
+          display: none;
+        }
+        .coursesStars {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.courses {
+  .ThirdCardOpen {
+    .overlay {
+      display: block;
+    }
+    .courseCard {
+      .courseTitle {
+        display: none;
+      }
+      .aboutCourse {
+        margin: 0;
+      }
+      .details-wrapper {
+        .course3 {
+          display: none;
+        }
+      }
+      &:nth-child(1) {
+        position: absolute;
+        top: 32px;
+        left: 0;
+        max-height: 600px;
+        width: 33%;
+        z-index: 799;
+        .courseTitle {
+          display: block;
+        }
+        .courseOpenTitle {
+          display: none;
+        }
+        .coursesStars {
+          display: none;
+        }
+      }
+      &:nth-child(2) {
+        position: relative;
+        z-index: 899;
+        left: 18%;
+        top: 0;
+        max-height: 600px;
+        width: 33%;
+        .courseTitle {
+          display: block;
+        }
+        .courseOpenTitle {
+          display: none;
+        }
+        .coursesStars {
+          display: none;
+        }
+      }
+      &:nth-child(3) {
+        z-index: 999;
+        position: absolute;
+        right: 0;
+        width: 850px;
+        height: 600px;
+        top: 32px;
+        display: flex;
+        gap: 40px;
+        overflow: visible;
+        transition: none;
+        .hidden-content {
+          opacity: 1;
+          z-index: 999;
+          max-width: 50%;
+          overflow: visible;
+          .card-list-title {
+            overflow: hidden;
+            padding: 0 5px 0 0;
+          }
+        }
+        .card-info {
+          width: 50%;
+        }
+        .courseOpenTitle {
+          display: block;
+        }
+        .coursesStars {
+          display: flex;
+          margin-top: 12px;
+        }
+      }
     }
   }
 }
