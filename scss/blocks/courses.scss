@@ -97,11 +97,12 @@
           position: relative;
           font-weight: 600;
           font-size: 18px;
+          padding: 0 0 0 20px;
           margin-bottom: 8px;
           &::after {
             content: '';
             position: absolute;
-            left: -20px;
+            left: 0;
             top: 5px;
             width: 8px;
             height: 8px;
@@ -327,7 +328,7 @@
         position: relative;
         max-width: 0;
         border-radius: 26px;
-        padding: 40px 0 0 0;
+        padding: 40px 0 0 20px;
         height: 100%;
         background-color: white;
         opacity: 0;
@@ -381,14 +382,18 @@
         width: 850px;
         top: 32px;
         display: flex;
-        gap: 63px;
+        gap: 40px;
         height: 600px;
-        overflow: visible;
+        transition: none;
         .hidden-content {
           opacity: 1;
           z-index: 999;
           max-width: 50%;
           overflow: visible;
+          .card-list-title {
+            overflow: hidden;
+            padding: 0 5px 0 0;
+          }
         }
         .card-info {
           width: 50%;
@@ -474,14 +479,18 @@
         width: 850px;
         height: 600px;
         display: flex;
-        gap: 63px;
+        gap: 40px;
         left: 16%;
-        transition: all 1.2s ease;
+        transition: none;
         .hidden-content {
           opacity: 1;
           z-index: 999;
           max-width: 50%;
           overflow: visible;
+          .card-list-title {
+            overflow: hidden;
+            padding: 0 5px 0 0;
+          }
         }
         .card-info {
           width: 50%;
@@ -569,14 +578,18 @@
         height: 600px;
         top: 32px;
         display: flex;
-        gap: 63px;
+        gap: 40px;
         overflow: visible;
-        transition: all 1.2s ease;
+        transition: none;
         .hidden-content {
           opacity: 1;
           z-index: 999;
           max-width: 50%;
           overflow: visible;
+          .card-list-title {
+            overflow: hidden;
+            padding: 0 5px 0 0;
+          }
         }
         .card-info {
           width: 50%;
