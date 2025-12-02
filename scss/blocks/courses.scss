@@ -48,6 +48,32 @@
       transition: all 1.2s ease;
       border-radius: 26px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      &:hover {
+        .free-lesson-btn {
+          display: block;
+        }
+      }
+      .free-lesson-btn {
+        display: none;
+        left: 85px;
+        top: 230px;
+        position: absolute;
+        font-size: 18px;
+        font-weight: 600;
+        color: #618135;
+        text-decoration: none;
+        padding: 10px 27px;
+        background-color: #f7f5eccc;
+        border-radius: 50px;
+        transition: all 0.4s ease;
+        &:hover {
+          background-color: #618135;
+          color: #fff;
+        }
+        &:active {
+          background-color: #517322;
+        }
+      }
       .card-info {
         display: flex;
         flex-direction: column;
@@ -376,6 +402,9 @@
           display: none;
         }
       }
+      .free-lesson-btn {
+        display: none;
+      }
       &:nth-child(1) {
         z-index: 999;
         position: absolute;
@@ -385,6 +414,9 @@
         gap: 40px;
         height: 600px;
         transition: none;
+        .free-lesson-btn {
+          display: none;
+        }
         .hidden-content {
           opacity: 1;
           z-index: 999;
@@ -396,7 +428,9 @@
           }
         }
         .card-info {
-          width: 50%;
+          width: 45%;
+          max-width: 380px;
+          transition: none;
         }
         .courseOpenTitle {
           display: block;
@@ -460,6 +494,9 @@
           display: none;
         }
       }
+      .free-lesson-btn {
+        display: none;
+      }
       &:nth-child(1) {
         z-index: 899;
         max-height: 600px;
@@ -482,6 +519,9 @@
         gap: 40px;
         left: 16%;
         transition: none;
+        .free-lesson-btn {
+          display: none;
+        }
         .hidden-content {
           opacity: 1;
           z-index: 999;
@@ -493,7 +533,9 @@
           }
         }
         .card-info {
-          width: 50%;
+          width: 45%;
+          max-width: 380px;
+          transition: none;
         }
         .courseOpenTitle {
           display: block;
@@ -525,6 +567,9 @@
       display: block;
     }
     .courseCard {
+      .free-lesson-btn {
+        display: none;
+      }
       .courseTitle {
         display: none;
       }
@@ -535,6 +580,9 @@
         .course3 {
           display: none;
         }
+      }
+      .free-lesson-btn {
+        display: none;
       }
       &:nth-child(1) {
         position: absolute;
@@ -579,8 +627,10 @@
         top: 32px;
         display: flex;
         gap: 40px;
-        overflow: visible;
         transition: none;
+        .free-lesson-btn {
+          display: none;
+        }
         .hidden-content {
           opacity: 1;
           z-index: 999;
@@ -592,7 +642,9 @@
           }
         }
         .card-info {
-          width: 50%;
+          width: 45%;
+          max-width: 380px;
+          transition: none;
         }
         .courseOpenTitle {
           display: block;
