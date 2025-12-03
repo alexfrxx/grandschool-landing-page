@@ -28,3 +28,13 @@ document.querySelectorAll('.closeBtn').forEach((button) => {
     }
   });
 });
+
+document.querySelectorAll('.overlay').forEach((button) => {
+  button.addEventListener('click', (e) => {
+    const card = e.target.closest('.FirstCardOpen, .SecondCardOpen, .ThirdCardOpen');
+    if (card) {
+      card.classList.remove('FirstCardOpen', 'SecondCardOpen', 'ThirdCardOpen');
+      card.classList.add('coursesList');
+    }
+  });
+});
