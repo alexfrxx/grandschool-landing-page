@@ -45,7 +45,7 @@
       overflow: hidden;
       display: flex;
       max-height: 602px;
-      transition: all 1.2s ease;
+      transition: all 0.5s ease;
       border-radius: 26px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       &:hover {
@@ -308,11 +308,10 @@
         position: relative;
         max-width: 0;
         border-radius: 26px;
-        padding: 40px 0 0 20px;
+        padding: 46px 0 0 20px;
         height: 100%;
         background-color: white;
         opacity: 0;
-        transition: max-width 1.5s ease;
         .card-list-title {
           list-style-type: none;
           .punkt {
@@ -373,17 +372,11 @@
       }
     }
   }
-}
-
-.courses {
   .FirstCardOpen {
     .overlay {
       display: block;
     }
     .courseCard {
-      .courseTitle {
-        display: none;
-      }
       .aboutCourse {
         margin: 0;
       }
@@ -398,12 +391,12 @@
       &:nth-child(1) {
         z-index: 999;
         position: absolute;
-        width: 850px;
         top: 32px;
         display: flex;
+        width: 850px;
         gap: 40px;
         height: 600px;
-        transition: none;
+        transition: all 0.5s ease;
         .free-lesson-btn {
           display: none;
         }
@@ -412,13 +405,9 @@
           z-index: 999;
           max-width: 50%;
           overflow: visible;
-          .card-list-title {
-            overflow: hidden;
-            padding: 0 5px 0 0;
-          }
         }
         .card-info {
-          width: 45%;
+          width: 50%;
           max-width: 380px;
           transition: none;
         }
@@ -465,17 +454,11 @@
       }
     }
   }
-}
-
-.courses {
   .SecondCardOpen {
     .overlay {
       display: block;
     }
     .courseCard {
-      .courseTitle {
-        display: none;
-      }
       .aboutCourse {
         margin: 0;
       }
@@ -549,18 +532,12 @@
       }
     }
   }
-}
-
-.courses {
   .ThirdCardOpen {
     .overlay {
       display: block;
     }
     .courseCard {
       .free-lesson-btn {
-        display: none;
-      }
-      .courseTitle {
         display: none;
       }
       .aboutCourse {
