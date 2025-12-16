@@ -60,12 +60,6 @@
         font-weight: 700;
       }
     }
-    hr {
-      width: 90%;
-      background-color: #e5e5e5;
-      text-align: center;
-      display: none;
-    }
   }
 }
 
@@ -98,10 +92,20 @@
         &:hover svg {
           transform: none;
         }
+        h3 {
+          margin-bottom: 2px;
+        }
       }
-      hr {
-        display: block;
-        width: 90%;
+      .mobile-underline {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          width: 93%;
+          height: 1px;
+          background-color: #e5e5e5;
+          top: 140px;
+        }
       }
     }
   }
@@ -128,6 +132,13 @@
         font-size: 30px;
       }
     }
+    .statsList {
+      .mobile-underline {
+        &::after {
+          width: 90%;
+        }
+      }
+    }
   }
 }
 
@@ -137,6 +148,12 @@
       li {
         p {
           width: 85%;
+        }
+      }
+      .mobile-underline {
+        &::after {
+          width: 85%;
+          top: 150px;
         }
       }
     }
