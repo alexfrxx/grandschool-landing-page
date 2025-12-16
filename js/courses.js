@@ -1,29 +1,29 @@
 document.querySelectorAll('.course1').forEach((button) => {
   button.addEventListener('click', (e) => {
     const card = e.target.closest('.coursesList');
-    card.classList.toggle('FirstCardOpen');
+    card.classList.toggle('firstCardOpen');
   });
 });
 
 document.querySelectorAll('.course2').forEach((button) => {
   button.addEventListener('click', (e) => {
     const card = e.target.closest('.coursesList');
-    card.classList.toggle('SecondCardOpen');
+    card.classList.toggle('secondCardOpen');
   });
 });
 
 document.querySelectorAll('.course3').forEach((button) => {
   button.addEventListener('click', (e) => {
     const card = e.target.closest('.coursesList');
-    card.classList.toggle('ThirdCardOpen');
+    card.classList.toggle('thirdCardOpen');
   });
 });
 
 document.querySelectorAll('.closeBtn').forEach((button) => {
   button.addEventListener('click', (e) => {
-    const card = e.target.closest('.FirstCardOpen, .SecondCardOpen, .ThirdCardOpen');
+    const card = e.target.closest('.firstCardOpen, .secondCardOpen, .thirdCardOpen');
     if (card) {
-      card.classList.remove('FirstCardOpen', 'SecondCardOpen', 'ThirdCardOpen');
+      card.classList.remove('firstCardOpen', 'secondCardOpen', 'thirdCardOpen');
       card.classList.add('coursesList');
     }
   });
@@ -31,9 +31,9 @@ document.querySelectorAll('.closeBtn').forEach((button) => {
 
 document.querySelectorAll('.overlay').forEach((button) => {
   button.addEventListener('click', (e) => {
-    const card = e.target.closest('.FirstCardOpen, .SecondCardOpen, .ThirdCardOpen');
+    const card = e.target.closest('.firstCardOpen, .secondCardOpen, .thirdCardOpen');
     if (card) {
-      card.classList.remove('FirstCardOpen', 'SecondCardOpen', 'ThirdCardOpen');
+      card.classList.remove('firstCardOpen', 'secondCardOpen', 'thirdCardOpen');
       card.classList.add('coursesList');
     }
   });

@@ -44,7 +44,8 @@
       width: 33%;
       overflow: hidden;
       display: flex;
-      max-height: 602px;
+      height: 600px;
+      max-height: 600px;
       transition: all 0.5s ease;
       border-radius: 26px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -78,12 +79,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-      }
-      .courseOpenTitle {
-        display: none;
-        font-size: 20px;
-        font-weight: 600;
-        margin: 0 0 12px 0;
+        transition: all 0.5s ease;
       }
       .courseTitle {
         font-size: 20px;
@@ -92,6 +88,7 @@
       }
       img {
         width: 100%;
+        max-width: 368px;
         margin: 0 0 20px 0;
       }
       .aboutCourse {
@@ -136,6 +133,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   h4 {
     font-size: 18px;
     font-weight: 700;
@@ -304,6 +302,7 @@
   .coursesList {
     .courseCard {
       .hidden-content {
+        position: absolute;
         overflow: hidden;
         position: relative;
         max-width: 0;
@@ -312,8 +311,11 @@
         height: 100%;
         background-color: white;
         opacity: 0;
+        transition: all 0.5s ease;
         .card-list-title {
+          position: absolute;
           list-style-type: none;
+          opacity: 0;
           .punkt {
             position: relative;
             font-weight: 600;
@@ -333,6 +335,8 @@
             ul {
               list-style-type: none;
               padding: 12px 0 0 0;
+              min-width: 100%;
+              overflow: hidden;
               li {
                 width: 100%;
                 font-size: 16px;
@@ -372,7 +376,7 @@
       }
     }
   }
-  .FirstCardOpen {
+  .firstCardOpen {
     .overlay {
       display: block;
     }
@@ -396,6 +400,7 @@
         width: 850px;
         gap: 40px;
         height: 600px;
+        max-height: 600px;
         transition: all 0.5s ease;
         .free-lesson-btn {
           display: none;
@@ -403,16 +408,16 @@
         .hidden-content {
           opacity: 1;
           z-index: 999;
-          max-width: 50%;
+          min-width: 50%;
           overflow: visible;
+          .card-list-title {
+            opacity: 1;
+          }
         }
         .card-info {
-          width: 50%;
+          width: 380px;
           max-width: 380px;
-          transition: none;
-        }
-        .courseOpenTitle {
-          display: block;
+          transition: all 0.5s ease;
         }
         .coursesStars {
           display: flex;
@@ -425,12 +430,6 @@
         top: 0;
         width: 33%;
         max-height: 600px;
-        .courseTitle {
-          display: block;
-        }
-        .courseOpenTitle {
-          display: none;
-        }
         .coursesStars {
           display: none;
         }
@@ -442,19 +441,13 @@
         width: 33%;
         z-index: 799;
         max-height: 600px;
-        .courseTitle {
-          display: block;
-        }
-        .courseOpenTitle {
-          display: none;
-        }
         .coursesStars {
           display: none;
         }
       }
     }
   }
-  .SecondCardOpen {
+  .secondCardOpen {
     .overlay {
       display: block;
     }
@@ -473,12 +466,6 @@
       &:nth-child(1) {
         z-index: 899;
         max-height: 600px;
-        .courseTitle {
-          display: block;
-        }
-        .courseOpenTitle {
-          display: none;
-        }
         .coursesStars {
           display: none;
         }
@@ -486,32 +473,27 @@
       &:nth-child(2) {
         z-index: 999;
         position: absolute;
-        width: 850px;
-        height: 600px;
+        top: 32px;
         display: flex;
+        width: 850px;
         gap: 40px;
+        height: 600px;
+        max-height: 600px;
         left: 16%;
-        transition: none;
-        .free-lesson-btn {
-          display: none;
-        }
+        transition: all 0.5s ease;
         .hidden-content {
           opacity: 1;
           z-index: 999;
-          max-width: 50%;
+          min-width: 50%;
           overflow: visible;
           .card-list-title {
-            overflow: hidden;
-            padding: 0 5px 0 0;
+            opacity: 1;
           }
         }
         .card-info {
-          width: 45%;
+          width: 380px;
           max-width: 380px;
-          transition: none;
-        }
-        .courseOpenTitle {
-          display: block;
+          transition: all 0.5s ease;
         }
         .coursesStars {
           display: flex;
@@ -520,19 +502,13 @@
       &:nth-child(3) {
         z-index: 799;
         max-height: 600px;
-        .courseTitle {
-          display: block;
-        }
-        .courseOpenTitle {
-          display: none;
-        }
         .coursesStars {
           display: none;
         }
       }
     }
   }
-  .ThirdCardOpen {
+  .thirdCardOpen {
     .overlay {
       display: block;
     }
@@ -548,9 +524,6 @@
           display: none;
         }
       }
-      .free-lesson-btn {
-        display: none;
-      }
       &:nth-child(1) {
         position: absolute;
         top: 32px;
@@ -558,12 +531,6 @@
         max-height: 600px;
         width: 33%;
         z-index: 799;
-        .courseTitle {
-          display: block;
-        }
-        .courseOpenTitle {
-          display: none;
-        }
         .coursesStars {
           display: none;
         }
@@ -575,12 +542,6 @@
         top: 0;
         max-height: 600px;
         width: 33%;
-        .courseTitle {
-          display: block;
-        }
-        .courseOpenTitle {
-          display: none;
-        }
         .coursesStars {
           display: none;
         }
@@ -588,33 +549,27 @@
       &:nth-child(3) {
         z-index: 999;
         position: absolute;
-        right: 0;
-        width: 850px;
-        height: 600px;
         top: 32px;
+        right: 0;
         display: flex;
+        width: 850px;
         gap: 40px;
-        transition: none;
-        .free-lesson-btn {
-          display: none;
-        }
+        height: 600px;
+        max-height: 600px;
+        transition: all 0.5s ease;
         .hidden-content {
           opacity: 1;
           z-index: 999;
-          max-width: 50%;
+          min-width: 50%;
           overflow: visible;
           .card-list-title {
-            overflow: hidden;
-            padding: 0 5px 0 0;
+            opacity: 1;
           }
         }
         .card-info {
-          width: 45%;
+          width: 380px;
           max-width: 380px;
-          transition: none;
-        }
-        .courseOpenTitle {
-          display: block;
+          transition: all 0.5s ease;
         }
         .coursesStars {
           display: flex;
