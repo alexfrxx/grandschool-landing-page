@@ -2,9 +2,10 @@
 
 header {
   z-index: 999;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
+  transition: all 1.2s ease;
   .headerWrapper {
     padding-top: 35px;
     @include mixins.flex;
@@ -29,6 +30,12 @@ header {
       }
     }
   }
+}
+.headerFixed {
+  position: fixed;
+  transition: all 1s ease;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 @media (max-width: 560px) {
