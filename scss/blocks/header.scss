@@ -5,9 +5,10 @@ header {
   position: absolute;
   top: 0;
   width: 100%;
-  transition: all 1.2s ease;
+  transition: all 1s ease;
   .headerWrapper {
     padding-top: 35px;
+    transition: all 1s ease;
     @include mixins.flex;
     .logo {
       display: flex;

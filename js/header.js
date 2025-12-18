@@ -9,7 +9,7 @@ const headerObserver = new IntersectionObserver(
       //   header.style.position = 'fixed';
       //   header.style.transition = 'all 1s ease';
       //   header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
-      headerWrapper.style.padding = '19px 0';
+      headerWrapper.style.padding = '19px 25px';
       header.classList.add('headerFixed');
     } else {
       //   header.style.backgroundColor = '';
