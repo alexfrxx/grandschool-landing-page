@@ -2,11 +2,23 @@
 
 header {
   z-index: 999;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
+  transition: all 1s ease;
+  &.headerFixed {
+    position: fixed;
+    transition: all 1s ease;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    z-index: 999;
+    .headerWrapper {
+      padding: 19px 25px;
+    }
+  }
   .headerWrapper {
     padding-top: 35px;
+    transition: all 1s ease;
     @include mixins.flex;
     .logo {
       display: flex;
@@ -50,6 +62,11 @@ header {
           height: 52px;
         }
       }
+    }
+  }
+  .headerFixed {
+    .headerWrapper {
+      padding: 19px 15px;
     }
   }
 }
