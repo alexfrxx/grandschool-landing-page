@@ -272,3 +272,17 @@
   animation: rotateScan 1.5s ease-in-out infinite;
   transform-origin: center;
 }
+
+@keyframes pulseOpacity {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.pulseOpacity {
+  animation: pulseOpacity 2s ease-in-out infinite;
+}
