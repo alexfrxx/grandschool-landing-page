@@ -33,6 +33,7 @@
     margin-top: 32px;
     li {
       display: flex;
+      position: relative;
       justify-content: space-between;
       align-items: center;
       padding: 20px;
@@ -48,7 +49,7 @@
       h3 {
         margin: 0;
         font-size: 34px;
-        margin-bottom: 24px;
+        margin-bottom: 19px;
         span {
           font-size: 48px;
           font-weight: 700;
@@ -142,12 +143,27 @@
   }
 }
 
+@media (max-width: 400px) {
+  .projectStats {
+    .statsList {
+      li {
+        hr {
+          top: 150px;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 360px) {
   .projectStats {
     .statsList {
       li {
         p {
           width: 85%;
+        }
+        hr {
+          top: 160px;
         }
       }
       .mobile-underline {
