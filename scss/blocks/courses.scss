@@ -542,8 +542,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .courses {
-    display: none;
+    .coursesList {
+      flex-direction: column;
+    }
   }
+}
+
+@media (max-width: 133px) {
 }
