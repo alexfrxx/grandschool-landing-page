@@ -90,7 +90,6 @@
 
 @media (max-width: 768px) {
   .testimonials {
-    background-size: contain;
     h2 {
       font-size: 30px;
     }
@@ -101,9 +100,9 @@
     }
   }
 }
-@media (max-width: 540px) {
+@media (max-width: 550px) {
   .testimonials {
-    background-position-y: -120px;
+    background-image: none;
   }
 }
 
