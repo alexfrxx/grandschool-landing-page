@@ -130,6 +130,24 @@
           margin: 0 0 40px 0;
         }
       }
+      .details-wrapper-close {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .close-details {
+          border: none;
+          display: none;
+          background-color: white;
+          color: #717070;
+          text-decoration: underline;
+          cursor: pointer;
+          text-align: center;
+          font-size: 16px;
+          font-weight: 400;
+          margin: 22px 0;
+        }
+      }
       .coursesStars {
         display: none;
         margin-bottom: 20px;
@@ -599,10 +617,10 @@
       justify-content: center;
       align-items: center;
       .courseCard {
+        min-height: auto;
         width: 70%;
         flex-direction: column;
         gap: 20px;
-        justify-content: center;
         align-items: center;
         .card-info {
           width: 100%;
@@ -636,26 +654,35 @@
           order: 4;
           display: none;
         }
-        .price-block {
+        .details-wrapper-close {
           order: 5;
         }
-        .courseCta {
+        .price-block {
           order: 6;
+        }
+        .courseCta {
+          order: 7;
         }
         .hidden-content {
           width: 100%;
           position: static;
+          top: 30px;
           order: 2;
           max-height: 0;
           padding: 0;
           opacity: 0;
           transition:
-            max-height 0.5s ease,
-            opacity 0.4s ease;
+            max-height 0.4s ease,
+            opacity 0.3s ease;
         }
         .price-mobile {
           order: 3;
         }
+      }
+    }
+    .fullCourseList {
+      li {
+        width: 70%;
       }
     }
     .firstCardOpen {
@@ -678,6 +705,11 @@
           width: 70%;
           padding: 20px;
           position: static;
+          .details-wrapper-close {
+            .close-details {
+              display: block;
+            }
+          }
           .hidden-content {
             padding: 0;
             opacity: 1;
@@ -729,6 +761,11 @@
             opacity: 1;
             max-height: 500px;
           }
+          .details-wrapper-close {
+            .close-details {
+              display: block;
+            }
+          }
           .coursesStars {
             display: flex;
           }
@@ -774,6 +811,11 @@
             padding: 0;
             opacity: 1;
             max-height: 500px;
+          }
+          .details-wrapper-close {
+            .close-details {
+              display: block;
+            }
           }
           .coursesStars {
             display: flex;
@@ -849,6 +891,10 @@
     .fullCourseList {
       li {
         width: 100%;
+      }
+      .fireTitleWrapper {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
     .firstCardOpen {
