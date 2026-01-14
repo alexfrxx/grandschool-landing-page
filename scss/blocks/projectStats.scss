@@ -60,6 +60,19 @@
         font-size: 18px;
         font-weight: 700;
       }
+      .mobile-underline {
+        position: relative;
+        justify-content: space-between;
+        display: none;
+        &::after {
+          content: '';
+          position: absolute;
+          width: 93%;
+          height: 1px;
+          background-color: #e5e5e5;
+          top: 140px;
+        }
+      }
     }
   }
 }
@@ -90,22 +103,14 @@
         width: 100%;
         box-shadow: none;
         border-radius: 10px;
+        .mobile-underline {
+          display: flex;
+        }
         &:hover svg {
           transform: none;
         }
         h3 {
           margin-bottom: 2px;
-        }
-      }
-      .mobile-underline {
-        position: relative;
-        &::after {
-          content: '';
-          position: absolute;
-          width: 93%;
-          height: 1px;
-          background-color: #e5e5e5;
-          top: 140px;
         }
       }
     }

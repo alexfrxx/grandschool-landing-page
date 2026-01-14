@@ -38,3 +38,13 @@ document.querySelectorAll('.overlay').forEach((button) => {
     }
   });
 });
+
+document.querySelectorAll('.close-details').forEach((button) => {
+  button.addEventListener('click', (e) => {
+    const card = e.target.closest('.firstCardOpen, .secondCardOpen, .thirdCardOpen');
+    if (card) {
+      card.classList.remove('firstCardOpen', 'secondCardOpen', 'thirdCardOpen');
+      card.classList.add('coursesList');
+    }
+  });
+});
