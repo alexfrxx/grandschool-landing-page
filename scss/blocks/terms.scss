@@ -1,0 +1,54 @@
+.terms-page {
+  padding: 60px 0;
+  background: url('./images/reviews.png') center 33vh no-repeat;
+  background-size: cover;
+}
+
+.terms-page .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffffcc;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.terms-page .title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.terms-page .section {
+  margin-bottom: 30px;
+  padding: 15px;
+  border-left: 4px solid #618135;
+  background-color: #f9f9f9;
+}
+
+.terms-page .section-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.terms-page .paragraph {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.link {
+  color: #618135;
+}
+
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
