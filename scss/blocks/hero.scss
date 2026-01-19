@@ -39,6 +39,15 @@
 
 // Adaptive //
 
+@media (min-width: 2000px) {
+  .hero {
+    background-image: image-set(
+      url('../../img/bg2000.webp') 1x,
+      url('../../img/bg2000Retina.webp') 2x
+    );
+  }
+}
+
 @media (max-width: 1200px) {
   .hero {
     .heroTitle {
