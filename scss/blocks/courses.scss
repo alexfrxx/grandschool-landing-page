@@ -9,6 +9,9 @@
   padding: 100px 0 130px 0;
   display: flex;
   flex-direction: column;
+  .container {
+    overflow: hidden;
+  }
   h2 {
     font-size: 36px;
     font-weight: 600;
@@ -26,7 +29,7 @@
     gap: 32px;
     list-style-type: none;
     justify-content: space-between;
-    padding: 32px 0;
+    margin: 32px 0;
     .overlay {
       display: none;
       position: absolute;
@@ -34,20 +37,22 @@
       height: 100%;
       background-color: #ffffff80;
       max-height: 600px;
-      z-index: 989;
+      z-index: 3;
       border-radius: 26px;
     }
     .courseCard {
       position: relative;
-      z-index: 997;
       background-color: white;
       padding: 20px;
-      width: 33%;
+      width: 32%;
       display: flex;
       min-height: 600px;
       transition: all 0.5s ease;
       border-radius: 26px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      &:nth-child(3) {
+        z-index: 3;
+      }
       &:hover {
         .free-lesson-btn {
           opacity: 1;
@@ -67,7 +72,7 @@
         padding: 10px 27px;
         background-color: #f7f5eccc;
         border-radius: 50px;
-        transition: all 0.4s ease;
+        transition: all 0.5s ease;
         opacity: 0;
         &:hover {
           background-color: #618135;
@@ -114,7 +119,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-top: 20px;
         .view-details {
           border: none;
           background-color: white;
@@ -122,7 +126,7 @@
           text-decoration: underline;
           cursor: pointer;
           text-align: center;
-          margin: 20px 0 40px 0;
+          margin: 40px 0 20px;
           font-size: 16px;
           font-weight: 400;
         }
@@ -150,8 +154,9 @@
       }
       .coursesStars {
         display: none;
-        margin-bottom: 20px;
         gap: 4px;
+        margin-top: 29px;
+        margin-bottom: 50px;
         p {
           font-size: 16px;
           font-weight: 600;
@@ -168,10 +173,12 @@
         opacity: 0;
         flex: 7;
         position: absolute;
-        transition: all 0.5s ease;
+        transition: all .1s ease;
+        height: -webkit-fill-available;
         width: 400px;
         right: 0;
-        padding: 50px 20px 0 0;
+        padding: 70px 20px 0 0;
+        z-index: -1;
         .card-list-title {
           position: absolute;
           list-style-type: none;
@@ -290,7 +297,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: all 0.4s ease;
+      transition: all 0.5s ease;
       &:hover,
       &:focus {
         background-color: #f3fee5;
@@ -316,7 +323,7 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      transition: all 0.4s ease;
+      transition: all 0.5s ease;
       span {
         position: relative;
         &::after {
@@ -327,7 +334,7 @@
           top: 20px;
           height: 1px;
           border-radius: 50%;
-          transition: all 0.3s ease;
+          transition: all 0.5s ease;
           transform: translateX(-50%);
           transform-origin: top;
           background-color: #fff;
@@ -408,50 +415,22 @@
       display: block;
     }
     .courseCard {
-      .details-wrapper {
-        .course1 {
-          display: none;
-        }
-      }
-      .aboutCourse {
-        margin: 0;
-      }
-
-      .free-lesson-btn {
-        display: none;
-      }
       &:nth-child(1) {
         width: calc(33% + 440px);
         padding: 20px 460px 20px 20px;
         transition: all 0.5s ease;
-        z-index: 998;
+        z-index: 4;
+        .details-wrapper {
+          display: none;
+        }
         .hidden-content {
           opacity: 1;
           right: 0;
-          padding: 70px 20px 0 0;
+          transition: opacity .5s ease;
+
         }
         .coursesStars {
           display: flex;
-        }
-      }
-      &:nth-child(2) {
-        position: absolute;
-        left: 50%;
-        transition: all 0.5s ease;
-        z-index: 899;
-        width: 33%;
-        .coursesStars {
-          display: none;
-        }
-      }
-      &:nth-child(3) {
-        position: absolute;
-        top: 32px;
-        right: 0;
-        width: 33%;
-        z-index: 799;
-        .coursesStars {
-          display: none;
         }
       }
     }
@@ -461,43 +440,24 @@
       display: block;
     }
     .courseCard {
-      .aboutCourse {
-        margin: 0;
-      }
       .details-wrapper {
         .course2 {
           display: none;
         }
       }
-      .free-lesson-btn {
-        display: none;
-      }
-      &:nth-child(1) {
-        z-index: 899;
-        .coursesStars {
-          display: none;
-        }
-      }
       &:nth-child(2) {
-        z-index: 998;
         width: calc(33% + 440px);
         padding: 20px 460px 20px 20px;
-        position: absolute;
-        content: '';
-        top: 32px;
-        left: 16%;
         transition: all 0.5s ease;
+        z-index: 4;
         .hidden-content {
-          opacity: 1;
-          right: 0;
-          padding: 70px 20px 0 0;
+          opacity: 1;;
         }
         .coursesStars {
           display: flex;
         }
       }
       &:nth-child(3) {
-        z-index: 799;
         .coursesStars {
           display: none;
         }
@@ -509,47 +469,20 @@
       display: block;
     }
     .courseCard {
-      .free-lesson-btn {
-        display: none;
-      }
-      .aboutCourse {
-        margin: 0;
-      }
       .details-wrapper {
         .course3 {
           display: none;
         }
       }
-      &:nth-child(1) {
-        width: 33%;
-        z-index: 799;
-        .coursesStars {
-          display: none;
-        }
-      }
-      &:nth-child(2) {
-        position: absolute;
-        right: 50%;
-        transition: all 0.5s ease;
-        z-index: 899;
-        width: 33%;
-        .coursesStars {
-          display: none;
-        }
-      }
       &:nth-child(3) {
-        content: '';
         width: calc(33% + 440px);
         padding: 20px 460px 20px 20px;
+        transform: translateX(-460px);
+        z-index: 4;
         transition: all 0.5s ease;
-        z-index: 998;
-        position: absolute;
-        top: 32px;
-        right: 0;
         .hidden-content {
           opacity: 1;
           right: 0;
-          padding: 70px 20px 0 0;
         }
         .coursesStars {
           display: flex;
