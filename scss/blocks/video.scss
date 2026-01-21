@@ -11,6 +11,12 @@
   iframe {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
+  &.animated {
+    iframe {
+      animation: slide-fwd-center 1s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+  }
 }
 
 @media (max-width: 1024px) {
