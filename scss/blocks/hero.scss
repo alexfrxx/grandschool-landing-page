@@ -39,6 +39,15 @@
 
 // Adaptive //
 
+@media (min-width: 2000px) {
+  .hero {
+    background-image: image-set(
+      url('../../img/bg2000.webp') 1x,
+      url('../../img/bg2000Retina.webp') 2x
+    );
+  }
+}
+
 @media (max-width: 1200px) {
   .hero {
     .heroTitle {
@@ -156,13 +165,18 @@
   }
 }
 
+// Nest Hub
+
 @media (min-width: 1024px) and (max-height: 600px) {
   .hero {
-    background-position-y: 65%;
+    background-image: image-set(
+      url('../../img/nest-hub.webp') 1x,
+      url('../../img/nest-hub-retina.webp') 2x
+    );
     align-items: center;
     justify-content: flex-start;
-    padding-top: 120px;
-    min-height: 140vh;
+    background-position-y: 0%;
+    padding-top: 115px;
     .heroAdapt {
       align-items: flex-start;
       justify-content: center;
@@ -176,6 +190,7 @@
       text-align: left;
       font-size: 24px;
       width: 50%;
+      margin: 0;
     }
   }
 }

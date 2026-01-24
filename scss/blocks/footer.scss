@@ -121,6 +121,15 @@
   }
 }
 
+@media (min-width: 2000px) {
+  .footer {
+    background-image: image-set(
+      url('../../img/footerBg2000.webp') 1x,
+      url('../../img/footerBg2000Ret.webp') 2x
+    );
+  }
+}
+
 @media (max-width: 1200px) {
   .footer {
     .footerInfo {
