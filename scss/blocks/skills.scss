@@ -28,20 +28,6 @@
       }
     }
   }
-  &.animated {
-    h2 {
-      animation: fadeInDown 1.1s ease-out forwards;
-      opacity: 0;
-      animation-delay: 0s;
-    }
-    .skillsList {
-      li {
-        animation: fadeInDown 1.1s ease-out forwards;
-        opacity: 0;
-        animation-delay: 0s;
-      }
-    }
-  }
 }
 
 @media (max-width: 1024px) {
