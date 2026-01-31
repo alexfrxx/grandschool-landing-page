@@ -427,14 +427,7 @@
     }
     &.animated {
       opacity: 1;
-      li {
-        &:nth-child(1) {
-          animation: slide-bottom 0.7s ease-out forwards;
-        }
-        &:nth-child(2) {
-          animation: slide-bottom 0.7s ease-out forwards;
-        }
-      }
+      animation: slide-bottom 0.7s ease-out forwards;
     }
   }
 
