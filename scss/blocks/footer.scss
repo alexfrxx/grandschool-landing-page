@@ -9,14 +9,15 @@
   .copyrightWrapper {
     background-color: #618135;
     width: 100%;
-    padding: 20px 0 30px 0;
+    padding: 12px 0;
+    margin-top: 50px;
     .copyrightContainer {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .terms {
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 400;
       text-decoration: none;
       color: white;
@@ -27,7 +28,7 @@
     }
     .copyright {
       color: #fff;
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 400;
     }
   }

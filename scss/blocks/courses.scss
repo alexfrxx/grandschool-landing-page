@@ -6,22 +6,32 @@
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-  padding: 100px 0 130px 0;
+  padding: 100px 0 170px 0;
   display: flex;
   flex-direction: column;
   .container {
     overflow: hidden;
   }
-  h2 {
+  .courseTitle {
     font-size: 36px;
     font-weight: 600;
     margin: 0 0 15px 0;
+    opacity: 0;
+    &.animated {
+      animation: fadeInUp 0.9s ease-out forwards;
+      opacity: 1;
+    }
   }
   .courseSubtitle {
     font-size: 22px;
     font-weight: 400;
     line-height: 141%;
     width: 50%;
+    opacity: 0;
+    &.animated {
+      animation: fadeInUp 0.9s ease-out forwards;
+      opacity: 1;
+    }
   }
   .coursesList {
     position: relative;
@@ -29,7 +39,9 @@
     gap: 32px;
     list-style-type: none;
     justify-content: space-between;
-    margin: 32px 0;
+    padding: 32px 0;
+    opacity: 0;
+    overflow: hidden;
     .overlay {
       display: none;
       position: absolute;
@@ -91,7 +103,7 @@
         width: max-content;
         z-index: 2;
       }
-      .courseTitle {
+      .courseCardTitle {
         font-size: 20px;
         font-weight: 600;
         margin: 0 0 20px 0;
@@ -132,7 +144,7 @@
           font-weight: 400;
         }
         .marginNone {
-          margin: 0 0 40px 0;
+          margin: 20px 0 20px 0;
         }
       }
       .details-wrapper-close {
@@ -174,7 +186,7 @@
         opacity: 0;
         flex: 7;
         position: absolute;
-        transition: all .1s ease;
+        transition: all 0.1s ease;
         height: -webkit-fill-available;
         width: 400px;
         right: 0;
@@ -240,6 +252,9 @@
           right: 20px;
         }
       }
+    }
+    &.animated {
+      animation: slide-left 0.7s ease-out forwards;
     }
   }
   .price-block {
@@ -367,6 +382,8 @@
     justify-content: center;
     list-style-type: none;
     gap: 32px;
+    padding-bottom: 20px;
+    opacity: 0;
     li {
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       width: 50%;
@@ -408,46 +425,9 @@
     .fullAccesCard {
       background-color: #faf1d5;
     }
-  }
-  //intersection animations
-  &.animated {
-    h2 {
-      animation: fadeInUp 0.9s ease-out forwards;
-      opacity: 0;
-      animation-delay: 0s;
-    }
-    .courseSubtitle {
-      animation: fadeInUp 0.9s ease-out forwards;
-      opacity: 0;
-      animation-delay: 0s;
-    }
-    .coursesList {
-      .courseCard {
-        &:nth-child(1) {
-          animation: slide-right 0.7s ease-out forwards;
-          animation-delay: 0s;
-        }
-        &:nth-child(2) {
-          animation: slide-top 0.7s ease-out forwards;
-          animation-delay: 0s;
-        }
-        &:nth-child(3) {
-          animation: slide-left 0.7s ease-out forwards;
-          animation-delay: 0s;
-        }
-      }
-    }
-    .fullCourseList {
-      li {
-        &:nth-child(1) {
-          animation: slide-right 0.7s ease-out forwards;
-          animation-delay: 1s;
-        }
-        &:nth-child(2) {
-          animation: slide-left 0.7s ease-out forwards;
-          animation-delay: 1s;
-        }
-      }
+    &.animated {
+      opacity: 1;
+      animation: slide-bottom 0.7s ease-out forwards;
     }
   }
 
@@ -458,7 +438,7 @@
     }
     .courseCard {
       &:nth-child(1) {
-        width: calc(33% + 440px);
+        width: calc(32% + 440px);
         padding: 20px 460px 20px 20px;
         transition: all 0.5s ease;
         z-index: 4;
@@ -468,8 +448,6 @@
         .hidden-content {
           opacity: 1;
           right: 0;
-          transition: opacity .5s ease;
-
         }
         .coursesStars {
           display: flex;
@@ -488,12 +466,12 @@
         }
       }
       &:nth-child(2) {
-        width: calc(33% + 440px);
+        width: calc(32% + 440px);
         padding: 20px 460px 20px 20px;
         transition: all 0.5s ease;
         z-index: 4;
         .hidden-content {
-          opacity: 1;;
+          opacity: 1;
         }
         .coursesStars {
           display: flex;
@@ -511,23 +489,22 @@
       display: block;
     }
     .courseCard {
-      .details-wrapper {
-        .course3 {
-          display: none;
-        }
-      }
       &:nth-child(3) {
-        width: calc(33% + 440px);
+        width: calc(32% + 440px);
         padding: 20px 460px 20px 20px;
-        transform: translateX(-460px);
         z-index: 4;
-        transition: all 0.5s ease;
+        transform: translateX(-460px);
+        transition: transform 0.5s ease;
         .hidden-content {
           opacity: 1;
           right: 0;
         }
+        .details-wrapper {
+          display: none;
+        }
         .coursesStars {
           display: flex;
+          margin: 29px 0 30px;
         }
       }
     }
@@ -617,7 +594,7 @@
         .courseImage {
           order: 1;
         }
-        .courseTitle {
+        .courseCardTitle {
           order: 2;
           margin: 0 0 12px 0;
         }
@@ -782,6 +759,7 @@
           width: 70%;
           padding: 20px;
           position: static;
+          transform: translateX(0);
           .hidden-content {
             padding: 0;
             opacity: 1;
@@ -811,7 +789,7 @@
 
 @media (max-width: 715px) {
   .courses {
-    h2 {
+    .courseTitle {
       font-size: 30px;
       text-align: center;
     }
