@@ -12,14 +12,17 @@
   <body>
     <header>
       <div class="headerWrapper container">
-        <a href="./index.html" class="logo" aria-hidden="true">
+        <a href="./index.html" class="logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="63"
             height="63"
+            aria-label="logo"
+            title="Grand School"
             viewBox="0 0 63 63"
             fill="none"
             class="logoIcon"
+            aria-hidden="true"
           >
             <path
               d="M33.8545 6.82146C33.779 6.85304 33.6929 6.86412 33.5961 6.85469C33.4292 6.83787 33.3426 6.82946 33.3365 6.82946C32.7292 6.83869 32.1872 6.819 31.5252 6.87314C30.6417 6.94533 29.8056 7.05812 29.0169 7.21152C28.3254 7.34564 27.72 7.49863 27.2007 7.67049C26.7807 7.80953 26.4206 7.92417 26.1204 8.0144C26.1129 8.01658 26.105 8.01683 26.0974 8.01513C26.0898 8.01342 26.0828 8.00983 26.0769 8.00467C26.0711 7.99951 26.0667 7.99296 26.064 7.98562C26.0614 7.97829 26.0607 7.97041 26.0619 7.96272C26.0738 7.88766 26.0449 7.81302 25.9752 7.73878C25.6276 7.36964 25.2775 7.0005 24.8961 6.68796C24.2808 6.18469 23.5754 5.77618 22.7797 5.46241C22.4757 5.34223 22.1181 5.22842 21.7067 5.12095C21.6206 5.09799 21.573 5.05923 21.564 5.00468C22.2817 4.7635 23.0133 4.58262 23.7585 4.46204C23.8873 4.44112 23.998 4.43087 24.0907 4.43128C24.2421 4.43251 24.3762 4.39867 24.5343 4.38883C25.2911 4.34248 26.0414 4.36442 26.7855 4.45466C27.0188 4.48296 27.2863 4.52151 27.5877 4.57032C28.7878 4.76432 30.045 5.12936 31.3591 5.66544C32.2467 6.02761 33.0785 6.41295 33.8545 6.82146Z"
@@ -283,9 +286,7 @@
             <use xlink:href="img/sprite.svg#logoText"></use>
           </svg>
         </a>
-        <a href="#courses" class="primaryBtn buyCourseBtn fadeIn" aria-label="Kup kurs"
-          ><span>Kup kurs</span></a
-        >
+        <a href="#courses" class="primaryBtn buyCourseBtn fadeIn"><span>Kup kurs</span></a>
       </div>
     </header>
     <main>
@@ -299,9 +300,7 @@
             Nauczymy, jak unikać oszustów, rozpoznawać fałszywe informacje i osiągnąć cyfrową
             samodzielność.
           </p>
-          <a href="#courses" class="primaryBtn fadeIn" aria-label="Wybrać kurs"
-            ><span>Wybrać kurs</span></a
-          >
+          <a href="#courses" class="primaryBtn fadeIn"><span>Wybrać kurs</span></a>
         </div>
       </section>
       <section class="courses" id="courses">
@@ -311,8 +310,8 @@
             Wybierz kurs odpowiedni dla Ciebie — w wygodnym tempie, z jasnymi wyjaśnieniami i
             wsparciem na każdym kroku.
           </p>
-          <ul class="coursesList">
-            <li class="courseCard">
+          <ul class="coursesList" role="list">
+            <li class="courseCard" role="listitem">
               <div class="card-info">
                 <div class="infoWrapper">
                   <h3 class="courseCardTitle">JAK NIE DAĆ SIĘ OSZUKAĆ</h3>
@@ -369,23 +368,29 @@
                   </div>
                 </div>
                 <div class="hidden-content">
-                  <ul class="card-list-title">
-                    <li class="punkt">
+                  <ul class="card-list-title" role="list">
+                    <li class="punkt" role="listitem">
                       Co zawiera ten kurs
-                      <ul>
-                        <li>10 lekcji/12 godzin</li>
+                      <ul role="list">
+                        <li role="listitem">10 lekcji/12 godzin</li>
                       </ul>
                     </li>
-                    <li class="punkt">
+                    <li class="punkt" role="listitem">
                       Czego ten kurs cię nauczy:
-                      <ul>
-                        <li class="punkts">Czym jest AI i jak on działa w codziennym życiu</li>
-                        <li class="punkts">Jak korzystać z asystentów głosowych i chatbotów</li>
-                        <li class="punkts">
+                      <ul role="list">
+                        <li class="punkts" role="listitem">
+                          Czym jest AI i jak on działa w codziennym życiu
+                        </li>
+                        <li class="punkts" role="listitem">
+                          Jak korzystać z asystentów głosowych i chatbotów
+                        </li>
+                        <li class="punkts" role="listitem">
                           Jak czuć się pewnie, nawet jeśli wcześniej nie spotkałeś się z czymś takim
                         </li>
-                        <li class="punkts">Jak korzystać z asystentów głosowych i chatbotów</li>
-                        <li class="punkts">
+                        <li class="punkts" role="listitem">
+                          Jak korzystać z asystentów głosowych i chatbotów
+                        </li>
+                        <li class="punkts" role="listitem">
                           Jak czuć się pewnie, nawet jeśli wcześniej nie spotkałeś się z czymś takim
                         </li>
                       </ul>
@@ -399,7 +404,7 @@
                 </div>
               </div>
             </li>
-            <li class="courseCard">
+            <li class="courseCard" role="listitem">
               <div class="card-info">
                 <div class="infoWrapper">
                   <h3 class="courseCardTitle">SZTUCZNA INTELIGENCJA</h3>
@@ -455,23 +460,29 @@
                   </div>
                 </div>
                 <div class="hidden-content">
-                  <ul class="card-list-title">
-                    <li class="punkt">
+                  <ul class="card-list-title" role="list">
+                    <li class="punkt" role="listitem">
                       Co zawiera ten kurs
-                      <ul>
-                        <li>10 lekcji/12 godzin</li>
+                      <ul role="list">
+                        <li role="listitem">10 lekcji/12 godzin</li>
                       </ul>
                     </li>
-                    <li class="punkt">
+                    <li class="punkt" role="listitem">
                       Czego ten kurs cię nauczy:
-                      <ul>
-                        <li class="punkts">Czym jest AI i jak on działa w codziennym życiu</li>
-                        <li class="punkts">Jak korzystać z asystentów głosowych i chatbotów</li>
-                        <li class="punkts">
+                      <ul role="list">
+                        <li class="punkts" role="listitem">
+                          Czym jest AI i jak on działa w codziennym życiu
+                        </li>
+                        <li class="punkts" role="listitem">
+                          Jak korzystać z asystentów głosowych i chatbotów
+                        </li>
+                        <li class="punkts" role="listitem">
                           Jak czuć się pewnie, nawet jeśli wcześniej nie spotkałeś się z czymś takim
                         </li>
-                        <li class="punkts">Jak korzystać z asystentów głosowych i chatbotów</li>
-                        <li class="punkts">
+                        <li class="punkts" role="listitem">
+                          Jak korzystać z asystentów głosowych i chatbotów
+                        </li>
+                        <li class="punkts" role="listitem">
                           Jak czuć się pewnie, nawet jeśli wcześniej nie spotkałeś się z czymś takim
                         </li>
                       </ul>
@@ -485,7 +496,7 @@
                 </div>
               </div>
             </li>
-            <li class="courseCard">
+            <li class="courseCard" role="listitem">
               <div class="card-info">
                 <div class="infoWrapper">
                   <h3 class="courseCardTitle">DEZINFORMACJA</h3>
@@ -541,23 +552,29 @@
                   </div>
                 </div>
                 <div class="hidden-content">
-                  <ul class="card-list-title">
-                    <li class="punkt">
+                  <ul class="card-list-title" role="list">
+                    <li class="punkt" role="listitem">
                       Co zawiera ten kurs
-                      <ul>
-                        <li>10 lekcji/12 godzin</li>
+                      <ul role="list">
+                        <li role="listitem">10 lekcji/12 godzin</li>
                       </ul>
                     </li>
-                    <li class="punkt">
+                    <li class="punkt" role="listitem">
                       Czego ten kurs cię nauczy:
-                      <ul>
-                        <li class="punkts">Czym jest AI i jak on działa w codziennym życiu</li>
-                        <li class="punkts">Jak korzystać z asystentów głosowych i chatbotów</li>
-                        <li class="punkts">
+                      <ul role="list">
+                        <li class="punkts" role="listitem">
+                          Czym jest AI i jak on działa w codziennym życiu
+                        </li>
+                        <li class="punkts" role="listitem">
+                          Jak korzystać z asystentów głosowych i chatbotów
+                        </li>
+                        <li class="punkts" role="listitem">
                           Jak czuć się pewnie, nawet jeśli wcześniej nie spotkałeś się z czymś takim
                         </li>
-                        <li class="punkts">Jak korzystać z asystentów głosowych i chatbotów</li>
-                        <li class="punkts">
+                        <li class="punkts" role="listitem">
+                          Jak korzystać z asystentów głosowych i chatbotów
+                        </li>
+                        <li class="punkts" role="listitem">
                           Jak czuć się pewnie, nawet jeśli wcześniej nie spotkałeś się z czymś takim
                         </li>
                       </ul>
@@ -660,8 +677,8 @@
             <use xlink:href="img/sprite.svg#fullLogo"></use>
           </svg>
           <div class="projectSupport__desktop only-desktop" aria-hidden="true">
-            <ul class="testimonialsList">
-              <li>
+            <ul class="testimonialsList" role="list">
+              <li role="listitem">
                 <figure>
                   <svg width="72" height="72" aria-hidden="true">
                     <use xlink:href="img/sprite.svg#figures"></use>
@@ -684,7 +701,7 @@
                   </figcaption>
                 </figure>
               </li>
-              <li>
+              <li role="listitem">
                 <figure>
                   <svg width="72" height="72" aria-hidden="true">
                     <use xlink:href="img/sprite.svg#figures"></use>
@@ -707,7 +724,7 @@
                   </figcaption>
                 </figure>
               </li>
-              <li>
+              <li role="listitem">
                 <figure>
                   <svg width="72" height="72" aria-hidden="true">
                     <use xlink:href="img/sprite.svg#figures"></use>
@@ -735,8 +752,8 @@
         </div>
         <div class="projectSupport__slider splide only-mobile" data-mobile-only>
           <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide">
+            <ul class="splide__list" role="list">
+              <li class="splide__slide" role="listitem">
                 <figure>
                   <svg width="72" height="72" aria-hidden="true">
                     <use xlink:href="img/sprite.svg#figures"></use>
@@ -759,7 +776,7 @@
                   </figcaption>
                 </figure>
               </li>
-              <li class="splide__slide">
+              <li class="splide__slide" role="listitem">
                 <figure>
                   <svg width="72" height="72" aria-hidden="true">
                     <use xlink:href="img/sprite.svg#figures"></use>
@@ -782,7 +799,7 @@
                   </figcaption>
                 </figure>
               </li>
-              <li class="splide__slide">
+              <li class="splide__slide" role="listitem">
                 <figure>
                   <svg width="72" height="72" aria-hidden="true">
                     <use xlink:href="img/sprite.svg#figures"></use>
@@ -829,8 +846,8 @@
           </h2>
 
           <div class="projectSupport__desktop only-desktop" aria-hidden="true">
-            <ul class="supportList">
-              <li>
+            <ul class="supportList" role="list">
+              <li role="listitem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#firstSupportIcon"></use>
                   <path
@@ -868,7 +885,7 @@
                   kontaktu.
                 </p>
               </li>
-              <li>
+              <li role="listitem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#secondSupportIcon"></use>
                   <path
@@ -895,7 +912,7 @@
                   samodzielności.
                 </p>
               </li>
-              <li>
+              <li role="listitem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#thirdSupportIcon"></use>
                   <path
@@ -917,8 +934,8 @@
         </div>
         <div class="projectSupport__slider splide only-mobile" data-mobile-only>
           <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide">
+            <ul class="splide__list" role="list">
+              <li class="splide__slide" role="listitem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#firstSupportIcon"></use>
                   <path
@@ -956,8 +973,7 @@
                   kontaktu.
                 </p>
               </li>
-
-              <li class="splide__slide">
+              <li class="splide__slide" role="listitem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#secondSupportIcon"></use>
                   <path
@@ -984,8 +1000,7 @@
                   samodzielności.
                 </p>
               </li>
-
-              <li class="splide__slide">
+              <li class="splide__slide" role="listitem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#thirdSupportIcon"></use>
                   <path
@@ -1010,8 +1025,8 @@
         <div class="container">
           <h2>Czego się nauczysz?</h2>
           <div class="projectSupport__desktop only-desktop" aria-hidden="true">
-            <ul class="skillsList">
-              <li>
+            <ul class="skillsList" role="list">
+              <li role="listItem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#skillsIcon1"></use>
                   <path
@@ -1046,7 +1061,7 @@
                   wiadomość tekstową lub e-mail i nie dać się zmanipulować.
                 </p>
               </li>
-              <li>
+              <li role="listItem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#skillsIcon2"></use>
                   <path
@@ -1061,7 +1076,7 @@
                   linki oraz jak unikać zagrożeń online.
                 </p>
               </li>
-              <li>
+              <li role="listItem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#skillsIcon3"></use>
                   <path
@@ -1077,7 +1092,7 @@
                   jak sprawdzać wiarygodność źródeł.
                 </p>
               </li>
-              <li>
+              <li role="listItem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#skillsIcon4"></use>
                   <path
@@ -1093,7 +1108,7 @@
                   typowy clickbait lub pułapkę propagandową.
                 </p>
               </li>
-              <li>
+              <li role="listItem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#skillsIcon5"></use>
                   <path
@@ -1109,7 +1124,7 @@
                   planowania dnia, generowania pomysłów oraz tłumaczenia.
                 </p>
               </li>
-              <li>
+              <li role="listItem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#skillsIcon6"></use>
                   <path
@@ -1130,8 +1145,8 @@
         </div>
         <div class="projectSupport__slider splide only-mobile" data-mobile-only>
           <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide">
+            <ul class="splide__list" role="list">
+              <li class="splide__slide" role="listItem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#skillsIcon1"></use>
                   <path
@@ -1167,7 +1182,7 @@
                   wiadomość tekstową lub e-mail i nie dać się zmanipulować.
                 </p>
               </li>
-              <li class="splide__slide">
+              <li class="splide__slide" role="listItem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#skillsIcon2"></use>
                   <path
@@ -1182,7 +1197,7 @@
                   linki oraz jak unikać zagrożeń online.
                 </p>
               </li>
-              <li class="splide__slide">
+              <li class="splide__slide" role="listItem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#skillsIcon3"></use>
                   <path
@@ -1198,7 +1213,7 @@
                   jak sprawdzać wiarygodność źródeł.
                 </p>
               </li>
-              <li class="splide__slide">
+              <li class="splide__slide" role="listItem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#skillsIcon4"></use>
                   <path
@@ -1214,7 +1229,7 @@
                   typowy clickbait lub pułapkę propagandową.
                 </p>
               </li>
-              <li class="splide__slide">
+              <li class="splide__slide" role="listItem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#skillsIcon5"></use>
                   <path
@@ -1230,7 +1245,7 @@
                   planowania dnia, generowania pomysłów oraz tłumaczenia.
                 </p>
               </li>
-              <li class="splide__slide">
+              <li class="splide__slide" role="listItem">
                 <svg width="90" height="90" aria-hidden="true">
                   <use xlink:href="img/sprite.svg#skillsIcon6"></use>
                   <path
@@ -1360,69 +1375,69 @@
           </ul>
         </div>
       </section>
-      <footer class="footer">
-        <div class="container respFooterWrapper">
-          <div class="footerInfo">
-            <blockquote class="footerText">
-              Zaczęło się od Niej.<br />
-              I nawet jeśli juz Jej nie ma — wciąż jestem w drodze, którą mi pokazała.<br />Dla
-              Mamy...
-            </blockquote>
-
-            <div class="contact">
-              <h4 class="footerSubtitle">Contact</h4>
-              <address class="contactInfo">
-                <svg class="locationIcon" aria-hidden="true">
-                  <use xlink:href="img/sprite.svg#location"></use>
-                </svg>
-                Kraków, Polska
-              </address>
-              <a class="emailLink" href="mailto:info@grandschool.app"
-                ><svg class="mailLinkIcon" aria-hidden="true">
-                  <use xlink:href="img/sprite.svg#mail"></use>
-                </svg>
-                info@grandschool.app</a
-              >
-            </div>
-            <div class="followUs">
-              <h4 class="footerSubtitle hiddenTitle">Follow Us</h4>
-              <nav>
-                <ul class="iconList">
-                  <li>
-                    <a href=" https://www.facebook.com/grandschool.poland" target="_blank">
-                      <svg class="icon" aria-hidden="true">
-                        <use xlink:href="img/sprite.svg#facebook"></use>
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.youtube.com/@grandschool_poland" target="_blank">
-                      <svg class="icon" aria-hidden="true">
-                        <use xlink:href="img/sprite.svg#youtube"></use>
-                      </svg>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="https://www.instagram.com/grandschool.pl" target="_blank"
-                      ><svg class="icon" aria-hidden="true">
-                        <use xlink:href="img/sprite.svg#instagram"></use>
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-        <div class="copyrightWrapper">
-          <div class="container copyrightContainer">
-            <small class="copyright">&copy; Copyright 2025 GrandSchool Sp. z o.o.</small>
-            <a href="./terms/index.html" target="_blank" class="terms"> Polityka prywatności</a>
-          </div>
-        </div>
-      </footer>
     </main>
+    <footer class="footer">
+      <div class="container respFooterWrapper">
+        <div class="footerInfo">
+          <blockquote class="footerText">
+            Zaczęło się od Niej.<br />
+            I nawet jeśli juz Jej nie ma — wciąż jestem w drodze, którą mi pokazała.<br />Dla
+            Mamy...
+          </blockquote>
+
+          <div class="contact">
+            <h4 class="footerSubtitle">Contact</h4>
+            <address class="contactInfo">
+              <svg class="locationIcon" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#location"></use>
+              </svg>
+              Kraków, Polska
+            </address>
+            <a class="emailLink" href="mailto:info@grandschool.app"
+              ><svg class="mailLinkIcon" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#mail"></use>
+              </svg>
+              info@grandschool.app</a
+            >
+          </div>
+          <div class="followUs">
+            <h4 class="footerSubtitle hiddenTitle">Follow Us</h4>
+            <nav>
+              <ul class="iconList">
+                <li>
+                  <a href=" https://www.facebook.com/grandschool.poland" target="_blank">
+                    <svg class="icon" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/@grandschool_poland" target="_blank">
+                    <svg class="icon" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#youtube"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.instagram.com/grandschool.pl" target="_blank"
+                    ><svg class="icon" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="copyrightWrapper">
+        <div class="container copyrightContainer">
+          <small class="copyright">&copy; Copyright 2025 GrandSchool Sp. z o.o.</small>
+          <a href="./terms/index.html" target="_blank" class="terms"> Polityka prywatności</a>
+        </div>
+      </div>
+    </footer>
     <script src="/js/counter.js"></script>
     <script src="/js/courses.js"></script>
     <script src="/js/animation.js"></script>
