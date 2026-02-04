@@ -13,6 +13,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    opacity: 0;
+
     h2 {
       font-size: 36px;
       margin-bottom: 15px;
@@ -31,11 +33,14 @@
     justify-content: center;
     gap: 34px;
     margin-top: 32px;
+    opacity: 0;
+
     li {
-      display: flex;
-      position: relative;
-      justify-content: space-between;
-      align-items: center;
+      .statsItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
       padding: 20px;
       width: 33%;
       background-color: #fff;
@@ -60,17 +65,28 @@
         font-size: 18px;
         font-weight: 700;
       }
-      .mobile-underline {
-        position: relative;
-        justify-content: space-between;
-        display: none;
-        &::after {
-          content: '';
-          position: absolute;
-          width: 93%;
-          height: 1px;
-          background-color: #e5e5e5;
-          top: 140px;
+    }
+  }
+  &.animated {
+    .stats-cta {
+      opacity: 1;
+      animation: fadeInUp 0.9s ease-out forwards;
+    }
+    .statsList {
+      opacity: 1;
+      animation: slide-bottom 0.7s ease-out forwards;
+    }
+  }
+}
+
+@media (max-width: 1025px) {
+  .projectStats {
+    .statsList {
+      li {
+        h3 {
+          span {
+            font-size: 40px;
+          }
         }
       }
     }
@@ -95,16 +111,22 @@
     .statsList {
       flex-direction: column;
       align-items: center;
-      gap: 0;
+      gap: 18px;
       border-radius: 10px;
       background: #fff;
+      padding: 20px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       li {
         width: 100%;
         box-shadow: none;
         border-radius: 10px;
+        padding: 0;
+        .statsItem {
+          padding: 18px 0;
+        }
         .mobile-underline {
-          display: flex;
+          border-bottom: 1px solid #e5e5e5;
+          border-top: 1px solid #e5e5e5;
         }
         &:hover svg {
           transform: none;
@@ -138,25 +160,6 @@
         font-size: 30px;
       }
     }
-    .statsList {
-      .mobile-underline {
-        &::after {
-          width: 90%;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 400px) {
-  .projectStats {
-    .statsList {
-      li {
-        hr {
-          top: 150px;
-        }
-      }
-    }
   }
 }
 
@@ -166,15 +169,6 @@
       li {
         p {
           width: 85%;
-        }
-        hr {
-          top: 160px;
-        }
-      }
-      .mobile-underline {
-        &::after {
-          width: 85%;
-          top: 150px;
         }
       }
     }

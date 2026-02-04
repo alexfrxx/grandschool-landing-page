@@ -10,6 +10,13 @@
   padding: 146px 0 130px 0;
   iframe {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+  }
+  &.animated {
+    iframe {
+      animation: slide-fwd-center 1s ease-out forwards;
+      opacity: 1;
+    }
   }
 }
 

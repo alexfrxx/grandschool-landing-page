@@ -1,7 +1,9 @@
 .terms-page {
-  padding: 60px 0;
+  padding: 60px 0 0 0;
   background: url('../../img/reviews.webp') center 33vh no-repeat;
   background-size: cover;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .terms-page .container {
@@ -11,6 +13,8 @@
   background-color: #ffffffcc;
   font-size: 18px;
   line-height: 1.6;
+  overflow-y: auto;
+  height: 100%;
 }
 
 .terms-page .title {

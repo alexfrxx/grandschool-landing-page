@@ -1,0 +1,64 @@
+'use strict';
+
+document.addEventListener('DOMContentLoaded', () => {
+  (function () {
+    const heroBlock = document.querySelector('.hero'),
+      courseTitle = document.querySelector('.courseTitle'),
+      courseSubtitle = document.querySelector('.courseSubtitle'),
+      coursesList = document.querySelector('.coursesList'),
+      fullCourseList = document.querySelector('.fullCourseList'),
+      testimonialsBlock = document.querySelector('.testimonials'),
+      videoBlock = document.querySelector('.video'),
+      supportBlock = document.querySelector('.projectSupport'),
+      skillsBlock = document.querySelector('.skills'),
+      feelingsBlock = document.querySelector('.feelings'),
+      statsBlock = document.querySelector('.projectStats');
+
+    const allBlocksForAnimation = [
+      heroBlock,
+      coursesList,
+      courseSubtitle,
+      courseTitle,
+      fullCourseList,
+      testimonialsBlock,
+      videoBlock,
+      supportBlock,
+      skillsBlock,
+      feelingsBlock,
+      statsBlock,
+    ];
+
+    let options = {
+      threshold: 0.45,
+    };
+
+    if (document.documentElement.clientWidth < 1024) {
+      options.threshold = 0.3;
+    } else if (document.documentElement.clientWidth < 768) {
+      options.threshold = 0.15;
+    } else if (
+      document.documentElement.clientWidth <= 1024 &&
+      document.documentElement.clientHeight < 601
+    ) {
+      options.threshold = 0.1;
+    } else if (
+      document.documentElement.clientWidth <= 1280 &&
+      document.documentElement.clientHeight < 801
+    ) {
+      options.threshold = 0.1;
+    }
+
+    function aboutUsAnimation(entries, observer) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.classList.add('animated');
+        }
+      });
+    }
+
+    const observer = new IntersectionObserver(aboutUsAnimation, options);
+
+    allBlocksForAnimation.forEach((block) => observer.observe(block));
+  })();
+});
