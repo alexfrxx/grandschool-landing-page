@@ -65,7 +65,8 @@
       &:nth-child(3) {
         z-index: 3;
       }
-      &:hover {
+      &:hover,
+      &:focus {
         .free-lesson-btn {
           opacity: 1;
         }
@@ -86,7 +87,8 @@
         border-radius: 50px;
         transition: all 0.5s ease;
         opacity: 0;
-        &:hover {
+        &:hover,
+        &:focus {
           background-color: #618135;
           color: #fff;
         }
