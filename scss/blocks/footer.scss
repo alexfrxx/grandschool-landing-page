@@ -115,13 +115,20 @@
     fill: #b2b2b2;
   }
 }
-.icon {
+.social-icon-link {
   transition: all 0.3s ease;
   fill: #fff;
   width: 45px;
   height: 46px;
-  &:hover {
-    fill: #b2b2b2;
+  border-radius: 50%;
+  &:hover,
+  &:focus {
+    .icon {
+      fill: #b2b2b2;
+    }
+  }
+  .icon {
+    transition: all 0.3s ease;
   }
 }
 
