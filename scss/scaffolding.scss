@@ -1,55 +1,81 @@
 @use './mixins' as mixins;
-/* Fonts */
 
+/* ==========================
+   Root variables (scaffolding)
+========================== */
+:root {
+  --container: 1120px;
+  --gap: 24px;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+}
+
+/* ==========================
+   Fonts
+========================== */
 @font-face {
   font-family: 'ProbaPro';
-  src: url('./../fonts/ProbaPro-Bold.woff2') format('woff2');
-  src: url('./../fonts/ProbaPro-Bold.woff') format('woff');
+  src:
+    url('./../fonts/ProbaPro-Bold.woff2') format('woff2'),
+    url('./../fonts/ProbaPro-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'ProbaPro';
-  src: url('./../fonts/ProbaPro-SemiBold.woff2') format('woff2');
-  src: url('./../fonts/ProbaPro-SemiBold.woff') format('woff');
+  src:
+    url('./../fonts/ProbaPro-SemiBold.woff2') format('woff2'),
+    url('./../fonts/ProbaPro-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'ProbaPro';
-  src: url('./../fonts/ProbaPro-Medium.woff2') format('woff2');
-  src: url('./../fonts/ProbaPro-Medium.woff') format('woff');
+  src:
+    url('./../fonts/ProbaPro-Medium.woff2') format('woff2'),
+    url('./../fonts/ProbaPro-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'ProbaPro';
-  src: url('./../fonts/ProbaPro-Regular.woff2') format('woff2');
-  src: url('./../fonts/ProbaPro-Regular.woff') format('woff');
+  src:
+    url('./../fonts/ProbaPro-Regular.woff2') format('woff2'),
+    url('./../fonts/ProbaPro-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'ProbaPro';
-  src: url('./../fonts/ProbaPro-Light.woff2') format('woff2');
-  src: url('./../fonts/ProbaPro-Light.woff') format('woff');
+  src:
+    url('./../fonts/ProbaPro-Light.woff2') format('woff2'),
+    url('./../fonts/ProbaPro-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'ProbaPro';
-  src: url('./../fonts/ProbaPro-Thin.woff2') format('woff2');
-  src: url('./../fonts/ProbaPro-Thin.woff') format('woff');
+  src:
+    url('./../fonts/ProbaPro-Thin.woff2') format('woff2'),
+    url('./../fonts/ProbaPro-Thin.woff') format('woff');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 
+/* ==========================
+   Base styles
+========================== */
 html {
   scroll-behavior: smooth;
 }
@@ -65,30 +91,14 @@ body {
   outline: none;
 }
 
+/* ==========================
+   Containers
+========================== */
 .container {
   width: 95%;
   max-width: 1800px;
   margin: 0 auto;
   padding: 0 25px;
-}
-
-.only-mobile {
-  display: block;
-  max-width: 100%;
-  padding-left: 9px;
-  overflow: visible;
-}
-.only-desktop {
-  display: none;
-}
-
-@media (min-width: 1025px) {
-  .only-mobile {
-    display: none !important;
-  }
-  .only-desktop {
-    display: block !important;
-  }
 }
 
 @media (max-width: 560px) {
@@ -98,46 +108,79 @@ body {
   }
 }
 
+/* ==========================
+   Display helpers
+========================== */
+.only-mobile {
+  display: block;
+  max-width: 100%;
+  padding-left: 9px;
+  overflow: visible;
+}
+
+.only-desktop {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .only-mobile {
+    display: none;
+  }
+  .only-desktop {
+    display: block;
+  }
+}
+
+/* ==========================
+   Buttons
+========================== */
 .primaryBtn {
   @include mixins.btnSettings;
-  height: fit-content;
   position: relative;
   min-width: 200px;
+  height: fit-content;
   padding: 15px 60px;
   font-size: 20px;
-  color: #ffff;
+  color: #fff;
   border: 2px solid #618135;
   background-color: #618135;
+  transition: all 0.3s ease;
+
   span {
     position: relative;
+
     &::after {
       content: '';
       position: absolute;
       left: 50%;
-      width: 0;
       top: 20px;
+      width: 0;
       height: 1px;
       border-radius: 50%;
-      transition: all 0.3s ease;
       transform: translateX(-50%);
       transform-origin: top;
       background-color: #fff;
+      transition: all 0.3s ease;
     }
   }
+
   &:hover,
   &:focus {
     background-color: #72a62b;
-    border: 2px solid #72a62b;
+    border-color: #72a62b;
+
     span::after {
       width: 100%;
     }
   }
+
   &:active {
     background-color: #517322;
-    border: 2px solid #618135;
+    border-color: #618135;
+
     span::after {
-      transform: scaleX(0);
       width: 0;
+      transform: scaleX(0);
     }
   }
 }

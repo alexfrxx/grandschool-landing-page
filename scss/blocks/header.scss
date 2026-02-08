@@ -1,40 +1,46 @@
 @use '../mixins' as mixins;
 
 header {
-  z-index: 999;
   position: absolute;
   top: 0;
   width: 100%;
+  z-index: 999;
   transition: all 1s ease;
+
   &.headerFixed {
     position: fixed;
-    transition: all 1s ease;
     background-color: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     z-index: 999;
+
     .headerWrapper {
       padding: 19px 25px;
     }
   }
+
   .headerWrapper {
     padding-top: 35px;
     transition: all 1s ease;
     @include mixins.flex;
+
     .logo {
       display: flex;
       align-items: center;
       gap: 6px;
       width: 175px;
       transition: all 1s ease;
+
       &:hover .computerLight,
       &:focus-visible .computerLight {
         -webkit-animation: blink-1 0.6s both;
         animation: blink-1 0.6s both;
       }
+
       .logoIcon {
         width: 63px;
         height: 63px;
       }
+
       .logoText {
         width: 95px;
         height: 38px;
@@ -43,6 +49,7 @@ header {
   }
 }
 
+/* Media Queries */
 @media (max-width: 560px) {
   header {
     .headerWrapper {
@@ -51,32 +58,15 @@ header {
         font-size: 18px;
         min-width: 163px;
       }
+
       .logo {
         width: 141px;
         height: 52px;
+
         .logoIcon {
           width: 52px;
           height: 52px;
         }
-        .logoText {
-          height: 52px;
-        }
-      }
-    }
-  }
-  .headerFixed {
-    .headerWrapper {
-      padding: 19px 15px;
-    }
-  }
-}
-@media (max-width: 370px) {
-  header {
-    .headerWrapper {
-      .buyCourseBtn {
-        padding: 12px 36px;
-        font-size: 18px;
-        min-width: 150px;
       }
     }
   }
