@@ -1,43 +1,48 @@
 .feelings {
+  width: 100%;
+  padding: 143px 0 114px 0;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-image: image-set(
     url('../../img/feelBg.webp') 1x,
     url('../../img/feelBgRetina.webp') 2x
   );
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding: 143px 0 114px 0;
-  width: 100%;
+
   h2 {
     font-size: 36px;
     font-weight: 600;
     text-align: center;
     opacity: 0;
   }
+
   .feelingList {
     width: 100%;
     margin-top: 34px;
-    list-style-type: none;
+    list-style: none;
     display: flex;
     gap: 34px;
     justify-content: center;
     opacity: 0;
 
     li {
+      width: 33%;
       background-color: #fff;
       padding: 20px;
       border-radius: 26px;
-      width: 33%;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
       img {
         width: 100%;
         height: auto;
         border-radius: 26px;
       }
+
       h3 {
         margin: 37px 0 27px 0;
         font-size: 24px;
         font-weight: 600;
       }
+
       p {
         font-size: 18px;
         font-weight: 400;
@@ -46,11 +51,13 @@
       }
     }
   }
+
   &.animated {
     h2 {
       animation: fadeInUp 0.9s ease-out forwards;
       opacity: 1;
     }
+
     .feelingList {
       opacity: 1;
       animation: slide-left 0.7s ease-out forwards;
@@ -58,15 +65,18 @@
   }
 }
 
+// Media Queries
 @media (max-width: 1150px) {
   .feelings {
     padding: 70px 0 67px 0;
     background: white;
+
     .feelingList {
       margin-top: 28px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       li {
         width: 70%;
       }
@@ -75,10 +85,8 @@
 }
 
 @media (max-width: 768px) {
-  .feelings {
-    h2 {
-      font-size: 30px;
-    }
+  .feelings h2 {
+    font-size: 30px;
   }
 }
 
@@ -87,13 +95,15 @@
     .feelingList {
       li {
         width: 100%;
-        h3 {
-          font-size: 20px;
-          margin: 22px 0 14px 0;
-        }
-        p {
-          font-size: 16px;
-        }
+      }
+
+      h3 {
+        font-size: 20px;
+        margin: 22px 0 14px 0;
+      }
+
+      p {
+        font-size: 16px;
       }
     }
   }

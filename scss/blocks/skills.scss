@@ -1,26 +1,31 @@
 .skills {
   width: 100%;
   background-color: #f7f5ec;
+
   h2 {
     text-align: center;
     font-size: 36px;
     font-weight: 600;
   }
+
   .skillsList {
     padding: 34px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 34px;
+
     li {
       width: 31%;
-      list-style-type: none;
+      list-style: none;
+
       h3 {
         font-size: 24px;
         font-weight: 600;
         line-height: 141%;
         margin: 28px 0 24px 0;
       }
+
       p {
         font-size: 18px;
         font-weight: 400;
@@ -30,6 +35,7 @@
   }
 }
 
+// Media Queries
 @media (max-width: 1024px) {
   .skills {
     background-color: #fff;
@@ -37,14 +43,11 @@
 }
 
 @media (max-width: 768px) {
-  .skills {
-    h2 {
-      font-size: 30px;
-    }
-    .splide__slide {
-      p {
-        font-size: 16px;
-      }
-    }
+  .skills h2 {
+    font-size: 30px;
+  }
+
+  .splide__slide p {
+    font-size: 16px;
   }
 }

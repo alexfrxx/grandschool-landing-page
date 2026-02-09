@@ -1,14 +1,15 @@
 .projectStats {
   padding: 86px 0 140px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-image: image-set(
     url('../../img/projectStatsBG.webp') 1x,
     url('../../img/projectStatsBGRetina.webp') 2x
   );
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
   .stats-cta {
     display: flex;
     justify-content: space-between;
@@ -21,14 +22,16 @@
       font-weight: 600;
     }
   }
+
   p {
     font-size: 18px;
     font-weight: 400;
     color: #484747;
   }
+
   .statsList {
     width: 100%;
-    list-style-type: none;
+    list-style: none;
     display: flex;
     justify-content: center;
     gap: 34px;
@@ -36,30 +39,35 @@
     opacity: 0;
 
     li {
+      width: 33%;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+      &:hover svg {
+        transform: scale(0.8);
+      }
+
+      svg {
+        transition: all 0.7s ease;
+      }
+
       .statsItem {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-      padding: 20px;
-      width: 33%;
-      background-color: #fff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      &:hover svg {
-        transform: scale(0.8);
-      }
-      svg {
-        transition: all 0.7s ease;
-      }
+
       h3 {
-        margin: 0;
+        margin: 0 0 19px 0;
         font-size: 34px;
-        margin-bottom: 19px;
+
         span {
           font-size: 48px;
           font-weight: 700;
         }
       }
+
       p {
         color: #618135;
         font-size: 18px;
@@ -67,11 +75,13 @@
       }
     }
   }
+
   &.animated {
     .stats-cta {
       opacity: 1;
       animation: fadeInUp 0.9s ease-out forwards;
     }
+
     .statsList {
       opacity: 1;
       animation: slide-bottom 0.7s ease-out forwards;
@@ -79,35 +89,32 @@
   }
 }
 
+// Media Queries
 @media (max-width: 1025px) {
-  .projectStats {
-    .statsList {
-      li {
-        h3 {
-          span {
-            font-size: 40px;
-          }
-        }
-      }
-    }
+  .projectStats .statsList li h3 span {
+    font-size: 40px;
   }
 }
 
 @media (max-width: 1020px) {
   .projectStats {
     background: white;
+
     h2 {
       text-align: center;
       margin-bottom: 14px;
     }
+
     p {
       text-align: center;
       margin-bottom: 14px;
     }
+
     .stats-cta {
       flex-direction: column;
       align-items: center;
     }
+
     .statsList {
       flex-direction: column;
       align-items: center;
@@ -116,21 +123,26 @@
       background: #fff;
       padding: 20px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
       li {
         width: 100%;
         box-shadow: none;
         border-radius: 10px;
         padding: 0;
+
         .statsItem {
           padding: 18px 0;
         }
+
         .mobile-underline {
-          border-bottom: 1px solid #e5e5e5;
           border-top: 1px solid #e5e5e5;
+          border-bottom: 1px solid #e5e5e5;
         }
+
         &:hover svg {
           transform: none;
         }
+
         h3 {
           margin-bottom: 2px;
         }
@@ -140,37 +152,23 @@
 }
 
 @media (max-width: 768px) {
-  .projectStats {
-    .statsList {
-      margin-top: 28px;
-      li {
-        width: 100%;
-        p {
-          text-align: left;
-        }
-      }
+  .projectStats .statsList {
+    margin-top: 28px;
+
+    li p {
+      text-align: left;
     }
   }
 }
 
 @media (max-width: 550px) {
-  .projectStats {
-    .stats-cta {
-      h2 {
-        font-size: 30px;
-      }
-    }
+  .projectStats .stats-cta h2 {
+    font-size: 30px;
   }
 }
 
 @media (max-width: 360px) {
-  .projectStats {
-    .statsList {
-      li {
-        p {
-          width: 85%;
-        }
-      }
-    }
+  .projectStats .statsList li p {
+    width: 85%;
   }
 }

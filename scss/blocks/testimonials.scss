@@ -5,12 +5,14 @@
   align-items: center;
   padding: 9px 0 100px 0;
   background-color: #f7f5ec;
+
   h2 {
     font-size: 36px;
     font-weight: 600;
     text-align: center;
     opacity: 0;
   }
+
   .fullLogo {
     width: 100%;
     display: flex;
@@ -18,19 +20,21 @@
     align-items: center;
     opacity: 0;
   }
+
   .testimonialsList {
     width: 100%;
     margin-top: 34px;
-    list-style-type: none;
+    list-style: none;
     display: flex;
     gap: 34px;
     justify-content: center;
-    opacity: 0;
 
     li {
       background-color: #fff;
       padding: 20px;
       border-radius: 10px;
+      opacity: 0;
+
       .testimonialsText {
         font-size: 18px;
         font-weight: 400;
@@ -45,24 +49,19 @@
       animation: fadeInUp 0.9s ease-out forwards;
       opacity: 1;
     }
+
     .fullLogo {
       animation: fadeIn 0.9s ease-out forwards;
       opacity: 1;
     }
-    .testimonialsList {
-      opacity: 1;
 
-      li {
-        &:nth-child(1) {
-          animation: slide-left 0.7s ease-out forwards;
-        }
-        &:nth-child(2) {
-          animation: slide-left 0.7s ease-out forwards;
-        }
-        &:nth-child(3) {
-          animation: slide-left 0.7s ease-out forwards;
-        }
+    .testimonialsList li {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        animation: slide-left 0.7s ease-out forwards;
       }
+      opacity: 1;
     }
   }
 }
@@ -71,17 +70,20 @@
   display: flex;
   align-items: center;
   gap: 20px;
+
   img {
     width: 98px;
     height: 98px;
     border: 1px solid #618135;
     border-radius: 50%;
   }
+
   strong {
     line-height: 141%;
     font-weight: 700;
     font-size: 18px;
     color: #484747;
+
     span {
       font-weight: 400;
       display: block;
@@ -106,13 +108,16 @@
     background-size: cover;
     background-position-y: -350px;
     padding: 115px 0 70px 0;
+
     h2 {
       margin-bottom: 6px;
     }
   }
+
   .splide__slide {
     background-color: #fff;
     margin-left: 6px;
+
     .testimonialsText {
       font-size: 20px;
     }
@@ -120,17 +125,15 @@
 }
 
 @media (max-width: 768px) {
-  .testimonials {
-    h2 {
-      font-size: 30px;
-    }
+  .testimonials h2 {
+    font-size: 30px;
   }
-  .splide__slide {
-    .testimonialsText {
-      font-size: 16px;
-    }
+
+  .splide__slide .testimonialsText {
+    font-size: 16px;
   }
 }
+
 @media (max-width: 550px) {
   .testimonials {
     background-image: none;
@@ -138,24 +141,19 @@
 }
 
 @media (max-width: 450px) {
-  .testimonials {
-    h2 {
-      font-size: 28px;
-    }
+  .testimonials h2 {
+    font-size: 28px;
   }
 }
+
 @media (max-width: 415px) {
-  .testimonials {
-    h2 {
-      font-size: 26px;
-    }
+  .testimonials h2 {
+    font-size: 26px;
   }
 }
 
 @media (max-width: 370px) {
-  .testimonials {
-    h2 {
-      font-size: 24px;
-    }
+  .testimonials h2 {
+    font-size: 24px;
   }
 }
