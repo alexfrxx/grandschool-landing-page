@@ -32,7 +32,7 @@
 
     li {
       background-color: #fff;
-      border-radius: 10px;
+      border-radius: var(--radius-sm);
       box-shadow: none;
       .testimonialsText {
         font-size: var(--space-3);

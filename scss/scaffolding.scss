@@ -4,6 +4,9 @@
    Root variables (scaffolding)
 ========================== */
 :root {
+  --container: 1800px;
+  --container-padding: 25px;
+  --container-padding-sm: 15px;
   --gap: 34px;
   --gap-2: 32px;
   --size: 16px;
@@ -13,6 +16,10 @@
   --space-4: 24px;
   --space-5: 28px;
   --space-6: 40px;
+  --radius: 26px;
+  --radius-sm: 10px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --card-padding: 20px;
 }
 
 /* ==========================
@@ -96,37 +103,37 @@ body {
 ========================== */
 .container {
   width: 95%;
-  max-width: 1800px;
+  max-width: var(--container);
   margin: 0 auto;
-  padding: 0 25px;
+  padding: 0 var(--container-padding);
 }
 
 @media (max-width: 560px) {
   .container {
     width: 100%;
-    padding: 0 15px;
+    padding: 0 var(--container-padding-sm);
   }
 }
 
 /* ==========================
    Display helpers
 ========================== */
-.only-mobile {
+.onlyMobile {
   display: block;
   max-width: 100%;
   padding-left: 9px;
   overflow: visible;
 }
 
-.only-desktop {
+.onlyDesktop {
   display: none;
 }
 
 @media (min-width: 1025px) {
-  .only-mobile {
+  .onlyMobile {
     display: none;
   }
-  .only-desktop {
+  .onlyDesktop {
     display: block;
   }
 }
@@ -184,7 +191,7 @@ body {
 }
 
 .sectionCard {
-  padding: 20px;
-  border-radius: 26px;
-  box-shadow: 0 4px var(--space-2) rgba(0, 0, 0, 0.08);
+  padding: var(--card-padding);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }

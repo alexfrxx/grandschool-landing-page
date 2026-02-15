@@ -54,7 +54,7 @@
     background-color: #ffffff80;
     min-height: 600px;
     z-index: 3;
-    border-radius: 26px;
+    border-radius: var(--radius);
   }
   .courseCard {
     position: relative;
@@ -118,7 +118,7 @@
     img {
       width: 100%;
       height: auto;
-      border-radius: 26px;
+      border-radius: var(--radius);
     }
     .aboutCourse {
       font-size: var(--size);
