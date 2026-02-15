@@ -1,6 +1,7 @@
+@use '../mixins.scss' as mixins;
+
 .testimonials {
-  display: flex;
-  flex-direction: column;
+  @include mixins.column;
   justify-content: center;
   align-items: center;
   padding: 9px 0 100px 0;
@@ -15,32 +16,30 @@
 
   .fullLogo {
     width: 100%;
-    display: flex;
+    @include mixins.flex;
     justify-content: center;
-    align-items: center;
     opacity: 0;
   }
 
   .testimonialsList {
     width: 100%;
-    margin-top: 34px;
+    margin-top: var(--gap);
     list-style: none;
     display: flex;
-    gap: 34px;
+    gap: var(--gap);
+    opacity: 0;
     justify-content: center;
 
     li {
       background-color: #fff;
-      padding: 20px;
       border-radius: 10px;
-      opacity: 0;
-
+      box-shadow: none;
       .testimonialsText {
-        font-size: 18px;
+        font-size: var(--space-3);
         font-weight: 400;
         color: #484747;
         line-height: 141%;
-        margin: 9px 0 32px 0;
+        margin: 9px 0 var(--gap-2) 0;
       }
     }
   }
@@ -55,12 +54,8 @@
       opacity: 1;
     }
 
-    .testimonialsList li {
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(3) {
-        animation: slide-left 0.7s ease-out forwards;
-      }
+    .testimonialsList {
+      animation: slideLeft 0.7s ease-out forwards;
       opacity: 1;
     }
   }
@@ -81,7 +76,7 @@
   strong {
     line-height: 141%;
     font-weight: 700;
-    font-size: 18px;
+    font-size: var(--space-3);
     color: #484747;
 
     span {
@@ -92,8 +87,8 @@
 }
 
 .splide__slide .testimonialsText {
-  font-size: 16px;
-  margin: 9px 0 32px 0;
+  font-size: var(--size);
+  margin: 9px 0 var(--gap-2) 0;
   line-height: 141%;
 }
 
@@ -130,7 +125,7 @@
   }
 
   .splide__slide .testimonialsText {
-    font-size: 16px;
+    font-size: var(--size);
   }
 }
 
@@ -142,7 +137,7 @@
 
 @media (max-width: 450px) {
   .testimonials h2 {
-    font-size: 28px;
+    font-size: var(--space-5);
   }
 }
 
@@ -154,6 +149,6 @@
 
 @media (max-width: 370px) {
   .testimonials h2 {
-    font-size: 24px;
+    font-size: var(--space-4);
   }
 }

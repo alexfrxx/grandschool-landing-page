@@ -4,15 +4,15 @@
    Root variables (scaffolding)
 ========================== */
 :root {
-  --container: 1120px;
-  --gap: 24px;
-  --radius: 16px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --gap: 34px;
+  --gap-2: 32px;
+  --size: 16px;
   --space-1: 8px;
   --space-2: 12px;
-  --space-3: 16px;
+  --space-3: 18px;
   --space-4: 24px;
-  --space-5: 40px;
+  --space-5: 28px;
+  --space-6: 40px;
 }
 
 /* ==========================
@@ -139,12 +139,10 @@ body {
   position: relative;
   min-width: 200px;
   height: fit-content;
-  padding: 15px 60px;
   font-size: 20px;
   color: #fff;
   border: 2px solid #618135;
   background-color: #618135;
-  transition: all 0.3s ease;
 
   span {
     position: relative;
@@ -183,4 +181,10 @@ body {
       transform: scaleX(0);
     }
   }
+}
+
+.sectionCard {
+  padding: 20px;
+  border-radius: 26px;
+  box-shadow: 0 4px var(--space-2) rgba(0, 0, 0, 0.08);
 }

@@ -39,7 +39,7 @@ document.querySelectorAll('.overlay').forEach((button) => {
   });
 });
 
-document.querySelectorAll('.close-details').forEach((button) => {
+document.querySelectorAll('.closeDetails').forEach((button) => {
   button.addEventListener('click', (e) => {
     const card = e.target.closest('.firstCardOpen, .secondCardOpen, .thirdCardOpen');
     if (card) {

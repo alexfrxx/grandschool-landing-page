@@ -17,20 +17,16 @@
 
   .feelingList {
     width: 100%;
-    margin-top: 34px;
+    margin-top: var(--gap);
     list-style: none;
     display: flex;
-    gap: 34px;
+    gap: var(--gap);
     justify-content: center;
     opacity: 0;
 
     li {
       width: 33%;
       background-color: #fff;
-      padding: 20px;
-      border-radius: 26px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
       img {
         width: 100%;
         height: auto;
@@ -39,12 +35,12 @@
 
       h3 {
         margin: 37px 0 27px 0;
-        font-size: 24px;
+        font-size: var(--space-4);
         font-weight: 600;
       }
 
       p {
-        font-size: 18px;
+        font-size: var(--space-3);
         font-weight: 400;
         line-height: 141%;
         color: #484747;
@@ -60,7 +56,7 @@
 
     .feelingList {
       opacity: 1;
-      animation: slide-left 0.7s ease-out forwards;
+      animation: slideLeft 0.7s ease-out forwards;
     }
   }
 }
@@ -72,7 +68,7 @@
     background: white;
 
     .feelingList {
-      margin-top: 28px;
+      margin-top: var(--space-5);
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -103,7 +99,7 @@
       }
 
       p {
-        font-size: 16px;
+        font-size: var(--size);
       }
     }
   }

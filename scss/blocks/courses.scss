@@ -1,3 +1,5 @@
+@use '../mixins.scss' as mixins;
+
 .courses {
   background-image: image-set(
     url('../../img/coursesBg.webp') 1x,
@@ -7,8 +9,7 @@
   background-position: bottom;
   background-repeat: no-repeat;
   padding: 100px 0 170px 0;
-  display: flex;
-  flex-direction: column;
+  @include mixins.column;
   .container {
     overflow: hidden;
   }
@@ -34,16 +35,15 @@
     }
   }
   .coursesList {
+    @include mixins.flex;
     position: relative;
-    display: flex;
-    gap: 32px;
+    gap: var(--gap-2);
     list-style-type: none;
-    justify-content: space-between;
-    padding: 32px 0;
+    padding: var(--gap-2) 0;
     opacity: 0;
     overflow: hidden;
     &.animated {
-      animation: slide-left 0.7s ease-out forwards;
+      animation: slideLeft 0.7s ease-out forwards;
     }
   }
   .overlay {
@@ -52,45 +52,39 @@
     width: 100%;
     height: 100%;
     background-color: #ffffff80;
-    max-height: 600px;
+    min-height: 600px;
     z-index: 3;
     border-radius: 26px;
   }
   .courseCard {
     position: relative;
     background-color: white;
-    padding: 20px;
     width: 32%;
     display: flex;
     min-height: 600px;
     transition: all 0.5s ease;
-    border-radius: 26px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     &:nth-child(3) {
       z-index: 3;
     }
     &:hover,
     &:focus {
-      .free-lesson-btn {
+      .freeLessonBtn {
         opacity: 1;
       }
     }
-    .free-lesson-btn {
+    .freeLessonBtn {
       display: inline-block;
       white-space: nowrap;
       position: absolute;
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 18px;
-      font-weight: 600;
+      font-size: var(--space-3);
       color: #618135;
-      text-decoration: none;
       padding: 10px 27px;
       background-color: #f7f5eccc;
-      border-radius: 50px;
-      transition: all 0.5s ease;
       opacity: 0;
+      border: none;
       &:hover,
       &:focus {
         background-color: #618135;
@@ -100,10 +94,9 @@
         background-color: #517322;
       }
     }
-    .card-info {
+    .cardInfo {
+      @include mixins.column;
       background-color: #fff;
-      display: flex;
-      flex-direction: column;
       justify-content: space-between;
       transition: all 0.5s ease;
       width: max-content;
@@ -128,25 +121,24 @@
       border-radius: 26px;
     }
     .aboutCourse {
-      font-size: 16px;
+      font-size: var(--size);
       font-weight: 400;
       color: #484747;
       margin: 0 0 20px 0;
     }
-    .details-wrapper {
+    .detailsWrapper {
+      @include mixins.flex;
       position: relative;
-      display: flex;
       justify-content: center;
-      align-items: center;
     }
-    .view-details {
+    .viewDetails {
       border: none;
       background-color: white;
       color: #618135;
       text-decoration: underline;
       text-align: center;
       margin: 30px 0 20px;
-      font-size: 16px;
+      font-size: var(--size);
       font-weight: 400;
       transition: all 0.4s ease;
       &:hover,
@@ -158,20 +150,19 @@
     .marginNone {
       margin: 10px 0 20px 0;
     }
-    .details-wrapper-close {
+    .detailsWrapperClose {
+      @include mixins.flex;
       position: relative;
-      display: flex;
       justify-content: center;
-      align-items: center;
     }
-    .close-details {
+    .closeDetails {
       border: none;
       display: none;
       background-color: white;
       color: #717070;
       text-decoration: underline;
       text-align: center;
-      font-size: 16px;
+      font-size: var(--size);
       font-weight: 400;
       margin: 22px 0;
     }
@@ -180,9 +171,9 @@
     display: none;
     gap: 4px;
     margin-top: 29px;
-    margin-bottom: 50px;
+    margin-bottom: 39px;
     p {
-      font-size: 16px;
+      font-size: var(--size);
       font-weight: 600;
     }
     span {
@@ -190,7 +181,7 @@
       font-weight: 400;
     }
   }
-  .hidden-content {
+  .hiddenContent {
     content: '';
     display: block;
     height: auto;
@@ -203,37 +194,37 @@
     right: 0;
     padding: 70px 20px 0 0;
     z-index: -1;
-    .card-list-title {
+    .cardListTitle {
       position: absolute;
       list-style-type: none;
     }
     .punkt {
       position: relative;
       font-weight: 600;
-      font-size: 18px;
+      font-size: var(--space-3);
       padding: 0 0 0 20px;
-      margin-bottom: 8px;
+      margin-bottom: var(--space-1);
       &::after {
         content: '';
         position: absolute;
         left: 0;
         top: 5px;
-        width: 8px;
-        height: 8px;
+        width: var(--space-1);
+        height: var(--space-1);
         border-radius: 50%;
         background-color: #e22;
       }
       ul {
         list-style-type: none;
-        padding: 12px 0 0 0;
+        padding: var(--space-2) 0 0 0;
         min-width: 100%;
         overflow: hidden;
         li {
           width: 100%;
-          font-size: 16px;
+          font-size: var(--size);
           font-weight: 400;
           color: #666666;
-          margin-bottom: 12px;
+          margin-bottom: var(--space-2);
           line-height: 140%;
           padding: 0 0 0 23px;
         }
@@ -263,12 +254,10 @@
       right: 20px;
     }
   }
-  .price-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .priceBlock {
+    @include mixins.flex;
     h4 {
-      font-size: 18px;
+      font-size: var(--space-3);
       font-weight: 700;
       color: #ff3f15;
     }
@@ -276,51 +265,44 @@
       font-size: 25px;
       font-weight: 700;
       color: #ff3f15;
-      display: flex;
-      align-items: flex-end;
+      @include mixins.flexEnd;
       gap: 6px;
     }
     .number {
-      font-size: 34px;
+      font-size: var(--gap);
       font-weight: 700;
       color: #ff3f15;
-      display: flex;
-      align-self: flex-end;
+      @include mixins.flexEnd;
     }
     .from {
       align-self: flex-end;
     }
     .currency {
-      font-size: 16px;
+      font-size: var(--size);
       font-weight: 700;
       color: #ff3f15;
       align-self: flex-start;
     }
     .oldPrice {
       color: #ff3f1580;
-      font-size: 24px;
+      font-size: var(--space-4);
       font-weight: 400;
     }
   }
   .courseCta {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 16px;
+    @include mixins.flex;
+    gap: var(--space-2);
+    margin-top: var(--size);
   }
   .courseCtaBtn {
-    width: 45%;
-    font-size: 18px;
-    font-weight: 600;
+    @include mixins.flex;
+    font-size: var(--space-3);
+    width: 40%;
+    min-width: 165px;
     color: #618135;
-    text-decoration: none;
-    border: 2px solid #618135;
-    border-radius: 50px;
-    padding: 8px 20px;
-    display: flex;
+    padding: var(--space-2) 20px;
     justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease;
+    background-color: transparent;
     &:hover,
     &:focus {
       background-color: #f3fee5;
@@ -332,71 +314,27 @@
     }
   }
   .presentBtn {
-    width: 54%;
-    height: fit-content;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    border: 2px solid #618135;
-    background-color: #618135;
-    color: white;
-    border-radius: 50px;
-    padding: 8px 15px;
-    display: flex;
-    align-items: center;
+    width: 60%;
+    min-width: 203px;
+    font-size: var(--space-3);
+    padding: var(--space-1) 15px;
+    @include mixins.flex;
     justify-content: center;
     gap: 6px;
-    transition: all 0.5s ease;
-    span {
-      position: relative;
-      &::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        width: 0;
-        top: 20px;
-        height: 1px;
-        border-radius: 50%;
-        transition: all 0.5s ease;
-        transform: translateX(-50%);
-        transform-origin: top;
-        background-color: #fff;
-      }
-    }
-    &:hover,
-    &:focus {
-      background-color: #72a62b;
-      border: 2px solid #72a62b;
-      span::after {
-        width: 100%;
-      }
-    }
-    &:active {
-      background-color: #517322;
-      border: 2px solid #618135;
-      span::after {
-        transform: scaleX(0);
-        width: 0;
-      }
-    }
   }
   .halfWidthBtn {
     width: 50%;
   }
   .fullCourseList {
-    display: flex;
+    @include mixins.flex;
     justify-content: center;
     list-style-type: none;
-    gap: 32px;
+    gap: var(--gap-2);
     padding-bottom: 20px;
     opacity: 0;
     li {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       width: 50%;
-      padding: 20px;
-      border-radius: 26px;
-      display: flex;
-      flex-direction: column;
+      @include mixins.column;
       justify-content: space-between;
     }
     .packOfCourses {
@@ -413,27 +351,27 @@
       margin-bottom: 20px;
     }
     p {
-      font-size: 16px;
+      font-size: var(--size);
       font-weight: 400;
       color: #666666;
     }
     .fullCourseTitle {
-      font-size: 24px;
+      font-size: var(--space-4);
       font-weight: 700;
       margin: 0;
     }
     .greenTitle {
       color: #618135;
     }
-    .full-price {
-      margin-top: 40px;
+    .fullPrice {
+      margin-top: var(--space-6);
     }
     .fullAccesCard {
       background-color: #faf1d5;
     }
     &.animated {
       opacity: 1;
-      animation: slide-bottom 0.7s ease-out forwards;
+      animation: slideBottom 0.7s ease-out forwards;
     }
   }
 }
@@ -448,10 +386,10 @@
       padding: 20px 460px 20px 20px;
       transition: all 0.5s ease;
       z-index: 4;
-      .details-wrapper {
+      .detailsWrapper {
         display: none;
       }
-      .hidden-content {
+      .hiddenContent {
         opacity: 1;
         right: 0;
       }
@@ -474,7 +412,7 @@
       padding: 20px 460px 20px 20px;
       transition: all 0.5s ease;
       z-index: 4;
-      .hidden-content {
+      .hiddenContent {
         opacity: 1;
       }
       .coursesStars {
@@ -494,11 +432,11 @@
       z-index: 4;
       transform: translateX(-460px);
       transition: transform 0.5s ease;
-      .hidden-content {
+      .hiddenContent {
         opacity: 1;
         right: 0;
       }
-      .details-wrapper {
+      .detailsWrapper {
         display: none;
       }
       .coursesStars {
@@ -518,12 +456,12 @@
     }
     .courseCard {
       width: 100%;
-      gap: 40px;
+      gap: var(--space-6);
       justify-content: space-between;
-      .card-info {
+      .cardInfo {
         width: 50%;
       }
-      .details-wrapper {
+      .detailsWrapper {
         display: none;
       }
     }
@@ -533,14 +471,14 @@
         margin-bottom: 0;
       }
     }
-    .hidden-content {
+    .hiddenContent {
       width: 50%;
       opacity: 1;
-      padding: 55px 20px 0 40px;
+      padding: 55px 20px 0 var(--space-6);
       .closeBtn {
         display: none;
       }
-      .card-list-title {
+      .cardListTitle {
         position: static;
       }
     }
@@ -570,7 +508,7 @@
       flex-direction: column;
       gap: 20px;
       align-items: center;
-      .card-info {
+      .cardInfo {
         width: 100%;
       }
       .infoWrapper {
@@ -578,13 +516,13 @@
         display: flex;
         flex-direction: column;
       }
-      .details-wrapper {
+      .detailsWrapper {
         display: flex;
         padding: 0;
         order: 4;
         margin: 0 0 14px 0;
       }
-      .view-details {
+      .viewDetails {
         margin: 0;
       }
       .courseImage {
@@ -592,23 +530,23 @@
       }
       .courseCardTitle {
         order: 2;
-        margin: 0 0 12px 0;
+        margin: 0 0 var(--space-2) 0;
       }
       .aboutCourse {
         order: 3;
         margin: 0 0 14px 0;
       }
-      .details-wrapper-close {
+      .detailsWrapperClose {
         order: 5;
       }
-      .price-mobile {
+      .priceMobile {
         order: 3;
       }
     }
     .courseCta {
       order: 7;
     }
-    .hidden-content {
+    .hiddenContent {
       width: 100%;
       position: static;
       top: 30px;
@@ -618,7 +556,7 @@
       opacity: 0;
       transition: all 0.4s ease;
     }
-    .price-block {
+    .priceBlock {
       order: 6;
     }
     .coursesStars {
@@ -644,17 +582,17 @@
       .aboutCourse {
         margin: 0 0 22px 0;
       }
-      .free-lesson-btn {
+      .freeLessonBtn {
         display: none;
       }
       &:nth-child(1) {
         width: 70%;
         padding: 20px;
         position: static;
-        .close-details {
+        .closeDetails {
           display: block;
         }
-        .hidden-content {
+        .hiddenContent {
           padding: 0;
           max-height: 500px;
         }
@@ -675,17 +613,17 @@
       .aboutCourse {
         margin: 0 0 22px 0;
       }
-      .free-lesson-btn {
+      .freeLessonBtn {
         display: none;
       }
       &:nth-child(2) {
         width: 70%;
         padding: 20px;
         position: static;
-        .close-details {
+        .closeDetails {
           display: block;
         }
-        .hidden-content {
+        .hiddenContent {
           padding: 0;
           max-height: 500px;
         }
@@ -706,7 +644,7 @@
       .aboutCourse {
         margin: 0 0 22px 0;
       }
-      .free-lesson-btn {
+      .freeLessonBtn {
         display: none;
       }
       &:nth-child(3) {
@@ -714,10 +652,10 @@
         padding: 20px;
         position: static;
         transform: translateX(0);
-        .close-details {
+        .closeDetails {
           display: block;
         }
-        .hidden-content {
+        .hiddenContent {
           padding: 0;
           max-height: 500px;
         }
@@ -736,7 +674,7 @@
       text-align: center;
     }
     .courseSubtitle {
-      font-size: 18px;
+      font-size: var(--space-3);
       text-align: center;
       width: 100%;
     }
@@ -747,14 +685,14 @@
   .courses {
     padding: 50px 0 25px 0;
     .coursesList {
-      padding: 28px 0;
+      padding: var(--space-5) 0;
     }
-    .price-block {
+    .priceBlock {
       .price {
-        font-size: 28px;
+        font-size: var(--space-5);
       }
       .number {
-        font-size: 28px;
+        font-size: var(--space-5);
       }
     }
     .courseCta {

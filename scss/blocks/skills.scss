@@ -1,3 +1,5 @@
+@use '../mixins.scss' as mixins;
+
 .skills {
   width: 100%;
   background-color: #f7f5ec;
@@ -9,25 +11,25 @@
   }
 
   .skillsList {
-    padding: 34px 0;
+    padding: var(--gap) 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 34px;
+    gap: var(--gap);
 
     li {
       width: 31%;
       list-style: none;
 
       h3 {
-        font-size: 24px;
+        font-size: var(--space-4);
         font-weight: 600;
         line-height: 141%;
-        margin: 28px 0 24px 0;
+        margin: var(--space-5) 0 var(--space-4) 0;
       }
 
       p {
-        font-size: 18px;
+        font-size: var(--space-3);
         font-weight: 400;
         line-height: 141%;
       }
@@ -48,6 +50,6 @@
   }
 
   .splide__slide p {
-    font-size: 16px;
+    font-size: var(--size);
   }
 }

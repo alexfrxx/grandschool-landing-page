@@ -1,5 +1,5 @@
 .hero-gallery {
-  padding: var(--space-3);
+  padding: var(--size);
 }
 
 .hero-gallery__slider {
@@ -12,7 +12,7 @@
     height: auto;
     object-fit: cover;
     aspect-ratio: 16 / 9;
-    border-radius: 12px;
+    border-radius: var(--space-2);
   }
 }
 
@@ -25,7 +25,7 @@
     .splide__list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-3);
+      gap: var(--size);
       list-style: none;
       padding: 0;
       margin: 0;
@@ -46,8 +46,8 @@
 }
 
 .splide__pagination__page {
-  width: 12px;
-  height: 12px;
+  width: var(--space-2);
+  height: var(--space-2);
   border: 0;
   border-radius: 2px;
   background: #f5f2e8;

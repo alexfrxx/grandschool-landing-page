@@ -1,6 +1,7 @@
+@use '../mixins.scss' as mixins;
+
 .projectSupport {
-  display: flex;
-  flex-direction: column;
+  @include mixins.column;
   justify-content: center;
   align-items: center;
   padding: 100px 0 200px 0;
@@ -29,10 +30,10 @@
 
   .supportList {
     width: 100%;
-    margin-top: 34px;
+    margin-top: var(--gap);
     list-style: none;
     display: flex;
-    gap: 34px;
+    gap: var(--gap);
     justify-content: center;
     opacity: 0;
 
@@ -40,15 +41,15 @@
       width: 33%;
 
       h3 {
-        font-size: 24px;
+        font-size: var(--space-4);
         font-weight: 600;
-        margin: 28px 0 24px 0;
+        margin: var(--space-5) 0 var(--space-4) 0;
       }
 
       p {
         line-height: 130%;
         width: 100%;
-        font-size: 18px;
+        font-size: var(--space-3);
         font-weight: 400;
       }
 
@@ -85,24 +86,24 @@
 }
 
 .projectSupport__slider {
-  margin-top: var(--space-3);
+  margin-top: var(--size);
 
   .splide__slide {
     width: 100%;
-    margin: 28px 0 28px 6px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    padding: var(--space-3);
+    margin: var(--space-5) 0 var(--space-5) 6px;
+    box-shadow: 0 4px var(--space-2) rgba(0, 0, 0, 0.08);
+    padding: var(--size);
     border-radius: 10px;
     text-align: left;
 
     h3 {
-      margin: 28px 0 24px 0;
-      font-size: 24px;
+      margin: var(--space-5) 0 var(--space-4) 0;
+      font-size: var(--space-4);
       line-height: 1.2;
     }
 
     p {
-      font-size: 18px;
+      font-size: var(--space-3);
       line-height: 1.5;
     }
   }

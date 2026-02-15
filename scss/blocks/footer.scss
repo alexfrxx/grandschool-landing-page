@@ -1,3 +1,5 @@
+@use '../mixins.scss' as mixins;
+
 .footer {
   background-size: cover;
   background-repeat: no-repeat;
@@ -14,9 +16,7 @@
     margin-top: 50px;
 
     .copyrightContainer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include mixins.flex;
     }
 
     .terms {
@@ -40,14 +40,14 @@
   }
 
   .footerInfo {
-    display: flex;
-    justify-content: space-between;
+    @include mixins.flex;
+    align-items: flex-start;
     width: 65%;
     padding: 35px 0 15px 0;
 
     .footerText {
       width: 35%;
-      font-size: 18px;
+      font-size: var(--space-3);
       color: #fff;
       font-weight: 500;
       line-height: 132%;
@@ -57,7 +57,7 @@
 }
 
 .footerSubtitle {
-  font-size: 18px;
+  font-size: var(--space-3);
   font-weight: 700;
   color: #fff;
   position: relative;
@@ -78,7 +78,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 18px;
+    font-size: var(--space-3);
     font-weight: 400;
     color: #fff;
     margin: 0 0 10px 0;
@@ -165,17 +165,17 @@
       width: 77%;
 
       .footerText {
-        font-size: 16px;
+        font-size: var(--size);
       }
     }
 
     .copyright {
-      font-size: 16px;
+      font-size: var(--size);
     }
   }
 
   .contact .contactInfo {
-    font-size: 16px;
+    font-size: var(--size);
   }
 }
 
@@ -219,7 +219,7 @@
 
   .contact .contactInfo,
   .contact .emailLink {
-    font-size: 18px;
+    font-size: var(--space-3);
   }
 
   .hideTitle {
@@ -228,7 +228,7 @@
 
   .iconList {
     margin-top: 22px;
-    gap: 28px;
+    gap: var(--space-5);
   }
 }
 
@@ -273,13 +273,13 @@
 
     .footerInfo .footerText {
       width: 100%;
-      font-size: 18px;
+      font-size: var(--space-3);
     }
   }
 
   .footerSubtitle {
-    font-size: 18px;
-    margin: 44px 0 12px 0;
+    font-size: var(--space-3);
+    margin: 44px 0 var(--space-2) 0;
 
     &::before {
       display: none;
@@ -292,6 +292,6 @@
 
   .contact .contactInfo,
   .contact .emailLink {
-    font-size: 16px;
+    font-size: var(--size);
   }
 }

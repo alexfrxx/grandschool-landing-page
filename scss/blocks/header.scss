@@ -10,7 +10,7 @@ header {
   &.headerFixed {
     position: fixed;
     background-color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px var(--space-2) rgba(0, 0, 0, 0.08);
     z-index: 999;
 
     .headerWrapper {
@@ -46,6 +46,10 @@ header {
         height: 38px;
       }
     }
+
+    .headerBtn {
+      padding: 19px 72px;
+    }
   }
 }
 
@@ -53,10 +57,9 @@ header {
 @media (max-width: 560px) {
   header {
     .headerWrapper {
-      .buyCourseBtn {
+      .headerBtn {
         padding: 14px 49px;
-        font-size: 18px;
-        min-width: 163px;
+        font-size: var(--space-3);
       }
 
       .logo {
