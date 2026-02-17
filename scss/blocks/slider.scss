@@ -8,7 +8,7 @@
 }
 
 /* Desktop: grid layout for projectSupport sliders, hide arrows/pagination by specificity */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .projectSupport__slider .splide__track {
     max-width: 100%;
     overflow: visible;
