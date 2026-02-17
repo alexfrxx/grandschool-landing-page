@@ -1,20 +1,22 @@
 .video {
+  display: flex;
+  justify-content: center;
+  padding: 146px 0 130px 0;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-image: image-set(
     url('../../img/videoBg.webp') 1x,
     url('../../img/videoBgRetina.webp') 2x
   );
-  background-size: contain;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  padding: 146px 0 130px 0;
+
   iframe {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow);
     opacity: 0;
   }
+
   &.animated {
     iframe {
-      animation: slide-fwd-center 1s ease-out forwards;
+      animation: slideCenter 1s ease-out forwards;
       opacity: 1;
     }
   }
@@ -24,6 +26,7 @@
   .video {
     padding: 70px 0 70px 0;
     background: white;
+
     iframe {
       width: 100%;
     }

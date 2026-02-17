@@ -1,55 +1,88 @@
 @use './mixins' as mixins;
-/* Fonts */
 
+/* ==========================
+   Root variables (scaffolding)
+========================== */
+:root {
+  --container: 1800px;
+  --container-padding: 25px;
+  --container-padding-sm: 15px;
+  --gap: 34px;
+  --gap-2: 32px;
+  --size: 16px;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 18px;
+  --space-4: 24px;
+  --space-5: 28px;
+  --space-6: 40px;
+  --radius: 26px;
+  --radius-sm: 10px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --card-padding: 20px;
+}
+
+/* ==========================
+   Fonts
+========================== */
 @font-face {
   font-family: 'ProbaPro';
-  src: url('./../fonts/ProbaPro-Bold.woff2') format('woff2');
-  src: url('./../fonts/ProbaPro-Bold.woff') format('woff');
+  src:
+    url('./../fonts/ProbaPro-Bold.woff2') format('woff2'),
+    url('./../fonts/ProbaPro-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'ProbaPro';
-  src: url('./../fonts/ProbaPro-SemiBold.woff2') format('woff2');
-  src: url('./../fonts/ProbaPro-SemiBold.woff') format('woff');
+  src:
+    url('./../fonts/ProbaPro-SemiBold.woff2') format('woff2'),
+    url('./../fonts/ProbaPro-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'ProbaPro';
-  src: url('./../fonts/ProbaPro-Medium.woff2') format('woff2');
-  src: url('./../fonts/ProbaPro-Medium.woff') format('woff');
+  src:
+    url('./../fonts/ProbaPro-Medium.woff2') format('woff2'),
+    url('./../fonts/ProbaPro-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'ProbaPro';
-  src: url('./../fonts/ProbaPro-Regular.woff2') format('woff2');
-  src: url('./../fonts/ProbaPro-Regular.woff') format('woff');
+  src:
+    url('./../fonts/ProbaPro-Regular.woff2') format('woff2'),
+    url('./../fonts/ProbaPro-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'ProbaPro';
-  src: url('./../fonts/ProbaPro-Light.woff2') format('woff2');
-  src: url('./../fonts/ProbaPro-Light.woff') format('woff');
+  src:
+    url('./../fonts/ProbaPro-Light.woff2') format('woff2'),
+    url('./../fonts/ProbaPro-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'ProbaPro';
-  src: url('./../fonts/ProbaPro-Thin.woff2') format('woff2');
-  src: url('./../fonts/ProbaPro-Thin.woff') format('woff');
+  src:
+    url('./../fonts/ProbaPro-Thin.woff2') format('woff2'),
+    url('./../fonts/ProbaPro-Thin.woff') format('woff');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 
+/* ==========================
+   Base styles
+========================== */
 html {
   scroll-behavior: smooth;
 }
@@ -65,79 +98,100 @@ body {
   outline: none;
 }
 
+/* ==========================
+   Containers
+========================== */
 .container {
   width: 95%;
-  max-width: 1800px;
+  max-width: var(--container);
   margin: 0 auto;
-  padding: 0 25px;
-}
-
-.only-mobile {
-  display: block;
-  max-width: 100%;
-  padding-left: 9px;
-  overflow: visible;
-}
-.only-desktop {
-  display: none;
-}
-
-@media (min-width: 1025px) {
-  .only-mobile {
-    display: none !important;
-  }
-  .only-desktop {
-    display: block !important;
-  }
+  padding: 0 var(--container-padding);
 }
 
 @media (max-width: 560px) {
   .container {
     width: 100%;
-    padding: 0 15px;
+    padding: 0 var(--container-padding-sm);
   }
 }
 
+/* ==========================
+   Display helpers
+========================== */
+.onlyMobile {
+  display: block;
+  max-width: 100%;
+  padding-left: 9px;
+  overflow: visible;
+}
+
+.onlyDesktop {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .onlyMobile {
+    display: none;
+  }
+  .onlyDesktop {
+    display: block;
+  }
+}
+
+/* ==========================
+   Buttons
+========================== */
 .primaryBtn {
   @include mixins.btnSettings;
-  height: fit-content;
   position: relative;
   min-width: 200px;
-  padding: 15px 60px;
+  height: fit-content;
   font-size: 20px;
-  color: #ffff;
+  color: #fff;
   border: 2px solid #618135;
   background-color: #618135;
+
   span {
     position: relative;
+
     &::after {
       content: '';
       position: absolute;
       left: 50%;
-      width: 0;
       top: 20px;
+      width: 0;
       height: 1px;
       border-radius: 50%;
-      transition: all 0.3s ease;
       transform: translateX(-50%);
       transform-origin: top;
       background-color: #fff;
+      transition: all 0.3s ease;
     }
   }
+
   &:hover,
   &:focus {
     background-color: #72a62b;
-    border: 2px solid #72a62b;
+    border-color: #72a62b;
+
     span::after {
       width: 100%;
     }
   }
+
   &:active {
     background-color: #517322;
-    border: 2px solid #618135;
+    border-color: #618135;
+
     span::after {
-      transform: scaleX(0);
       width: 0;
+      transform: scaleX(0);
     }
   }
+}
+
+.sectionCard {
+  padding: var(--card-padding);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
