@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+@mixin flexEnd {
+  display: flex;
+  align-self: flex-end;
+}
+
 @mixin column {
   display: flex;
   flex-direction: column;
