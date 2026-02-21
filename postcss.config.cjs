@@ -5,8 +5,8 @@ module.exports = (ctx) => ({
     ...(ctx.env === 'production'
       ? [
           purgecss({
-            content: ['./index.html', './js/**/*.js'],
-            safelist: ['active', 'open', 'visible', /^is-/, /^has-/, /^js-/, /^modal-/, /^fade-/],
+            content: ['./index.html', './terms/index.html', './js/**/*.js'],
+            safelist: ['active', 'open', 'visible', /^is-/, /^has-/, /^js-/, /^modal-/, /^fade-/, /^splide/],
           }),
         ]
       : []),
