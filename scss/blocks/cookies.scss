@@ -34,19 +34,20 @@
 .cookiesWrapper .data p {
   color: #333;
   font-size: 16px;
+  line-height: 120%;
 }
 .cookiesWrapper .cookiesButtons {
   margin-top: 16px;
   width: 100%;
   display: flex;
+  gap: 10px;
   align-items: center;
-  justify-content: space-between;
 }
 .cookiesButtons .cookiesBtn {
   border: none;
   color: #fff;
   padding: 8px 0;
-  border-radius: 4px;
+  border-radius: 50px;
   background: #618135;
   border: 2px solid #618135;
   cursor: pointer;
