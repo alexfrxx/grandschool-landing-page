@@ -3,17 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="GrandSchool to pierwsza szkoła online stworzona z myślą o seniorach. Pomagamy starszemu pokoleniu odnaleźć się w cyfrowym świecie."
+    />
+    <meta
+      name="keywords"
+      content="GrandSchool, edukacja dla seniorów, szkoła online, cyfrowe umiejętności, kursy dla osób starszych"
+    />
+    <meta name="author" content="GrandSchool" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="GrandSchool — Szkoła online dla starszego pokolenia" />
+    <meta
+      property="og:description"
+      content="Pomagamy starszemu pokoleniu zrozumieć świat internetu, sztucznej inteligencji i bezpieczeństwa online."
+    />
+    <meta property="og:image" content="https://grandschool.app/images/og-image.jpg" />
+    <meta property="og:url" content="https://grandschool.app" />
+    <meta property="og:type" content="website" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GrandSchool — Szkoła online dla starszego pokolenia" />
+    <meta
+      name="twitter:description"
+      content="Pierwsza platforma edukacyjna dla seniorów w Polsce."
+    />
+    <meta name="twitter:image" content="https://grandschool.app/images/og-image.jpg" />
     <title>GrandSchool — Szkoła online dla starszego pokolenia</title>
     <link rel="icon" href="./img/favicon.webp" type="image/webp" sizes="32x32" />
     <link rel="apple-touch-icon" href="./img/favicon.webp" sizes="180x180" />
-    <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
-    <script type="module" src="/js/main.js"></script>
-    <script defer src="js/header.js"></script>
+    <link
+      rel="preload"
+      href="/fonts/ProbaPro-SemiBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
   <body>
+    <div class="cookiesWrapper hidden cookieFadeIn">
+      <div class="cookiesTitle">
+        <i class="bx bx-cookie"></i>
+        <h2>Cookies Consent</h2>
+      </div>
+
+      <div class="data">
+        <p>
+          This website use cookies to help you have a superior and more relevant browsing experience
+          on the website.
+        </p>
+      </div>
+
+      <div class="cookiesButtons">
+        <button class="cookiesBtn" id="acceptBtn">Accept</button>
+        <button class="cookiesBtn" id="declineBtn">Decline</button>
+      </div>
+    </div>
+
     <header>
       <div class="headerWrapper container">
-        <a href="./index.html" class="logo">
+        <a href="./index.html" aria-label="GrandSchool — Strona główna" class="logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="63"
@@ -403,7 +453,7 @@
                       </ul>
                     </li>
                   </ul>
-                  <button class="closeBtn" type="button">
+                  <button class="closeBtn" aria-label="Zamknij okno modalne" type="button">
                     <svg width="19" height="19">
                       <use xlink:href="img/sprite.svg#closeBtn"></use>
                     </svg>
@@ -500,7 +550,7 @@
                       </ul>
                     </li>
                   </ul>
-                  <button class="closeBtn" type="button">
+                  <button class="closeBtn" aria-label="Zamknij okno modalne" type="button">
                     <svg width="19" height="19">
                       <use xlink:href="img/sprite.svg#closeBtn"></use>
                     </svg>
@@ -599,7 +649,7 @@
                       </ul>
                     </li>
                   </ul>
-                  <button class="closeBtn" type="button">
+                  <button class="closeBtn" aria-label="Zamknij okno modalne" type="button">
                     <svg width="19" height="19">
                       <use xlink:href="img/sprite.svg#closeBtn"></use>
                     </svg>
@@ -892,7 +942,7 @@
           loading="lazy"
           width="866"
           height="485"
-          src="https://www.youtube.com/embed/S_zMbLa_nAE?si=5NPPHzQUzNH17zJmrel=0"
+          src="https://www.youtube-nocookie.com/embed/S_zMbLa_nAE?rel=0"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
@@ -1532,8 +1582,11 @@
         </div>
       </div>
     </footer>
-    <script src="/js/counter.js"></script>
-    <script src="/js/courses.js"></script>
-    <script src="/js/animation.js"></script>
+    <script defer src="js/header.js"></script>
+    <script type="module" src="/js/main.js"></script>
+    <script defer src="/js/counter.js"></script>
+    <script defer src="/js/courses.js"></script>
+    <script defer src="/js/animation.js"></script>
+    <script src="/js/cookies.js" defer></script>
   </body>
 </html>
