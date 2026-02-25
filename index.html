@@ -946,7 +946,15 @@
           height="485"
           src="https://www.youtube-nocookie.com/embed/S_zMbLa_nAE?rel=0"
           title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         ></iframe>
@@ -1580,7 +1588,10 @@
       <div class="copyrightWrapper">
         <div class="container copyrightContainer">
           <small class="copyright">&copy; Copyright 2025 GrandSchool Sp. z o.o.</small>
-          <a href="./terms/index.html" target="_blank" class="terms"> Polityka prywatności</a>
+          <div class="privacyFilePicker">
+            <button class="terms changeCookies" id="change">Zarządzaj plikami cookies</button>
+            <a href="./terms/index.html" target="_blank" class="terms"> Polityka prywatności</a>
+          </div>
         </div>
       </div>
     </footer>

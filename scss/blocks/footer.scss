@@ -19,7 +19,27 @@
       @include mixins.flex;
     }
 
+    .privacyFilePicker {
+      position: relative;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      &::after {
+        content: '|';
+        position: absolute;
+        color: white;
+        right: 127px;
+      }
+    }
+
+    .changeCookies {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
     .terms {
+      width: max-content;
       font-size: 14px;
       font-weight: 400;
       text-decoration: none;
@@ -241,16 +261,18 @@
     .footerText {
       width: 70%;
     }
-  }
-}
-
-@media (max-width: 540px) {
-  .footer {
-    padding-bottom: 15px;
-    background-position-y: 90%;
-
     .copyrightWrapper {
       padding: 15px 0 0 0;
+      .privacyFilePicker {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        &::after {
+          display: none;
+        }
+      }
     }
 
     .copyrightContainer {
@@ -262,13 +284,23 @@
 
     .copyrightWrapper .terms {
       order: 1;
-      width: 100%;
+    }
+
+    .copyrightWrapper .changeCookies {
+      order: 2;
     }
 
     .copyrightWrapper .copyright {
       order: 2;
       width: 100%;
     }
+  }
+}
+
+@media (max-width: 540px) {
+  .footer {
+    padding-bottom: 15px;
+    background-position-y: 90%;
 
     .footerText {
       width: 100%;

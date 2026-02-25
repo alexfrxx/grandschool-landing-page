@@ -31,6 +31,11 @@ document.getElementById('declineBtn').addEventListener('click', () => {
   });
 });
 
+document.getElementById('change').addEventListener('click', () => {
+  localStorage.removeItem(COOKIE_CONSENT_KEY);
+  banner.classList.remove('hidden');
+});
+
 function getStoredConsent() {
   const value = localStorage.getItem(COOKIE_CONSENT_KEY);
   return value ? JSON.parse(value) : null;
