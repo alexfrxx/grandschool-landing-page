@@ -8,7 +8,9 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "dev": "vite",
-    "build": "vite build",
+    "build:vite": "vite build",
+    "build:svgo": "svgo img/sprite.svg -o dist/img/sprite.svg",
+    "build": "npm run build:vite && npm run build:svgo",
     "preview": "vite preview"
   },
   "devDependencies": {
