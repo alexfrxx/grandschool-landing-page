@@ -1,53 +1,45 @@
-.hero-gallery {
-  padding: 16px;
+.splide__slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--space-2);
 }
 
-.hero-gallery__slider {
-  max-width: 1200px;
-  margin: 0 auto;
-
-  .splide__slide img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    aspect-ratio: 16 / 9;
-    border-radius: 12px;
+/* Desktop: grid layout for projectSupport sliders, hide arrows/pagination by specificity */
+@media (min-width: 1025px) {
+  .projectSupport__slider .splide__track {
+    max-width: 100%;
+    overflow: visible;
   }
-}
 
-@media (min-width: 1024px) {
-  .hero-gallery__slider {
-    .splide__track {
-      max-width: 100%;
-      overflow: visible;
-    }
-    .splide__list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .splide__arrows,
-    .splide__pagination {
-      display: none !important;
-    }
+  .projectSupport__slider .splide__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--size);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .projectSupport__slider .splide__arrows,
+  .projectSupport__slider .splide__pagination {
+    display: none;
   }
 }
 
 .splide__pagination {
   position: static;
-  margin-top: 12px;
+  margin-top: var(--space-2);
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: var(--space-2);
 }
 
 .splide__pagination__page {
-  width: 12px;
-  height: 12px;
+  width: var(--space-2);
+  height: var(--space-2);
   border: 0;
   border-radius: 2px;
   background: #f5f2e8;

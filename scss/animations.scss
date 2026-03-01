@@ -9,15 +9,6 @@
   }
 }
 
-@-webkit-keyframes blink-1 {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-}
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -30,26 +21,6 @@
   0% {
     opacity: 0;
     transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes slideInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
   }
   100% {
     opacity: 1;
@@ -77,13 +48,14 @@
   animation-delay: 0.5s;
   opacity: 0;
 }
-.slideInRight {
-  animation: slideInRight 0.6s ease-out forwards;
-  animation-delay: 0.6s;
-  opacity: 0;
-}
 .pulseOpacity {
   animation: pulseOpacity 3s ease-in-out infinite;
+}
+
+.cookieFadeIn {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
 }
 
 @keyframes grow {
@@ -142,16 +114,6 @@
 .head {
   animation: nod 3s infinite ease-in-out;
   transform-origin: center bottom;
-}
-
-@keyframes fadeToBlackAndBack {
-  55% {
-    fill: rgb(20, 16, 16); /* к 75% черный */
-  }
-}
-
-.mask {
-  animation: fadeToBlackAndBack 4s infinite ease-in-out;
 }
 
 @keyframes jumpAndSpin {
@@ -237,12 +199,12 @@
   }
 }
 
-.hand-icon {
+.handIcon {
   animation: tap 1.3s ease-in-out infinite;
   transform-origin: bottom center;
 }
 
-.pulse-circle {
+.pulseCircle {
   animation: tap 1.3s ease-in-out infinite;
   transform-origin: top center;
 }
@@ -256,11 +218,11 @@
     transform: rotate(-3deg);
   }
 }
-.left-person {
+.leftPerson {
   animation: hug 2s infinite;
   transform-origin: bottom right;
 }
-.right-person {
+.rightPerson {
   animation: hug 2s infinite;
   transform-origin: bottom left;
 }
@@ -278,52 +240,12 @@
   }
 }
 
-.Ai-icon {
+.aiIcon {
   animation: rotateScan 1.5s ease-in-out infinite;
   transform-origin: center;
 }
 
-@keyframes pulseOpacity {
-  0%,
-  100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.pulseOpacity {
-  animation: pulseOpacity 2s ease-in-out infinite;
-}
-
-@keyframes slide-right {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(100px);
-    transform: translateX(100px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-top {
-  0% {
-    -webkit-transform: translateY(-100px);
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-left {
+@keyframes slideLeft {
   0% {
     -webkit-transform: translateX(-100px);
     transform: translateX(-100px);
@@ -336,7 +258,7 @@
   }
 }
 
-@keyframes slide-bottom {
+@keyframes slideBottom {
   0% {
     -webkit-transform: translateY(100px);
     transform: translateY(100px);
@@ -349,7 +271,7 @@
   }
 }
 
-@keyframes slide-fwd-center {
+@keyframes slideCenter {
   0% {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
