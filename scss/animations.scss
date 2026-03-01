@@ -52,6 +52,12 @@
   animation: pulseOpacity 3s ease-in-out infinite;
 }
 
+.cookieFadeIn {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
+}
+
 @keyframes grow {
   0%,
   100% {
