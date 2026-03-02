@@ -3,16 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="GrandSchool to pierwsza szkoła online stworzona z myślą o seniorach. Pomagamy starszemu pokoleniu odnaleźć się w cyfrowym świecie."
+    />
+    <meta
+      name="keywords"
+      content="GrandSchool, edukacja dla seniorów, szkoła online, cyfrowe umiejętności, kursy dla osób starszych"
+    />
+    <meta name="author" content="GrandSchool" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="GrandSchool — Szkoła online dla starszego pokolenia" />
+    <meta
+      property="og:description"
+      content="Pomagamy starszemu pokoleniu zrozumieć świat internetu, sztucznej inteligencji i bezpieczeństwa online."
+    />
+    <meta property="og:image" content="https://grandschool.app/img/grandschool.webp" />
+    <meta property="og:url" content="https://grandschool.app" />
+    <meta property="og:type" content="website" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GrandSchool — Szkoła online dla starszego pokolenia" />
+    <meta
+      name="twitter:description"
+      content="Pierwsza platforma edukacyjna dla seniorów w Polsce."
+    />
+    <meta name="twitter:image" content="https://grandschool.app/img/grandschool.webp" />
     <title>GrandSchool — Szkoła online dla starszego pokolenia</title>
-    <link rel="icon" href="./favicon.png" sizes="32x32" />
-    <link rel="apple-touch-icon" href="./favicon.png" />
-    <script type="module" src="/js/main.js"></script>
-    <script defer src="js/header.js"></script>
+    <link rel="icon" href="./img/favicon.webp" type="image/webp" sizes="32x32" />
+    <link rel="apple-touch-icon" href="./img/favicon.webp" sizes="180x180" />
+    <link
+      rel="preload"
+      href="/fonts/ProbaPro-SemiBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
   <body>
+    <div class="cookiesWrapper hidden cookieFadeIn">
+      <div class="cookiesTitle">
+        <svg width="24" height="24" aria-hidden="true">
+          <use xlink:href="img/sprite.svg#cookies"></use>
+        </svg>
+        <h2>Zgoda na pliki cookie</h2>
+      </div>
+
+      <div class="data">
+        <p>
+          Ta strona używa plików cookie, aby zapewnić Ci lepsze i bardziej dopasowane doświadczenie
+          podczas przeglądania strony.
+        </p>
+      </div>
+
+      <div class="cookiesButtons">
+        <button class="cookiesBtn" id="acceptBtn">Zezwol</button>
+        <button class="cookiesBtn" id="declineBtn">Odmawiam</button>
+      </div>
+    </div>
+
     <header>
       <div class="headerWrapper container">
-        <a href="./index.html" class="logo">
+        <a href="./index.html" aria-label="GrandSchool — Strona główna" class="logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="63"
@@ -324,6 +377,8 @@
                         <img
                           src="img/oszustwo.png"
                           alt="Babcia nie daje się oszukać"
+                          width="255"
+                          height="170"
                           loading="lazy"
                         />
                       </picture>
@@ -400,7 +455,7 @@
                       </ul>
                     </li>
                   </ul>
-                  <button class="closeBtn" type="button">
+                  <button class="closeBtn" aria-label="Zamknij okno modalne" type="button">
                     <svg width="19" height="19">
                       <use xlink:href="img/sprite.svg#closeBtn"></use>
                     </svg>
@@ -420,6 +475,8 @@
                         <img
                           src="img/ai.png"
                           alt="Babcia korzysta ze sztucznej inteligencji"
+                          width="255"
+                          height="170"
                           loading="lazy"
                         />
                       </picture>
@@ -495,7 +552,7 @@
                       </ul>
                     </li>
                   </ul>
-                  <button class="closeBtn" type="button">
+                  <button class="closeBtn" aria-label="Zamknij okno modalne" type="button">
                     <svg width="19" height="19">
                       <use xlink:href="img/sprite.svg#closeBtn"></use>
                     </svg>
@@ -515,6 +572,8 @@
                         <img
                           src="img/dezinformacja.png"
                           alt="Dziadek rozpoznaje nie prawdziwą informację"
+                          width="255"
+                          height="170"
                           loading="lazy"
                         />
                       </picture>
@@ -592,7 +651,7 @@
                       </ul>
                     </li>
                   </ul>
-                  <button class="closeBtn" type="button">
+                  <button class="closeBtn" aria-label="Zamknij okno modalne" type="button">
                     <svg width="19" height="19">
                       <use xlink:href="img/sprite.svg#closeBtn"></use>
                     </svg>
@@ -604,7 +663,19 @@
           </ul>
           <ul class="fullCourseList">
             <li class="packOfCourses sectionCard">
-              <img src="img/packOfCourses.webp" alt="Pakiet trzech kursów" />
+              <figure>
+                <picture>
+                  <source srcset="img/packOfCourses.webp" type="image/webp" />
+                  <source srcset="img/packOfCourses.avif" type="image/avif" />
+                  <img
+                    src="img/packOfCourses.png"
+                    width="173"
+                    height="48"
+                    alt="Pakiet trzech kursów"
+                    loading="lazy"
+                  />
+                </picture>
+              </figure>
               <h3 class="fullCourseTitle">
                 KUP PAKIET TRZECH KURSÓW - <span class="greenTitle">OSZCZĘDZASZ 20%</span>
               </h3>
@@ -704,7 +775,13 @@
                     <picture>
                       <source srcset="img/user1.avif" type="image/avif" />
                       <source srcset="img/user1.webp" type="image/webp" />
-                      <img src="img/user1.png" alt="Photo of Mateusz Zieliński" loading="lazy" />
+                      <img
+                        src="img/user1.png"
+                        width="98"
+                        height="98"
+                        alt="Photo of Mateusz Zieliński"
+                        loading="lazy"
+                      />
                     </picture>
                     <strong>
                       Mateusz Zieliński
@@ -727,7 +804,13 @@
                     <picture>
                       <source srcset="img/user2.avif" type="image/avif" />
                       <source srcset="img/user2.webp" type="image/webp" />
-                      <img src="img/user2.png" alt="Photo of Joanna Krawczyk" loading="lazy" />
+                      <img
+                        src="img/user2.png"
+                        width="98"
+                        height="98"
+                        alt="Photo of Joanna Krawczyk"
+                        loading="lazy"
+                      />
                     </picture>
                     <strong>
                       Joanna Krawczyk
@@ -750,7 +833,13 @@
                     <picture>
                       <source srcset="img/user3.avif" type="image/avif" />
                       <source srcset="img/user3.webp" type="image/webp" />
-                      <img src="img/user3.png" alt="Photo of Piotr Jankowski" loading="lazy" />
+                      <img
+                        src="img/user3.png"
+                        width="98"
+                        height="98"
+                        alt="Photo of Piotr Jankowski"
+                        loading="lazy"
+                      />
                     </picture>
                     <strong>
                       Piotr Jankowski
@@ -779,7 +868,13 @@
                     <picture>
                       <source srcset="img/user1.avif" type="image/avif" />
                       <source srcset="img/user1.webp" type="image/webp" />
-                      <img src="img/user1.png" alt="Photo of Mateusz Zieliński" loading="lazy" />
+                      <img
+                        src="img/user1.png"
+                        width="98"
+                        height="98"
+                        alt="Photo of Mateusz Zieliński"
+                        loading="lazy"
+                      />
                     </picture>
                     <strong>
                       Mateusz Zieliński
@@ -802,7 +897,13 @@
                     <picture>
                       <source srcset="img/user2.avif" type="image/avif" />
                       <source srcset="img/user2.webp" type="image/webp" />
-                      <img src="img/user2.png" alt="Photo of Joanna Krawczyk" loading="lazy" />
+                      <img
+                        src="img/user2.png"
+                        width="98"
+                        height="98"
+                        alt="Photo of Joanna Krawczyk"
+                        loading="lazy"
+                      />
                     </picture>
                     <strong>
                       Joanna Krawczyk
@@ -825,7 +926,13 @@
                     <picture>
                       <source srcset="img/user3.avif" type="image/avif" />
                       <source srcset="img/user3.webp" type="image/webp" />
-                      <img src="img/user3.png" alt="Photo of Piotr Jankowski" loading="lazy" />
+                      <img
+                        src="img/user3.png"
+                        width="98"
+                        height="98"
+                        alt="Photo of Piotr Jankowski"
+                        loading="lazy"
+                      />
                     </picture>
                     <strong>
                       Piotr Jankowski
@@ -843,9 +950,17 @@
           loading="lazy"
           width="866"
           height="485"
-          src="https://www.youtube.com/embed/S_zMbLa_nAE?si=5NPPHzQUzNH17zJmrel=0"
+          src="https://www.youtube-nocookie.com/embed/S_zMbLa_nAE?rel=0"
           title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         ></iframe>
@@ -1286,7 +1401,13 @@
                 <picture>
                   <source srcset="img/brakCzasu.avif" type="image/avif" />
                   <source srcset="img/brakCzasu.webp" type="image/webp" />
-                  <img src="img/brakCzasu.png" alt="Pani się śpieszy" loading="lazy" />
+                  <img
+                    src="img/brakCzasu.png"
+                    width="255"
+                    height="170"
+                    alt="Pani się śpieszy"
+                    loading="lazy"
+                  />
                 </picture>
                 <figcaption>
                   <h3>Chroniczny brak czasu</h3>
@@ -1303,7 +1424,13 @@
                 <picture>
                   <source srcset="img/strach.avif" type="image/avif" />
                   <source srcset="img/strach.webp" type="image/webp" />
-                  <img src="img/strach.png" alt="Tata z synem" loading="lazy" />
+                  <img
+                    src="img/strach.png"
+                    width="255"
+                    height="170"
+                    alt="Tata z synem"
+                    loading="lazy"
+                  />
                 </picture>
                 <figcaption>
                   <h3>Strach o przyszłość</h3>
@@ -1320,7 +1447,13 @@
                 <picture>
                   <source srcset="img/wina.avif" type="image/avif" />
                   <source srcset="img/wina.webp" type="image/webp" />
-                  <img src="img/wina.png" alt="Pan ma depresję" loading="lazy" />
+                  <img
+                    src="img/wina.png"
+                    width="255"
+                    height="170"
+                    alt="Pan ma depresję"
+                    loading="lazy"
+                  />
                 </picture>
                 <figcaption>
                   <h3>Wypalenie i poczucie winy</h3>
@@ -1461,12 +1594,18 @@
       <div class="copyrightWrapper">
         <div class="container copyrightContainer">
           <small class="copyright">&copy; Copyright 2025 GrandSchool Sp. z o.o.</small>
-          <a href="./terms/index.html" target="_blank" class="terms"> Polityka prywatności</a>
+          <div class="privacyFilePicker">
+            <button class="terms changeCookies" id="change">Zarządzaj plikami cookies</button>
+            <a href="./terms/index.html" target="_blank" class="terms"> Polityka prywatności</a>
+          </div>
         </div>
       </div>
     </footer>
-    <script src="/js/counter.js"></script>
-    <script src="/js/courses.js"></script>
-    <script src="/js/animation.js"></script>
+    <script defer src="js/header.js"></script>
+    <script type="module" src="/js/main.js"></script>
+    <script defer src="/js/counter.js"></script>
+    <script defer src="/js/courses.js"></script>
+    <script defer src="/js/animation.js"></script>
+    <script src="/js/cookies.js" defer></script>
   </body>
 </html>
