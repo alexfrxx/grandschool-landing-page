@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import globals from 'globals';
 import prettier from 'eslint-config-prettier';
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
@@ -9,13 +10,11 @@ export default [
   js.configs.recommended,
   prettier,
   {
+    files: ['js/**/*.js', '*.js'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
-      globals: {
-        window: true,
-        document: true,
-      },
+      globals: globals.browser,
     },
     rules: {
       'no-unused-vars': 'warn',
