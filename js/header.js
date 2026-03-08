@@ -1,9 +1,9 @@
 const header = document.querySelector('header'),
-  sectionTrigger = document.querySelector('.courses');
+  sectionTrigger = document.querySelector(' .courses');
 
 const headerObserver = new IntersectionObserver(
   ([entry]) => {
-    if (!entry.isIntersecting) {
+    if (entry.boundingClientRect.top < 0) {
       header.classList.add('headerFixed');
     } else {
       header.classList.remove('headerFixed');
