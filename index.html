@@ -402,7 +402,9 @@
                           loading="lazy"
                         />
                       </picture>
-                      <a href="#" class="primaryBtn freeLessonBtn">Darmowa próbna lekcja</a>
+                      <button type="button" class="primaryBtn freeLessonBtn">
+                        Darmowa próbna lekcja
+                      </button>
                     </figure>
                   </div>
                   <p class="aboutCourse">
@@ -500,7 +502,9 @@
                           loading="lazy"
                         />
                       </picture>
-                      <a href="#" class="primaryBtn freeLessonBtn">Darmowa próbna lekcja</a>
+                      <button type="button" class="primaryBtn freeLessonBtn">
+                        Darmowa próbna lekcja
+                      </button>
                     </figure>
                   </div>
                   <p class="aboutCourse">
@@ -597,7 +601,9 @@
                           loading="lazy"
                         />
                       </picture>
-                      <a href="#" class="primaryBtn freeLessonBtn">Darmowa próbna lekcja</a>
+                      <button type="button" class="primaryBtn freeLessonBtn">
+                        Darmowa próbna lekcja
+                      </button>
                     </figure>
                   </div>
                   <p class="aboutCourse">
@@ -1601,11 +1607,63 @@
         </div>
       </div>
     </footer>
+
+    <div class="contact-form__wrap">
+      <div class="contact-form__bg">
+        <form id="popup-form" class="contact-form">
+          <svg class="fullLogo contactLogo" width="163" height="63" aria-hidden="true">
+            <use xlink:href="img/sprite.svg#contactLogo"></use>
+          </svg>
+          <h2 class="contact-title">Dostań darmową próbną lekcje</h2>
+          <div class="contact-form__data-wrap">
+            <div class="contact-form__text-wrap">
+              <label for="modal-name"></label>
+              <input
+                id="modal-name"
+                type="text"
+                name="user_name"
+                required
+                placeholder="Imie"
+                class="contact-form__text-input"
+              />
+            </div>
+            <div class="contact-form__text-wrap">
+              <label for="modal-email"></label>
+              <input
+                id="modal-email"
+                type="email"
+                name="user_email"
+                required
+                placeholder="Email"
+                class="contact-form__text-input"
+              />
+            </div>
+            <div class="contact-form__text-wrap">
+              <button type="submit" class="start-btn">Wysłać</button>
+            </div>
+          </div>
+          <p class="contact-form__privacy">
+            Rejestrując się do newslettera e-mail, zgadzasz się z naszą
+            <a href="./terms/index.html" target="_blank" class="contact-form__link"
+              >polityką prywatności</a
+            >
+            oraz na otrzymywanie wiadomości marketingowych od GrandSchool.
+          </p>
+
+          <button class="close-btn">
+            <svg width="19" height="19">
+              <use xlink:href="img/sprite.svg#closeBtn"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
     <script defer src="js/header.js"></script>
     <script type="module" src="/js/main.js"></script>
     <script defer src="/js/counter.js"></script>
     <script defer src="/js/courses.js"></script>
     <script defer src="/js/animation.js"></script>
+    <script defer src="/js/form.js"></script>
     <script src="/js/cookies.js" defer></script>
   </body>
 </html>

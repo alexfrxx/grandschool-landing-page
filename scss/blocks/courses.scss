@@ -115,6 +115,9 @@
       flex-direction: column;
       margin-bottom: 20px;
     }
+    .infoWrapper {
+      background-color: white;
+    }
     img {
       width: 100%;
       height: auto;
@@ -125,6 +128,7 @@
       font-weight: 400;
       color: #484747;
       margin: 0 0 20px 0;
+      background-color: white;
     }
     .detailsWrapper {
       @include mixins.flex;
@@ -168,6 +172,7 @@
     }
   }
   .coursesStars {
+    background-color: white;
     display: none;
     gap: 4px;
     margin-top: 29px;
@@ -187,13 +192,13 @@
     height: auto;
     opacity: 0;
     flex: 7;
+    z-index: -1;
     position: absolute;
     transition: all 0.1s ease;
     height: -webkit-fill-available;
     width: 400px;
     right: 0;
     padding: 70px 20px 0 0;
-    z-index: -1;
     .cardListTitle {
       position: absolute;
       list-style-type: none;

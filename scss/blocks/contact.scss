@@ -1,0 +1,161 @@
+.contact-form__wrap.opened-form {
+  transform: translateX(0);
+}
+
+.contact-form__wrap {
+  position: fixed;
+  top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 998;
+  transform: translateX(-120%);
+  transition: transform 0.5s ease;
+}
+
+.contact-form__bg {
+  width: 900px;
+  border-radius: 13px;
+  height: 600px;
+  display: flex;
+  justify-content: flex-end;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: var(--shadow);
+  background-image: image-set(url('../../img/dziad1.webp') 1x, url('../../img/dziad.webp') 2x);
+}
+
+.contact-form {
+  position: relative;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  border-radius: 13px;
+}
+
+input {
+  height: 55px;
+}
+
+.contact-form__data-wrap {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-title {
+  text-shadow: 0 0 4px #000;
+  width: 90%;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.contactLogo {
+  margin-bottom: 25px;
+}
+
+.contact-form__text-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+
+.contact-form__text-input {
+  width: 100%;
+  background: none;
+  border: 1px solid #fff;
+  border-radius: 9px;
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.start-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 19px;
+  height: 50px;
+  background-color: #618135;
+  color: #fff;
+  border: 1px solid #618135;
+  border-radius: 9px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-btn:hover,
+.start-btn:focus {
+  background-color: #72a62b;
+  border: 1px solid #72a62b;
+}
+
+.start-btn:active {
+  transform: scale(0.9);
+  background-color: #618135;
+}
+
+.contact-form__text-input::placeholder {
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  color: #fff;
+  opacity: 0.7;
+}
+
+.contact-form__label.invalid {
+  color: red;
+}
+
+.close-btn {
+  width: 19px;
+  height: 19px;
+  padding: 0;
+  border: 0;
+  background: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  fill: #474747;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0px;
+}
+
+.close-btn:hover svg,
+.close-btn:focus svg {
+  opacity: 0.6;
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+}
+
+.contact-form__privacy {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+.contact-form__link {
+  text-decoration: underline;
+  color: #fff;
+}
