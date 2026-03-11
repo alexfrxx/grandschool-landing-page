@@ -4,11 +4,13 @@
 
 .contact-form__wrap {
   position: fixed;
-  top: 100px;
   display: flex;
+  top: 0;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff80;
   z-index: 998;
   transform: translateX(-120%);
   transition: transform 0.5s ease;
@@ -158,4 +160,54 @@ input {
 .contact-form__link {
   text-decoration: underline;
   color: #fff;
+}
+
+@media (max-width: 970px) {
+  .contact-form__bg {
+    width: 600px;
+    background-position-x: 20%;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 670px) {
+  .contact-form__bg {
+    width: 450px;
+  }
+
+  .contact-form {
+    padding: 35px;
+  }
+
+  .contact-form__text-wrap {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-form__bg {
+    width: 350px;
+    height: 550px;
+    background-position-x: 25%;
+  }
+
+  .contact-title {
+    margin-bottom: 20px;
+    font-size: 29px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 374px) {
+  .contact-form__bg {
+    width: 300px;
+    background-position-x: 29%;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
 }
