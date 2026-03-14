@@ -1612,9 +1612,12 @@
       <div class="contact-form__bg">
         <form id="popup-form" class="contact-form">
           <svg class="fullLogo contactLogo" width="163" height="63" aria-hidden="true">
-            <use xlink:href="img/sprite.svg#contactLogo"></use>
+            <use xlink:href="img/sprite.svg#fullLogo"></use>
           </svg>
-          <h2 class="contact-title">Dostań darmową próbną lekcje</h2>
+          <h2 class="contact-title">Odbierz darmową lekcję</h2>
+          <p class="contact-subtitle">
+            Podaj swój email, a wyślemy Ci dostęp do bezpłatnej lekcji.
+          </p>
           <div class="contact-form__data-wrap">
             <div class="contact-form__text-wrap">
               <label for="modal-name"></label>
@@ -1639,15 +1642,15 @@
               />
             </div>
             <div class="contact-form__text-wrap">
-              <button type="submit" class="start-btn">Wysłać</button>
+              <button type="submit" class="start-btn">Wyślij dostęp</button>
             </div>
           </div>
           <p class="contact-form__privacy">
-            Rejestrując się do newslettera e-mail, zgadzasz się z naszą
+            Rejestrując się, wyrażasz zgodę na otrzymywanie informacji marketingowych od GrandSchool
+            oraz potwierdzasz zapoznanie się z naszą
             <a href="./terms/index.html" target="_blank" class="contact-form__link"
               >polityką prywatności</a
-            >
-            oraz na otrzymywanie wiadomości marketingowych od GrandSchool.
+            >.
           </p>
 
           <button class="close-btn">
@@ -1657,6 +1660,7 @@
           </button>
         </form>
       </div>
+      <div class="contact-overlay"></div>
     </div>
     <script defer src="js/header.js"></script>
     <script type="module" src="/js/main.js"></script>

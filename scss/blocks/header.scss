@@ -4,14 +4,14 @@ header {
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 997;
+  z-index: 996;
   transition: all 1s ease;
 
   &.headerFixed {
     position: fixed;
     background-color: white;
     box-shadow: var(--shadow);
-    z-index: 997;
+    z-index: 996;
 
     .headerWrapper {
       padding: 19px 25px;
