@@ -12,12 +12,20 @@
   function removeFormPopup() {
     formWrap.classList.remove(`opened-form`);
   }
+  function onEscPress(evt) {
+    if (evt.key === 'Escape') {
+      removeFormPopup();
+    }
+  }
 
   startBtn.forEach((button) => {
     button.addEventListener(`click`, getFormPopup);
   });
   formCloseBtn.addEventListener(`click`, removeFormPopup);
   formOverlay.addEventListener(`click`, removeFormPopup);
+
+  document.addEventListener(`keydown`, onEscPress);
+
   window.openForm = {
     getFormPopup,
     formWrap,

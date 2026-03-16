@@ -1,5 +1,5 @@
 const header = document.querySelector('header'),
-  sectionTrigger = document.querySelector(' .courses');
+  sectionTrigger = document.querySelector('.courses');
 
 const headerObserver = new IntersectionObserver(
   ([entry]) => {
