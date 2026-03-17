@@ -6,6 +6,10 @@
   const startBtn = document.querySelectorAll(`.freeLessonBtn`);
   const formCloseBtn = formWrap.querySelector(`.close-btn`);
 
+  window.addEventListener('load', () => {
+    formWrap.classList.add(`ready`);
+  });
+
   function getFormPopup() {
     formWrap.classList.add(`opened-form`);
   }
