@@ -15,6 +15,7 @@
   }
   function removeFormPopup() {
     formWrap.classList.remove(`opened-form`);
+    document.activeElement.blur();
   }
   function onEscPress(evt) {
     if (evt.key === 'Escape') {
