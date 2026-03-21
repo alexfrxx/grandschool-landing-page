@@ -29,7 +29,7 @@
 
 .contact-form__bg {
   width: 900px;
-  border-radius: 13px;
+  border-radius: var(--radius);
   height: 600px;
   display: flex;
   justify-content: flex-end;
@@ -198,8 +198,12 @@ input {
 }
 
 @media (max-width: 670px) {
+  .contact-form__wrap {
+    padding: 0 var(--container-padding-sm);
+  }
+
   .contact-form__bg {
-    width: 450px;
+    width: 100%;
   }
 
   .contact-form {
@@ -212,10 +216,6 @@ input {
 }
 
 @media (max-width: 505px) {
-  .contact-form__bg {
-    width: 350px;
-  }
-
   .contact-title {
     margin-bottom: 20px;
     font-size: 29px;
@@ -223,10 +223,6 @@ input {
 }
 
 @media (max-width: 374px) {
-  .contact-form__bg {
-    width: 300px;
-  }
-
   .contact-form {
     padding: 20px;
   }
