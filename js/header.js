@@ -3,7 +3,7 @@ const header = document.querySelector('header'),
 
 const headerObserver = new IntersectionObserver(
   ([entry]) => {
-    if (!entry.isIntersecting) {
+    if (entry.boundingClientRect.top < 0) {
       header.classList.add('headerFixed');
     } else {
       header.classList.remove('headerFixed');
