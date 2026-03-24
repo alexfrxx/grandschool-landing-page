@@ -151,9 +151,6 @@
         text-shadow: 0 0 0.5px black;
       }
     }
-    .marginNone {
-      margin: 10px 0 20px 0;
-    }
     .detailsWrapperClose {
       @include mixins.flex;
       position: relative;
@@ -207,7 +204,7 @@
       position: relative;
       font-weight: 600;
       font-size: var(--space-3);
-      padding: 0 0 0 20px;
+      padding: 0 20px 0 20px;
       margin-bottom: var(--space-1);
       &::after {
         content: '';
@@ -361,13 +358,18 @@
     .fullCourseTitle {
       font-size: var(--space-4);
       font-weight: 700;
-      margin: 0;
+    }
+    .threeCourseTitle {
+      margin-bottom: 10px;
     }
     .greenTitle {
       color: #618135;
     }
     .fullPrice {
       margin-top: var(--space-6);
+    }
+    .limitlessCard {
+      margin-top: 70px;
     }
     .fullAccesCard {
       background-color: #faf1d5;
@@ -417,6 +419,7 @@
       z-index: 4;
       .hiddenContent {
         opacity: 1;
+        right: 0;
       }
       .coursesStars {
         display: flex;
