@@ -124,7 +124,8 @@
       border-radius: var(--radius);
     }
     .aboutCourse {
-      font-size: var(--size);
+      font-size: 17px;
+      line-height: 25px;
       font-weight: 400;
       color: #484747;
       margin: 0 0 20px 0;
@@ -195,7 +196,7 @@
     height: -webkit-fill-available;
     width: 400px;
     right: 0;
-    padding: 70px 20px 0 0;
+    padding: 60px 20px 0 0;
     .cardListTitle {
       position: absolute;
       list-style-type: none;
@@ -447,7 +448,6 @@
       }
       .coursesStars {
         display: flex;
-        margin: 29px 0 30px;
       }
     }
   }

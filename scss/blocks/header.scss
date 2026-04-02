@@ -15,6 +15,9 @@ header {
 
     .headerWrapper {
       padding: 19px 25px;
+      .headerBtn {
+        opacity: 1;
+      }
     }
   }
 
@@ -49,6 +52,7 @@ header {
 
     .headerBtn {
       padding: 19px 72px;
+      opacity: 0;
     }
   }
 }
