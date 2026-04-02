@@ -230,7 +230,7 @@
           color: #666666;
           margin-bottom: var(--space-2);
           line-height: 140%;
-          padding: 0 0 0 23px;
+          padding: 0 0 0 10px;
           &::after {
             content: '';
             width: 3px;
@@ -238,7 +238,7 @@
             position: absolute;
             background-color: #666666;
             border-radius: 50%;
-            left: 10px;
+            left: 0;
             top: 7px;
           }
         }
