@@ -31,7 +31,6 @@ header {
       align-items: center;
       gap: 6px;
       width: 175px;
-      transition: all 1s ease;
 
       &:hover .computerLight,
       &:focus-visible .computerLight {
@@ -58,6 +57,28 @@ header {
 }
 
 /* Media Queries */
+
+@media (max-width: 1024px) {
+  header {
+    .headerWrapper {
+      .logo {
+        position: absolute;
+        top: 19px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &.headerFixed {
+      .headerWrapper {
+        .logo {
+          position: static;
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 560px) {
   header {
     .headerWrapper {
@@ -69,6 +90,8 @@ header {
       .logo {
         width: 141px;
         height: 52px;
+        left: 45%;
+        transform: translateX(-45%);
 
         .logoIcon {
           width: 52px;

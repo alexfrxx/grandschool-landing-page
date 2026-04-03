@@ -26,6 +26,7 @@
   .heroSubtitle {
     margin: 10px 0 42px 0;
     font-size: 22px;
+    width: 55%;
     font-weight: 400;
     line-height: 30px;
     color: #484747;
@@ -99,7 +100,7 @@
     }
 
     .heroSubtitle {
-      width: 65%;
+      width: 60%;
       font-size: 25px;
       line-height: 141%;
       text-align: center;
@@ -156,12 +157,15 @@
   }
 }
 
-@media (max-width: 370px) {
-  .heroTitle {
-    font-size: 25px;
-  }
-  .heroSubtitle {
-    font-size: var(--size);
+@media (max-width: 375px) {
+  .hero {
+    background-position-y: 25%;
+    .heroTitle {
+      font-size: 25px;
+    }
+    .heroSubtitle {
+      font-size: var(--size);
+    }
   }
 }
 
@@ -188,7 +192,7 @@
       text-align: left;
     }
     .heroSubtitle {
-      width: 50%;
+      width: 90%;
       font-size: var(--space-4);
       text-align: left;
       margin: 0;
