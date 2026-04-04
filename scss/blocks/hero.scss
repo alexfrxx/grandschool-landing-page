@@ -54,6 +54,14 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .hero {
+    .heroSubtitle {
+      width: 50%;
+    }
+  }
+}
+
 @media (max-width: 1200px) {
   .heroTitle {
     width: 50%;
