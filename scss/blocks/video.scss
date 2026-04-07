@@ -1,7 +1,7 @@
 .video {
   display: flex;
   justify-content: center;
-  padding: 146px 0 130px 0;
+  padding: 146px 0 100px 0;
   background-size: contain;
   background-repeat: no-repeat;
   background-image: image-set(
@@ -19,6 +19,12 @@
       animation: slideCenter 1s ease-out forwards;
       opacity: 1;
     }
+  }
+}
+
+@media (min-width: 4000px) {
+  .video {
+    background-size: cover;
   }
 }
 

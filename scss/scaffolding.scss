@@ -96,6 +96,7 @@ body {
   margin: 0;
   padding: 0;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* ==========================
@@ -106,6 +107,33 @@ body {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 var(--container-padding);
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.terms {
+  width: max-content;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
 }
 
 @media (max-width: 560px) {

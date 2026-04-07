@@ -1,4 +1,4 @@
-@use '../mixins.scss' as mixins;
+@use '../mixins' as mixins;
 
 .hero {
   width: 100%;
@@ -34,7 +34,6 @@
     margin: 10px 0 42px 0;
     font-size: 22px;
     font-weight: 400;
-    width: 45%;
     line-height: 30px;
     color: #484747;
   }
@@ -159,7 +158,7 @@
     .heroSubtitle {
       width: 100%;
       font-size: var(--space-3);
-      margin: 0;
+      margin: 16px 0 36px 0;
     }
   }
 }
