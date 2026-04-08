@@ -118,13 +118,17 @@
     .infoWrapper {
       background-color: white;
     }
+    .priceMobile {
+      background-color: white;
+    }
     img {
       width: 100%;
       height: auto;
       border-radius: var(--radius);
     }
     .aboutCourse {
-      font-size: var(--size);
+      font-size: 17px;
+      line-height: 25px;
       font-weight: 400;
       color: #484747;
       margin: 0 0 20px 0;
@@ -195,7 +199,7 @@
     height: -webkit-fill-available;
     width: 400px;
     right: 0;
-    padding: 70px 20px 0 0;
+    padding: 60px 20px 0 0;
     .cardListTitle {
       position: absolute;
       list-style-type: none;
@@ -229,7 +233,7 @@
           color: #666666;
           margin-bottom: var(--space-2);
           line-height: 140%;
-          padding: 0 0 0 23px;
+          padding: 0 0 0 10px;
           &::after {
             content: '';
             width: 3px;
@@ -237,7 +241,7 @@
             position: absolute;
             background-color: #666666;
             border-radius: 50%;
-            left: 10px;
+            left: 0;
             top: 7px;
           }
         }
@@ -447,7 +451,6 @@
       }
       .coursesStars {
         display: flex;
-        margin: 29px 0 30px;
       }
     }
   }
@@ -563,7 +566,7 @@
       max-height: 0;
       padding: 0;
       opacity: 0;
-      transition: all 0.4s ease;
+      transition: all 0.3s ease;
     }
     .priceBlock {
       order: 6;
@@ -598,12 +601,13 @@
         width: 70%;
         padding: 20px;
         position: static;
+        transform: translateX(0);
         .closeDetails {
           display: block;
         }
         .hiddenContent {
           padding: 0;
-          max-height: 500px;
+          max-height: 520px;
         }
         .coursesStars {
           display: flex;
@@ -634,7 +638,7 @@
         }
         .hiddenContent {
           padding: 0;
-          max-height: 500px;
+          max-height: 520px;
         }
         .coursesStars {
           display: flex;
@@ -666,7 +670,7 @@
         }
         .hiddenContent {
           padding: 0;
-          max-height: 500px;
+          max-height: 520px;
         }
         .coursesStars {
           display: flex;
