@@ -16,6 +16,7 @@ header {
       padding: 19px 25px;
       .headerBtn {
         opacity: 1;
+        position: static;
       }
     }
   }
@@ -24,12 +25,15 @@ header {
     padding-top: 35px;
     transition: all 1s ease;
     @include mixins.flex;
+    position: relative;
 
     .logo {
       display: flex;
       align-items: center;
       gap: 6px;
       width: 175px;
+      -webkit-animation: fadeIn 0.6s both;
+      animation: fadeIn 0.6s both;
 
       &:hover .computerLight,
       &:focus-visible .computerLight {
@@ -49,6 +53,7 @@ header {
     }
 
     .headerBtn {
+      position: absolute;
       padding: 19px 72px;
       opacity: 0;
     }
@@ -89,8 +94,6 @@ header {
       .logo {
         width: 141px;
         height: 52px;
-        left: 45%;
-        transform: translateX(-45%);
 
         .logoIcon {
           width: 52px;
@@ -111,6 +114,17 @@ header {
     .headerWrapper {
       .headerBtn {
         padding: 14px 37px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 600px) {
+  header {
+    .headerWrapper {
+      .logo {
+        position: static;
+        transform: none;
       }
     }
   }

@@ -599,7 +599,9 @@
       }
       &:nth-child(1) {
         width: 70%;
+        padding: 20px;
         position: static;
+        transform: translateX(0);
         .closeDetails {
           display: block;
         }
