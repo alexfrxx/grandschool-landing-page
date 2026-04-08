@@ -21,18 +21,12 @@
     font-size: 45px;
     font-weight: 600;
     color: black;
-
-    .greenTitle {
-      color: #618135;
-    }
-    .blueTitle {
-      color: #32477c;
-    }
   }
 
   .heroSubtitle {
     margin: 10px 0 42px 0;
     font-size: 22px;
+    width: 55%;
     font-weight: 400;
     line-height: 30px;
     color: #484747;
@@ -47,6 +41,8 @@
 
   .heroBtn {
     padding: 19px 70px;
+    opacity: 0;
+    transition: none;
   }
 }
 
@@ -57,6 +53,14 @@
       url('../../img/bg2000.webp') 1x,
       url('../../img/bg2000Retina.webp') 2x
     );
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    .heroSubtitle {
+      width: 50%;
+    }
   }
 }
 
@@ -106,7 +110,7 @@
     }
 
     .heroSubtitle {
-      width: 65%;
+      width: 60%;
       font-size: 25px;
       line-height: 141%;
       text-align: center;
@@ -163,12 +167,15 @@
   }
 }
 
-@media (max-width: 370px) {
-  .heroTitle {
-    font-size: 25px;
-  }
-  .heroSubtitle {
-    font-size: var(--size);
+@media (max-width: 375px) {
+  .hero {
+    background-position-y: 25%;
+    .heroTitle {
+      font-size: 25px;
+    }
+    .heroSubtitle {
+      font-size: var(--size);
+    }
   }
 }
 
@@ -195,7 +202,7 @@
       text-align: left;
     }
     .heroSubtitle {
-      width: 50%;
+      width: 90%;
       font-size: var(--space-4);
       text-align: left;
       margin: 0;
