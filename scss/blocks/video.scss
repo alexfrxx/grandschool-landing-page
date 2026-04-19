@@ -9,6 +9,39 @@
     url('../../img/videoBgRetina.webp') 2x
   );
 
+  .video-wrapper {
+    width: 866px;
+    height: 485px;
+    background-color: #c4c4c4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow);
+  }
+
+  .start-video-btn {
+    position: relative;
+    border: none;
+    width: 142px;
+    height: 134px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #e5e5e5;
+    transition: background-color 0.25s ease;
+
+    svg {
+      position: absolute;
+      left: 54%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+
+  .start-video-btn:hover,
+  .start-video-btn:focus {
+    background-color: #ffffff;
+  }
+
   iframe {
     box-shadow: var(--shadow);
     opacity: 0;
@@ -33,6 +66,7 @@
     padding: 70px 0 70px 0;
     background: white;
 
+    .video-wrapper,
     iframe {
       width: 100%;
     }
@@ -41,6 +75,7 @@
 
 @media (max-width: 550px) {
   .video {
+    .video-wrapper,
     iframe {
       height: 283px;
     }

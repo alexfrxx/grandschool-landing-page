@@ -83,12 +83,18 @@
 /* ==========================
    Base styles
 ========================== */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'ProbaPro', 'Segoe UI', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: 'ProbaPro', system-ui, sans-serif;
 }
 
 * {
