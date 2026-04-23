@@ -1,6 +1,11 @@
 .video {
+  /* Flex + один ребёнок: без явной ширины блок схлопывается (min-size по контенту ≈ 0). */
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
   padding: 146px 0 100px 0;
   background-size: contain;
   background-repeat: no-repeat;
@@ -9,17 +14,99 @@
     url('../../img/videoBgRetina.webp') 2x
   );
 
-  iframe {
+  /* Монтирование React: всегда полная ширина секции (и поля от контейнера страницы). */
+  #youtube-video-root {
+    width: 100%;
+    max-width: 866px;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .youtube-consent-root {
+    width: 100%;
+    min-width: 0;
     box-shadow: var(--shadow);
     opacity: 0;
   }
 
+  .youtube-consent-root iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
   &.animated {
-    iframe {
+    .youtube-consent-root {
       animation: slideCenter 1s ease-out forwards;
       opacity: 1;
     }
   }
+}
+
+.youtube-consent-placeholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #1a1a2e;
+}
+
+.youtube-consent-placeholder__block {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #2d2d44 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+.youtube-consent-placeholder__thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.youtube-consent-placeholder__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  background: rgb(0 0 0 / 55%);
+}
+
+.youtube-consent-placeholder__message {
+  margin: 0;
+  max-width: 28rem;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: #fff;
+}
+
+.youtube-consent-placeholder__cta {
+  cursor: pointer;
+  padding: 0.65rem 1.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--green, #618135);
+  border: none;
+  border-radius: 8px;
+}
+
+.youtube-consent-placeholder__cta:hover {
+  filter: brightness(1.06);
+}
+
+.youtube-consent-placeholder__cta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 
 @media (min-width: 4000px) {
@@ -32,17 +119,15 @@
   .video {
     padding: 70px 0 70px 0;
     background: white;
-
-    iframe {
-      width: 100%;
-    }
   }
 }
 
 @media (max-width: 550px) {
   .video {
-    iframe {
+    .youtube-consent-root {
       height: 283px;
+      max-height: 283px;
+      aspect-ratio: auto;
     }
   }
 }

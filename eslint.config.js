@@ -22,6 +22,23 @@ export default [
     },
   },
   {
+    files: ['src/**/*.{js,jsx}'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: globals.browser,
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    rules: {
+      'no-unused-vars': 'warn',
+      'no-console': 'off',
+    },
+  },
+  {
     files: ['**/*.cjs', '**/*config*.{js,cjs,mjs}'],
     languageOptions: {
       ecmaVersion: 'latest',

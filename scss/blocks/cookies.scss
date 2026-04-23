@@ -9,7 +9,8 @@
   padding: 15px;
   transition: right 0.3s ease;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  z-index: 999;
+  /* Выше contact-modal (997–999), чтобы плашка всегда была кликабельна. */
+  z-index: 10020;
   &.hidden {
     display: none;
   }

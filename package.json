@@ -22,6 +22,7 @@
     "eslint": "^9.7.0",
     "eslint-config-prettier": "^9.1.2",
     "eslint-plugin-import": "^2.29.1",
+    "@vitejs/plugin-react": "^4.7.0",
     "globals": "^17.4.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.3.1",
@@ -37,10 +38,12 @@
     "not dead"
   ],
   "lint-staged": {
-    "*.js": "eslint --fix",
+    "*.{js,jsx}": "eslint --fix",
     "*.{html,css,scss,json,md}": "prettier --write"
   },
   "dependencies": {
-    "@splidejs/splide": "^4.1.4"
+    "@splidejs/splide": "^4.1.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
