@@ -138,14 +138,11 @@
       </section>
       <section class="video" id="video">
         <h2 class="visuallyHidden">Film prezentacja</h2>
-
-        <div class="video-wrapper">
-          <button type="button" class="start-video-btn" aria-label="Rozpocznij filmik">
-            <svg width="39" height="57">
-              <use href="./img/sprite.svg#video-icon"></use>
-            </svg>
-          </button>
-        </div>
+        <div
+          id="youtube-video-root"
+          data-video-id="S_zMbLa_nAE"
+          data-title="YouTube video player"
+        ></div>
       </section>
       <section class="courses" id="courses">
         <div class="container">
@@ -1473,5 +1470,9 @@
       <div class="contact-overlay"></div>
     </div>
     <script type="module" src="/js/main.js"></script>
+    <script defer src="/js/counter.js"></script>
+    <script defer src="/js/courses.js"></script>
+    <script defer src="/js/animation.js"></script>
+    <script defer src="/js/form.js"></script>
   </body>
 </html>

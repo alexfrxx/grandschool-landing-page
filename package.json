@@ -11,7 +11,8 @@
     "build:vite": "vite build",
     "build:svgo": "svgo img/sprite.svg -o dist/img/sprite.svg",
     "build": "npm run build:vite && npm run build:svgo",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@eslint/js": "^9.34.0",
@@ -21,7 +22,10 @@
     "eslint": "^9.7.0",
     "eslint-config-prettier": "^9.1.2",
     "eslint-plugin-import": "^2.29.1",
-    "html-minifier-terser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "globals": "^17.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.3.1",
     "postcss": "^8.4.38",
     "prettier": "^3.8.1",
     "sass": "^1.99.0",
@@ -35,7 +39,13 @@
     "last 2 versions",
     "not dead"
   ],
+  "lint-staged": {
+    "*.{js,jsx}": "eslint --fix",
+    "*.{html,css,scss,json,md}": "prettier --write"
+  },
   "dependencies": {
-    "@splidejs/splide": "^4.1.4"
+    "@splidejs/splide": "^4.1.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
