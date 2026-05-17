@@ -33,8 +33,7 @@
     "svgo": "^4.0.0",
     "terser": "^5.46.1",
     "vite": "^7.1.4",
-    "vite-plugin-image-optimizer": "^2.0.3",
-    "vite-plugin-singlefile": "^2.3.3"
+    "vite-plugin-image-optimizer": "^2.0.3"
   },
   "browserslist": [
     ">0.5%",

@@ -28,14 +28,24 @@
   }
 }
 .fadeIn {
-  animation: fadeIn 0.6s ease-out forwards;
-  animation-delay: 0.6s;
-  opacity: 0;
+  opacity: 1;
+  transform: translateZ(0);
+  @media (prefers-reduced-motion: no-preference) {
+    animation: fadeIn 0.6s ease-out forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+    will-change: opacity;
+  }
 }
 .fadeInUp {
-  animation: fadeInUp 0.5s ease-out forwards;
-  animation-delay: 0.5s;
-  opacity: 0;
+  opacity: 1;
+  transform: translateZ(0);
+  @media (prefers-reduced-motion: no-preference) {
+    animation: fadeInUp 0.5s ease-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+    will-change: opacity, transform;
+  }
 }
 
 .cookieFadeIn {

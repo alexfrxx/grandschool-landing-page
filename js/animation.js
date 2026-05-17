@@ -2,8 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   (function () {
-    const heroBlock = document.querySelector('.hero'),
-      courseTitle = document.querySelector('.courseTitle'),
+    const courseTitle = document.querySelector('.courseTitle'),
       courseSubtitle = document.querySelector('.courseSubtitle'),
       coursesList = document.querySelector('.coursesList'),
       fullCourseList = document.querySelector('.fullCourseList'),
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
       statsBlock = document.querySelector('.projectStats');
 
     const allBlocksForAnimation = [
-      heroBlock,
       coursesList,
       courseSubtitle,
       courseTitle,

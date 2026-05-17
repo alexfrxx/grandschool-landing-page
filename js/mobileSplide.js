@@ -1,13 +1,24 @@
 'use strict';
 
-import Splide from '@splidejs/splide';
-import '@splidejs/splide/css/core';
-
 const MOBILE_BREAKPOINT = 1024;
 const splideInstances = new Map();
+let splideModule;
 
-function mountSplideFor(el) {
+async function loadSplide() {
+  if (!splideModule) {
+    const [splide, css] = await Promise.all([
+      import('@splidejs/splide'),
+      import('@splidejs/splide/css/core'),
+    ]);
+    splideModule = splide.default;
+    void css;
+  }
+  return splideModule;
+}
+
+async function mountSplideFor(el) {
   if (splideInstances.has(el)) return;
+  const Splide = await loadSplide();
   const PEEK = 56;
   const slider = new Splide(el, {
     type: 'loop',
@@ -44,17 +55,17 @@ function destroySplideFor(el) {
   }
 }
 
-function applyMobileOnlySliders() {
+async function applyMobileOnlySliders() {
   const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
   const nodes = document.querySelectorAll('.splide[data-mobile-only]');
 
-  nodes.forEach((el) => {
+  for (const el of nodes) {
     if (isMobile) {
-      mountSplideFor(el);
+      await mountSplideFor(el);
     } else {
       destroySplideFor(el);
     }
-  });
+  }
 }
 
 function debounce(fn, wait = 150) {

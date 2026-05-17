@@ -32,8 +32,10 @@ header {
       align-items: center;
       gap: 6px;
       width: 175px;
-      -webkit-animation: fadeIn 0.6s both;
-      animation: fadeIn 0.6s both;
+      @media (prefers-reduced-motion: no-preference) {
+        -webkit-animation: fadeIn 0.6s both;
+        animation: fadeIn 0.6s both;
+      }
 
       &:hover .computerLight,
       &:focus-visible .computerLight {
