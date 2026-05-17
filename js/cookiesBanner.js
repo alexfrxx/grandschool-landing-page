@@ -62,14 +62,7 @@ function saveChoice(consent) {
   persistConsent(consent);
 }
 
-function initCookieBanner() {
-  const banner = document.querySelector('.cookiesWrapper');
-  if (!banner) return;
-
-  const consent = getStoredConsent();
-  if (consent) {
-    applyConsent(consent);
-  }
+function initCookieBannerUi(banner, consent) {
   if (shouldShowMainCookieBanner(consent)) {
     banner.classList.remove('hidden');
   } else {
@@ -117,8 +110,20 @@ function initCookieBanner() {
   }
 }
 
+function initCookies() {
+  const consent = getStoredConsent();
+  if (consent) {
+    applyConsent(consent);
+  }
+
+  const banner = document.querySelector('.cookiesWrapper');
+  if (banner) {
+    initCookieBannerUi(banner, consent);
+  }
+}
+
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initCookieBanner, { once: true });
+  document.addEventListener('DOMContentLoaded', initCookies, { once: true });
 } else {
-  initCookieBanner();
+  initCookies();
 }

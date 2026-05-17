@@ -2,6 +2,7 @@
 
 import {
   CONSENT_CHANGE_EVENT,
+  COOKIE_CONSENT_KEY,
   getStoredConsent,
   isExternalMediaAllowed,
   mergeConsent,
@@ -114,7 +115,6 @@ function renderPlaceholder(root, config) {
   cta.textContent = config.acceptLabel;
   cta.addEventListener('click', () => {
     mergeConsent({ externalMedia: true });
-    render(root);
   });
 
   overlay.append(message, cta);
@@ -143,7 +143,11 @@ function render(root) {
 function initYouTubeConsent(root) {
   render(root);
   window.addEventListener(CONSENT_CHANGE_EVENT, () => render(root));
-  window.addEventListener('storage', () => render(root));
+  window.addEventListener('storage', (e) => {
+    if (e.key === COOKIE_CONSENT_KEY) {
+      render(root);
+    }
+  });
 }
 
 const mount = document.getElementById('youtube-video-root');

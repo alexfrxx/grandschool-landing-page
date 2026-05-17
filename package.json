@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "dev": "vite",
-    "build:vite": "vite build",
+    "build:vite": "vite build && vite build --config vite.terms.config.js",
     "build:svgo": "svgo img/sprite.svg -o dist/img/sprite.svg",
     "build": "npm run build:vite && npm run build:svgo",
     "preview": "vite preview",
