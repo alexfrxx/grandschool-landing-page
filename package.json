@@ -7,10 +7,10 @@
   "scripts": {
     "lint": "eslint .",
     "format": "prettier --write .",
-    "dev": "vite",
+    "build:sprite": "mkdir -p public/img && svgo img/sprite.svg -o public/img/sprite.svg",
+    "dev": "npm run build:sprite && vite",
     "build:vite": "vite build && vite build --config vite.terms.config.js",
-    "build:svgo": "svgo img/sprite.svg -o dist/img/sprite.svg",
-    "build": "npm run build:vite && npm run build:svgo",
+    "build": "npm run build:sprite && npm run build:vite",
     "preview": "vite preview",
     "prepare": "husky"
   },

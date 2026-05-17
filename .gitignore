@@ -18,6 +18,9 @@ dist/
 
 css/
 
+# Generated from img/sprite.svg via npm run build:sprite
+public/img/sprite.svg
+
 # IDE и редакторы
 .idea/
 .vscode/

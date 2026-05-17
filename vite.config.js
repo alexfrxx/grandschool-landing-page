@@ -10,6 +10,8 @@ const rootDir = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   plugins: [
     ViteImageOptimizer({
+      // SVG sprite: symbols must not be stripped (logoText, social icons, etc.)
+      exclude: /sprite\.svg$/,
       avif: {
         quality: 40,
       },
