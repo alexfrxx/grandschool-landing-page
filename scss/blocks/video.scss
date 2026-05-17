@@ -14,7 +14,7 @@
     url('../../img/videoBgRetina.webp') 2x
   );
 
-  /* Монтирование React: всегда полная ширина секции (и поля от контейнера страницы). */
+  /* YouTube embed: полная ширина секции в пределах max-width. */
   #youtube-video-root {
     width: 100%;
     max-width: 866px;

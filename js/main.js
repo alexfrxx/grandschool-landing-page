@@ -1,10 +1,10 @@
 /* Согласие cookies: первый импорт, чтобы сбой Splide/стилей не оставил баннер без init. */
-import '../src/cookiesBanner.js';
+import './cookiesBanner.js';
 
 import Splide from '@splidejs/splide';
 import '@splidejs/splide/css/core';
 import '../scss/styles.scss';
-import '../src/videoMount.jsx';
+import './youtubeConsent.js';
 
 const MOBILE_BREAKPOINT = 1024;
 let splideInstances = new Map();
