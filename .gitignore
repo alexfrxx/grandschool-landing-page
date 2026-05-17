@@ -25,3 +25,4 @@ css/
 # Кэш и временные файлы
 .cache/
 tmp/
+stats.html

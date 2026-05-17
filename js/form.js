@@ -34,9 +34,4 @@ if (formWrap) {
   }
 
   document.addEventListener('keydown', onEscPress);
-
-  window.openForm = {
-    getFormPopup,
-    formWrap,
-  };
 }
