@@ -27,10 +27,5 @@ export default defineConfig({
         quality: 80,
       },
     }),
-    visualizer({
-      filename: 'stats.html',
-      open: false,
-      gzipSize: true,
-    }),
   ],
 });
