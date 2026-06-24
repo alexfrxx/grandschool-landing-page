@@ -49,27 +49,6 @@
     />
   </head>
   <body>
-    <div class="cookiesWrapper hidden cookieFadeIn">
-      <div class="cookiesTitle">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/img/sprite.svg#cookies"></use>
-        </svg>
-        <h2>Zgoda na pliki cookie</h2>
-      </div>
-
-      <div class="data">
-        <p>
-          Ta strona używa plików cookie, aby zapewnić Ci lepsze i bardziej dopasowane doświadczenie
-          podczas przeglądania strony.
-        </p>
-      </div>
-
-      <div class="cookiesButtons">
-        <button class="cookiesBtn" id="acceptBtn">Zezwol</button>
-        <button class="cookiesBtn" id="declineBtn">Odmawiam</button>
-      </div>
-    </div>
-
     <header class="fadeIn">
       <div class="headerWrapper container">
         <a href="./index.html" aria-label="GrandSchool — Strona główna" class="logo">
@@ -1402,7 +1381,9 @@
         <div class="container copyrightContainer">
           <small class="copyright">&copy; Copyright 2025 GrandSchool Sp. z o.o.</small>
           <div class="privacyFilePicker">
-            <button class="terms changeCookies" id="change">Zarządzaj plikami cookies</button>
+            <button type="button" class="terms changeCookies" id="cookieSettingsFooterBtn">
+              Ustawienia cookies
+            </button>
             <a href="./terms/index.html" target="_blank" class="terms"> Polityka prywatności</a>
           </div>
         </div>
