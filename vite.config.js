@@ -1,14 +1,15 @@
 import { defineConfig } from 'vite';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
-import { visualizer } from 'rollup-plugin-visualizer';
 import { htmlPostProcessPlugin } from './vite.plugins.js';
 
 export default defineConfig({
   build: {
     // Keep fonts, backgrounds, and images as separate files (no base64 blobs in CSS).
     assetsInlineLimit: 0,
-    cssCodeSplit: false,
     modulePreload: false,
+    minify: 'esbuild',
+    sourcemap: false,
+    cssCodeSplit: true,
   },
   plugins: [
     htmlPostProcessPlugin(),
@@ -26,11 +27,6 @@ export default defineConfig({
       jpeg: {
         quality: 80,
       },
-    }),
-    visualizer({
-      filename: 'stats.html',
-      open: false,
-      gzipSize: true,
     }),
   ],
 });
