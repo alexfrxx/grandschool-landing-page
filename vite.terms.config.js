@@ -12,6 +12,13 @@ export default defineConfig({
     assetsInlineLimit: 0,
     cssCodeSplit: false,
     modulePreload: false,
+    minify: 'terser',
+    terserOptions: {
+      compress: true,
+      format: {
+        comments: false,
+      },
+    },
     rollupOptions: {
       input: path.resolve(rootDir, 'terms/index.html'),
     },

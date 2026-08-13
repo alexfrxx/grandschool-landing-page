@@ -31,7 +31,12 @@ function createModalElement() {
   modal.setAttribute('aria-hidden', 'true');
 
   modal.innerHTML = `
-    <div class="cookie-settings__overlay" data-action="close-overlay" tabindex="-1"></div>
+    <button
+      type="button"
+      class="cookie-settings__overlay"
+      data-action="close-overlay"
+      aria-label="Zamknij ustawienia cookies"
+    ></button>
     <div class="cookie-settings__panel" role="document">
       <button
         type="button"

@@ -7,7 +7,13 @@ export default defineConfig({
     // Keep fonts, backgrounds, and images as separate files (no base64 blobs in CSS).
     assetsInlineLimit: 0,
     modulePreload: false,
-    minify: 'esbuild',
+    minify: 'terser',
+    terserOptions: {
+      compress: true,
+      format: {
+        comments: false,
+      },
+    },
     sourcemap: false,
     cssCodeSplit: true,
   },

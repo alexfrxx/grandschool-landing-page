@@ -1,9 +1,20 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { minify as minifyHtml } from 'html-minifier-terser';
+
+const HTML_MINIFY_OPTIONS = {
+  collapseWhitespace: true,
+  conservativeCollapse: true,
+  removeComments: true,
+  removeRedundantAttributes: true,
+  removeEmptyAttributes: true,
+  minifyCSS: true,
+  minifyJS: true,
+};
 
 /**
  * Lighthouse cannot audit crossorigin stylesheets (shows "Error!").
- * Preload + non-blocking attrs; move entry script to end of body.
+ * Preload + non-blocking attrs; move entry script to end of body; minify HTML.
  */
 export function htmlPostProcessPlugin() {
   return {
@@ -33,32 +44,37 @@ export function htmlPostProcessPlugin() {
 
       return out;
     },
-    closeBundle() {
+    async closeBundle() {
       const distDir = path.resolve('dist');
-      const indexPath = path.join(distDir, 'index.html');
-      if (!fs.existsSync(indexPath)) return;
+      const htmlFiles = ['index.html', 'terms/index.html'];
 
-      const indexHtml = fs.readFileSync(indexPath, 'utf8');
-      const cssMatch = indexHtml.match(/href="(\/assets\/style-[^"]+\.css)"/);
-      if (!cssMatch) return;
+      for (const relPath of htmlFiles) {
+        const indexPath = path.join(distDir, relPath);
+        if (!fs.existsSync(indexPath)) continue;
 
-      const cssPath = path.join(distDir, cssMatch[1].replace(/^\//, ''));
-      if (!fs.existsSync(cssPath)) return;
+        let indexHtml = fs.readFileSync(indexPath, 'utf8');
 
-      const css = fs.readFileSync(cssPath, 'utf8');
-      const heroBlock = css.match(/\.hero\{[^}]+\}/)?.[0];
-      if (!heroBlock) return;
+        if (relPath === 'index.html') {
+          const cssMatch = indexHtml.match(/href="(\/assets\/[^"]+\.css)"/);
+          if (cssMatch) {
+            const cssPath = path.join(distDir, cssMatch[1].replace(/^\//, ''));
+            if (fs.existsSync(cssPath)) {
+              const css = fs.readFileSync(cssPath, 'utf8');
+              const heroBlock = css.match(/\.hero\{[^}]+\}/)?.[0];
+              const heroBgMatch =
+                heroBlock?.match(/url\((\/assets\/background-[A-Za-z0-9_-]+\.webp)\)\s*1x/) ??
+                heroBlock?.match(/url\((\/assets\/background[A-Za-z0-9_-]*\.webp)\)/);
+              if (heroBgMatch && !indexHtml.includes(heroBgMatch[1])) {
+                const preload = `    <link rel="preload" href="${heroBgMatch[1]}" as="image" type="image/webp" fetchpriority="high" />\n`;
+                indexHtml = indexHtml.replace('<title>', `${preload}    <title>`);
+              }
+            }
+          }
+        }
 
-      const heroBgMatch =
-        heroBlock.match(/url\((\/assets\/background-[A-Za-z0-9_-]+\.webp)\)\s*1x/) ??
-        heroBlock.match(/url\((\/assets\/background[A-Za-z0-9_-]*\.webp)\)/);
-      if (!heroBgMatch) return;
-
-      const preload = `    <link rel="preload" href="${heroBgMatch[1]}" as="image" type="image/webp" fetchpriority="high" />\n`;
-      if (indexHtml.includes(heroBgMatch[1])) return;
-
-      const updated = indexHtml.replace('<title>', `${preload}    <title>`);
-      fs.writeFileSync(indexPath, updated);
+        const minified = await minifyHtml(indexHtml, HTML_MINIFY_OPTIONS);
+        fs.writeFileSync(indexPath, minified);
+      }
     },
   };
 }

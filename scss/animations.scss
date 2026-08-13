@@ -147,11 +147,11 @@
   } /* мягкое закрытие */
   30% {
     transform: scaleY(1);
-    fill: #618135;
+    fill: var(--green);
   } /* задержка в закрытом состоянии */
   35% {
     transform: scaleY(1);
-    fill: #618135;
+    fill: var(--green);
   } /* мягкое открытие */
   37% {
     transform: scaleY(0);
@@ -163,11 +163,11 @@
   } /* мягкое закрытие */
   48% {
     transform: scaleY(1);
-    fill: #618135;
+    fill: var(--green);
   } /* задержка в закрытом состоянии */
   53% {
     transform: scaleY(1);
-    fill: #618135;
+    fill: var(--green);
   } /* мягкое открытие */
   55% {
     transform: scaleY(0);
