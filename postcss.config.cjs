@@ -28,6 +28,8 @@ module.exports = (ctx) => ({
               /^youtube-consent/,
               /^cookie-/,
               'cookie-settings-open',
+              'cookie-consent-pending',
+              'cookie-consent-blocker',
               'cookieFadeIn',
               'visually-hidden',
             ],

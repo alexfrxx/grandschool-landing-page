@@ -8,6 +8,34 @@ import {
 } from './useCookieConsent.js';
 
 const BANNER_ID = 'cookieConsentBanner';
+const BLOCKER_ID = 'cookieConsentBlocker';
+
+function createBlockerElement() {
+  const blocker = document.createElement('div');
+  blocker.id = BLOCKER_ID;
+  blocker.className = 'cookie-consent-blocker hidden';
+  blocker.setAttribute('aria-hidden', 'true');
+  return blocker;
+}
+
+/**
+ * @param {HTMLElement} blocker
+ */
+function syncBlockerVisibility(blocker) {
+  return subscribeCookieConsent(({ showBanner }) => {
+    blocker.classList.toggle('hidden', !showBanner);
+    blocker.setAttribute('aria-hidden', showBanner ? 'false' : 'true');
+    document.body.classList.toggle('cookie-consent-pending', showBanner);
+  });
+}
+
+export function mountCookieConsentBlocker() {
+  if (document.getElementById(BLOCKER_ID)) return () => {};
+
+  const blocker = createBlockerElement();
+  document.body.prepend(blocker);
+  return syncBlockerVisibility(blocker);
+}
 
 function createBannerElement() {
   const banner = document.createElement('aside');
