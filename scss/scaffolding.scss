@@ -20,6 +20,9 @@
   --radius-sm: 10px;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   --card-padding: 20px;
+  --green: #4a6b24;
+  --green-hover: #567a2e;
+  --green-active: #3d5a1e;
 }
 
 /* ==========================
@@ -46,36 +49,9 @@
 @font-face {
   font-family: 'ProbaPro';
   src:
-    url('./../fonts/ProbaPro-Medium.woff2') format('woff2'),
-    url('./../fonts/ProbaPro-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'ProbaPro';
-  src:
     url('./../fonts/ProbaPro-Regular.woff2') format('woff2'),
     url('./../fonts/ProbaPro-Regular.woff') format('woff');
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'ProbaPro';
-  src:
-    url('./../fonts/ProbaPro-Light.woff2') format('woff2'),
-    url('./../fonts/ProbaPro-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'ProbaPro';
-  src:
-    url('./../fonts/ProbaPro-Thin.woff2') format('woff2'),
-    url('./../fonts/ProbaPro-Thin.woff') format('woff');
-  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
@@ -83,12 +59,18 @@
 /* ==========================
    Base styles
 ========================== */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'ProbaPro', 'Segoe UI', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: 'ProbaPro', system-ui, sans-serif;
 }
 
 * {
@@ -123,7 +105,7 @@ body {
 }
 
 .greenTitle {
-  color: #618135;
+  color: var(--green);
 }
 .blueTitle {
   color: #32477c;
@@ -135,6 +117,10 @@ body {
   font-weight: 400;
   text-decoration: none;
   color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
   transition: all 0.3s ease;
 
   &:hover,
@@ -183,8 +169,8 @@ body {
   height: fit-content;
   font-size: 20px;
   color: #fff;
-  border: 2px solid #618135;
-  background-color: #618135;
+  border: 2px solid var(--green);
+  background-color: var(--green);
 
   span {
     position: relative;
@@ -206,8 +192,8 @@ body {
 
   &:hover,
   &:focus {
-    background-color: #72a62b;
-    border-color: #72a62b;
+    background-color: var(--green-hover);
+    border-color: var(--green-hover);
 
     span::after {
       width: 100%;
@@ -215,8 +201,8 @@ body {
   }
 
   &:active {
-    background-color: #517322;
-    border-color: #618135;
+    background-color: var(--green-active);
+    border-color: var(--green);
 
     span::after {
       width: 0;

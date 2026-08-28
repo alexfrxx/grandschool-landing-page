@@ -2,8 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   (function () {
-    const heroBlock = document.querySelector('.hero'),
-      courseTitle = document.querySelector('.courseTitle'),
+    const courseTitle = document.querySelector('.courseTitle'),
       courseSubtitle = document.querySelector('.courseSubtitle'),
       coursesList = document.querySelector('.coursesList'),
       fullCourseList = document.querySelector('.fullCourseList'),
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
       statsBlock = document.querySelector('.projectStats');
 
     const allBlocksForAnimation = [
-      heroBlock,
       coursesList,
       courseSubtitle,
       courseTitle,
@@ -32,23 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
       threshold: 0.45,
     };
 
-    if (document.documentElement.clientWidth < 1024) {
-      options.threshold = 0.3;
-    } else if (document.documentElement.clientWidth < 768) {
+    const width = document.documentElement.clientWidth;
+    const height = document.documentElement.clientHeight;
+
+    if (width < 768) {
       options.threshold = 0.15;
-    } else if (
-      document.documentElement.clientWidth <= 1024 &&
-      document.documentElement.clientHeight < 601
-    ) {
+    } else if (width < 1024) {
+      options.threshold = 0.3;
+    } else if (width <= 1024 && height < 601) {
       options.threshold = 0.1;
-    } else if (
-      document.documentElement.clientWidth <= 1280 &&
-      document.documentElement.clientHeight < 801
-    ) {
+    } else if (width <= 1280 && height < 801) {
       options.threshold = 0.1;
     }
 
-    function aboutUsAnimation(entries, observer) {
+    function aboutUsAnimation(entries) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const el = entry.target;

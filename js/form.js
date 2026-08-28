@@ -1,20 +1,20 @@
 'use strict';
 
-(function () {
-  const formWrap = document.querySelector(`.contact-form__wrap`);
-  const formOverlay = document.querySelector(`.contact-overlay`);
-  const startBtn = document.querySelectorAll(`.freeLessonBtn`);
-  const formCloseBtn = formWrap.querySelector(`.close-btn`);
+const formWrap = document.querySelector('.contact-form__wrap');
+if (formWrap) {
+  const formOverlay = document.querySelector('.contact-overlay');
+  const startBtn = document.querySelectorAll('.freeLessonBtn');
+  const formCloseBtn = formWrap.querySelector('.close-btn');
 
   window.addEventListener('load', () => {
-    formWrap.classList.add(`ready`);
+    formWrap.classList.add('ready');
   });
 
   function getFormPopup() {
-    formWrap.classList.add(`opened-form`);
+    formWrap.classList.add('opened-form');
   }
   function removeFormPopup() {
-    formWrap.classList.remove(`opened-form`);
+    formWrap.classList.remove('opened-form');
     document.activeElement.blur();
   }
   function onEscPress(evt) {
@@ -24,15 +24,14 @@
   }
 
   startBtn.forEach((button) => {
-    button.addEventListener(`click`, getFormPopup);
+    button.addEventListener('click', getFormPopup);
   });
-  formCloseBtn.addEventListener(`click`, removeFormPopup);
-  formOverlay.addEventListener(`click`, removeFormPopup);
+  if (formCloseBtn) {
+    formCloseBtn.addEventListener('click', removeFormPopup);
+  }
+  if (formOverlay) {
+    formOverlay.addEventListener('click', removeFormPopup);
+  }
 
-  document.addEventListener(`keydown`, onEscPress);
-
-  window.openForm = {
-    getFormPopup,
-    formWrap,
-  };
-})();
+  document.addEventListener('keydown', onEscPress);
+}

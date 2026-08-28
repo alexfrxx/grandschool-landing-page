@@ -708,4 +708,7 @@
 </defs>
 </svg>
     </symbol>
+    <symbol id="video-icon"  viewBox="0 0 39 57">
+  <path d="M39 28.1455L0 56.2913L0 -0.000318527L39 28.1455Z" fill="#C4C4C4" />
+    </symbol>
 </svg>
