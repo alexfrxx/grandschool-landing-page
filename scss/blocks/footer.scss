@@ -132,18 +132,19 @@
 
 .socialIconLink {
   transition: all 0.3s ease;
-  fill: #fff;
   width: 45px;
   height: 46px;
   border-radius: 50%;
-
-  &:hover,
-  &:focus .icon {
-    fill: #b2b2b2;
-  }
+  color: #fff;
 
   .icon {
     transition: all 0.3s ease;
+    fill: currentColor;
+  }
+
+  &:hover,
+  &:focus .icon {
+    color: #b2b2b2;
   }
 }
 
